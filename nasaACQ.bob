@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2024-03-10 17:39:26 by eric-->
+<display version="2.0.0">
+  <name>NASA Data Acquisition</name>
+  <x>9</x>
+  <y>88</y>
+  <width>440</width>
+  <height>270</height>
+  <background_color>
+    <color name="GLOBAL canvas" red="200" green="200" blue="200">
+    </color>
+  </background_color>
+  <grid_visible>false</grid_visible>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>$(P)</text>
+    <y>2</y>
+    <width>440</width>
+    <height>21</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="18.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="green-19" red="0" green="128" blue="0">
+      </color>
+    </background_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="open_display">
+        <file>nasaACQ_sysmon.bob</file>
+        <macros>
+          <R>01:</R>
+        </macros>
+        <target>window</target>
+        <description>FPGA 01</description>
+      </action>
+      <action type="open_display">
+        <file>nasaACQ_sysmon.bob</file>
+        <macros>
+          <R>02:</R>
+        </macros>
+        <target>window</target>
+        <description>FPGA 02</description>
+      </action>
+      <action type="open_display">
+        <file>nasaACQ_sysmon.bob</file>
+        <macros>
+          <R>03:</R>
+        </macros>
+        <target>window</target>
+        <description>FPGA 03</description>
+      </action>
+      <action type="open_display">
+        <file>nasaACQ_sysmon.bob</file>
+        <macros>
+          <R>04:</R>
+        </macros>
+        <target>window</target>
+        <description>FPGA 04</description>
+      </action>
+      <action type="open_display">
+        <file>nasaACQ_sysmon.bob</file>
+        <macros>
+          <R>05:</R>
+        </macros>
+        <target>window</target>
+        <description>FPGA 05</description>
+      </action>
+      <action type="open_display">
+        <file>nasaACQ_sysmon.bob</file>
+        <macros>
+          <R>06:</R>
+        </macros>
+        <target>window</target>
+        <description>FPGA 06</description>
+      </action>
+      <action type="open_display">
+        <file>nasaACQ_sysmon.bob</file>
+        <macros>
+          <R>07:</R>
+        </macros>
+        <target>window</target>
+        <description>FPGA 07</description>
+      </action>
+      <action type="open_display">
+        <file>nasaACQ_sysmon.bob</file>
+        <macros>
+          <R>08:</R>
+        </macros>
+        <target>window</target>
+        <description>FPGA 08</description>
+      </action>
+      <action type="open_display">
+        <file>nasaACQ_sysmon.bob</file>
+        <macros>
+          <R>09:</R>
+        </macros>
+        <target>window</target>
+        <description>FPGA 09</description>
+      </action>
+      <action type="open_display">
+        <file>nasaACQ_sysmon.bob</file>
+        <macros>
+          <R>10:</R>
+        </macros>
+        <target>window</target>
+        <description>FPGA 10</description>
+      </action>
+      <action type="open_display">
+        <file>nasaACQ_sysmon.bob</file>
+        <macros>
+          <R>11:</R>
+        </macros>
+        <target>window</target>
+        <description>FPGA 11</description>
+      </action>
+      <action type="open_display">
+        <file>nasaACQ_sysmon.bob</file>
+        <macros>
+          <R>12:</R>
+        </macros>
+        <target>window</target>
+        <description>FPGA 12</description>
+      </action>
+      <action type="open_display">
+        <file>nasaACQ_sysmon.bob</file>
+        <macros>
+          <R>13:</R>
+        </macros>
+        <target>window</target>
+        <description>FPGA 13</description>
+      </action>
+      <action type="open_display">
+        <file>nasaACQ_sysmon.bob</file>
+        <macros>
+          <R>14:</R>
+        </macros>
+        <target>window</target>
+        <description>FPGA 14</description>
+      </action>
+      <action type="open_display">
+        <file>nasaACQ_sysmon.bob</file>
+        <macros>
+          <R>15:</R>
+        </macros>
+        <target>window</target>
+        <description>FPGA 15</description>
+      </action>
+      <action type="open_display">
+        <file>nasaACQ_sysmon.bob</file>
+        <macros>
+          <R>16:</R>
+        </macros>
+        <target>window</target>
+        <description>FPGA 16</description>
+      </action>
+      <action type="open_display">
+        <file>nasaACQ_sysmon.bob</file>
+        <macros>
+          <R>17:</R>
+        </macros>
+        <target>window</target>
+        <description>FPGA 17</description>
+      </action>
+      <action type="open_display">
+        <file>nasaACQ_sysmon.bob</file>
+        <macros>
+          <R>18:</R>
+        </macros>
+        <target>window</target>
+        <description>FPGA 18</description>
+      </action>
+      <action type="open_display">
+        <file>nasaACQ_sysmon.bob</file>
+        <macros>
+          <R>19:</R>
+        </macros>
+        <target>window</target>
+        <description>FPGA 19</description>
+      </action>
+      <action type="open_display">
+        <file>nasaACQ_sysmon.bob</file>
+        <macros>
+          <R>20:</R>
+        </macros>
+        <target>window</target>
+        <description>FPGA 20</description>
+      </action>
+      <action type="open_display">
+        <file>nasaACQ_sysmon.bob</file>
+        <macros>
+          <R>21:</R>
+        </macros>
+        <target>window</target>
+        <description>FPGA 21</description>
+      </action>
+      <action type="open_display">
+        <file>nasaACQ_sysmon.bob</file>
+        <macros>
+          <R>22:</R>
+        </macros>
+        <target>window</target>
+        <description>FPGA 22</description>
+      </action>
+      <action type="open_display">
+        <file>nasaACQ_sysmon.bob</file>
+        <macros>
+          <R>23:</R>
+        </macros>
+        <target>window</target>
+        <description>FPGA 23</description>
+      </action>
+      <action type="open_display">
+        <file>nasaACQ_sysmon.bob</file>
+        <macros>
+          <R>24:</R>
+        </macros>
+        <target>window</target>
+        <description>FPGA 24</description>
+      </action>
+      <action type="open_display">
+        <file>nasaACQ_sysmon.bob</file>
+        <macros>
+          <R>25:</R>
+        </macros>
+        <target>window</target>
+        <description>FPGA 25</description>
+      </action>
+      <action type="open_display">
+        <file>nasaACQ_sysmon.bob</file>
+        <macros>
+          <R>26:</R>
+        </macros>
+        <target>window</target>
+        <description>FPGA 26</description>
+      </action>
+      <action type="open_display">
+        <file>nasaACQ_sysmon.bob</file>
+        <macros>
+          <R>27:</R>
+        </macros>
+        <target>window</target>
+        <description>FPGA 27</description>
+      </action>
+      <action type="open_display">
+        <file>nasaACQ_sysmon.bob</file>
+        <macros>
+          <R>28:</R>
+        </macros>
+        <target>window</target>
+        <description>FPGA 28</description>
+      </action>
+      <action type="open_display">
+        <file>nasaACQ_sysmon.bob</file>
+        <macros>
+          <R>29:</R>
+        </macros>
+        <target>window</target>
+        <description>FPGA 29</description>
+      </action>
+      <action type="open_display">
+        <file>nasaACQ_sysmon.bob</file>
+        <macros>
+          <R>30:</R>
+        </macros>
+        <target>window</target>
+        <description>FPGA 30</description>
+      </action>
+      <action type="open_display">
+        <file>nasaACQ_sysmon.bob</file>
+        <macros>
+          <R>31:</R>
+        </macros>
+        <target>window</target>
+        <description>FPGA 31</description>
+      </action>
+      <action type="open_display">
+        <file>nasaACQ_sysmon.bob</file>
+        <macros>
+          <R>32:</R>
+        </macros>
+        <target>window</target>
+        <description>FPGA 32</description>
+      </action>
+    </actions>
+    <text>Per-Node...</text>
+    <x>310</x>
+    <y>50</y>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group</name>
+    <x>80</x>
+    <y>40</y>
+    <width>198</width>
+    <height>53</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_2</name>
+      <text>Acquisition</text>
+      <width>198</width>
+      <height>21</height>
+      <font>
+        <font name="Header 2" family="Liberation Sans" style="BOLD" size="18.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_16</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(P)ACQ:enable</pv_name>
+          <value>0</value>
+          <description>WritePV</description>
+        </action>
+      </actions>
+      <text>Disable</text>
+      <y>28</y>
+      <width>80</width>
+      <height>25</height>
+      <background_color>
+        <color name="Write_Background" red="128" green="255" blue="255">
+        </color>
+      </background_color>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_17</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(P)ACQ:enable</pv_name>
+          <value>1</value>
+          <description>WritePV</description>
+        </action>
+      </actions>
+      <text>Enable</text>
+      <x>87</x>
+      <y>28</y>
+      <width>80</width>
+      <height>25</height>
+      <background_color>
+        <color name="Write_Background" red="128" green="255" blue="255">
+        </color>
+      </background_color>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED</name>
+      <pv_name>$(P)01:ACQ:status</pv_name>
+      <bit>30</bit>
+      <x>173</x>
+      <y>28</y>
+      <width>25</width>
+      <height>25</height>
+      <off_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </off_color>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group</name>
+    <x>110</x>
+    <y>110</y>
+    <width>126</width>
+    <height>57</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="combo" version="2.0.0">
+      <name>Combo Box</name>
+      <pv_name>$(P)ACQ:rate</pv_name>
+      <y>27</y>
+      <width>126</width>
+      <font>
+        <font name="Header 2" family="Liberation Sans" style="BOLD" size="18.0">
+        </font>
+      </font>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_1</name>
+      <text>Sampling Rate</text>
+      <width>126</width>
+      <height>21</height>
+      <font>
+        <font name="Header 2" family="Liberation Sans" style="BOLD" size="18.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group_6</name>
+    <x>10</x>
+    <y>197</y>
+    <width>420</width>
+    <height>60</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>EDM activeXTextClass_3</name>
+      <text>Reboot ALL Acquisition Nodes</text>
+      <width>420</width>
+      <height>21</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="18.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="black-14" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="green-19" red="0" green="128" blue="0">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_19</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(P)FPGA:reboot</pv_name>
+          <value>1</value>
+          <description>WritePV</description>
+        </action>
+      </actions>
+      <text>Step One</text>
+      <y>25</y>
+      <width>120</width>
+      <height>35</height>
+      <background_color>
+        <color name="Write_Background" red="128" green="255" blue="255">
+        </color>
+      </background_color>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_22</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(P)FPGA:reboot</pv_name>
+          <value>100</value>
+          <description>WritePV</description>
+        </action>
+      </actions>
+      <text>Step Two</text>
+      <x>150</x>
+      <y>25</y>
+      <width>120</width>
+      <height>35</height>
+      <background_color>
+        <color name="Write_Background" red="128" green="255" blue="255">
+        </color>
+      </background_color>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_23</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(P)FPGA:reboot</pv_name>
+          <value>10000</value>
+          <description>WritePV</description>
+        </action>
+      </actions>
+      <text>Step Three</text>
+      <x>300</x>
+      <y>25</y>
+      <width>120</width>
+      <height>35</height>
+      <background_color>
+        <color name="Write_Background" red="128" green="255" blue="255">
+        </color>
+      </background_color>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+  </widget>
+</display>
