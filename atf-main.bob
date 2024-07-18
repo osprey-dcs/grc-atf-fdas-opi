@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-06-03 13:17:12 by atf-->
+<!--Saved on 2024-07-18 16:35:42 by atf-->
 <display version="2.0.0">
   <name>Main</name>
   <macros>
@@ -327,6 +327,101 @@
     <text>Control</text>
     <x>160</x>
     <y>250</y>
+    <width>140</width>
+    <height>40</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_14</name>
+    <text>Free disk: /data</text>
+    <x>330</x>
+    <y>300</y>
+    <width>210</width>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_7</name>
+    <pv_name>FDAS:SYS:DAQS:DATA:AVAIL</pv_name>
+    <x>330</x>
+    <y>330</y>
+    <width>90</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_15</name>
+    <text>/</text>
+    <x>415</x>
+    <y>330</y>
+    <width>30</width>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_8</name>
+    <pv_name>FDAS:SYS:DAQS:DATA:SIZE</pv_name>
+    <x>445</x>
+    <y>330</y>
+    <width>90</width>
+  </widget>
+  <widget type="progressbar" version="2.0.0">
+    <name>Progress Bar</name>
+    <pv_name>FDAS:SYS:DAQS:DATA:AVAIL</pv_name>
+    <x>545</x>
+    <y>330</y>
+    <width>210</width>
+    <fill_color>
+      <color name="OK" red="0" green="255" blue="0">
+      </color>
+    </fill_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_16</name>
+    <text>Free disk: /export</text>
+    <x>330</x>
+    <y>360</y>
+    <width>210</width>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_9</name>
+    <pv_name>FDAS:SYS:MISC:DATA:AVAIL</pv_name>
+    <x>330</x>
+    <y>390</y>
+    <width>90</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_17</name>
+    <text>/</text>
+    <x>415</x>
+    <y>390</y>
+    <width>30</width>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_10</name>
+    <pv_name>FDAS:SYS:MISC:DATA:SIZE</pv_name>
+    <x>445</x>
+    <y>390</y>
+    <width>90</width>
+  </widget>
+  <widget type="progressbar" version="2.0.0">
+    <name>Progress Bar_1</name>
+    <pv_name>FDAS:SYS:MISC:DATA:AVAIL</pv_name>
+    <x>545</x>
+    <y>390</y>
+    <width>210</width>
+    <fill_color>
+      <color name="OK" red="0" green="255" blue="0">
+      </color>
+    </fill_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_7</name>
+    <actions>
+      <action type="open_display">
+        <file>sysmon.bob</file>
+        <target>tab</target>
+      </action>
+    </actions>
+    <text>Comp. Monitoring</text>
+    <x>10</x>
+    <y>300</y>
     <width>140</width>
     <height>40</height>
     <tooltip>$(actions)</tooltip>

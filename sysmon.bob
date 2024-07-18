@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2024-07-18 12:52:59 by atf-->
+<display version="2.0.0">
+  <name>Sys Mon</name>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <class>TITLE</class>
+    <text>Computer Monitoring</text>
+    <x use_class="true">0</x>
+    <y use_class="true">0</y>
+    <width>550</width>
+    <height>31</height>
+    <font use_class="true">
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display</name>
+    <macros>
+      <IOC>FDAS:SYS:DAQS</IOC>
+    </macros>
+    <file>linStatHost.bob</file>
+    <x>10</x>
+    <y>31</y>
+    <width>550</width>
+    <height>440</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_1</name>
+    <macros>
+      <P>FDAS:SYS:DAQS:ROOT</P>
+    </macros>
+    <file>linStatFS.bob</file>
+    <x>20</x>
+    <y>481</y>
+    <width>550</width>
+    <height>105</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_3</name>
+    <macros>
+      <P>FDAS:SYS:DAQS:DATA</P>
+    </macros>
+    <file>linStatFS.bob</file>
+    <x>20</x>
+    <y>586</y>
+    <width>550</width>
+    <height>105</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_5</name>
+    <macros>
+      <IOC>FDAS:SYS:DAQS</IOC>
+      <NIC>DAQeth0</NIC>
+    </macros>
+    <file>linStatNIC.bob</file>
+    <x>20</x>
+    <y>701</y>
+    <width>550</width>
+    <height>135</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_6</name>
+    <macros>
+      <IOC>FDAS:SYS:MISC</IOC>
+    </macros>
+    <file>linStatHost.bob</file>
+    <x>590</x>
+    <y>31</y>
+    <width>550</width>
+    <height>440</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_7</name>
+    <macros>
+      <P>FDAS:SYS:MISC:ROOT</P>
+    </macros>
+    <file>linStatFS.bob</file>
+    <x>590</x>
+    <y>481</y>
+    <width>550</width>
+    <height>105</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_8</name>
+    <macros>
+      <P>FDAS:SYS:MISC:DATA</P>
+    </macros>
+    <file>linStatFS.bob</file>
+    <x>590</x>
+    <y>586</y>
+    <width>550</width>
+    <height>105</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_9</name>
+    <macros>
+      <IOC>FDAS:SYS:MISC</IOC>
+      <NIC>MISCeth0</NIC>
+    </macros>
+    <file>linStatNIC.bob</file>
+    <x>590</x>
+    <y>701</y>
+    <width>550</width>
+    <height>135</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_10</name>
+    <macros>
+      <IOC>FDAS:SYS:MISC</IOC>
+      <NIC>eno8403</NIC>
+    </macros>
+    <file>linStatNIC.bob</file>
+    <x>590</x>
+    <y>850</y>
+    <width>550</width>
+    <height>135</height>
+    <resize>2</resize>
+  </widget>
+</display>
