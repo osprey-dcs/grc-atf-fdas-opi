@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-06-04 09:00:45 by atf-->
+<!--Saved on 2024-05-31 08:24:22 by atf-->
 <display version="2.0.0">
   <name>Mic Checks</name>
   <macros>
@@ -1490,7 +1490,7 @@
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display</name>
     <file>_acq_header.bob</file>
-    <width>1910</width>
+    <width>1915</width>
     <height>20</height>
     <resize>2</resize>
   </widget>
@@ -1784,5 +1784,24 @@
     <width>170</width>
     <vertical_alignment>1</vertical_alignment>
     <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_1</name>
+    <actions>
+      <action type="execute">
+        <script file="EmbeddedPy">
+          <text><![CDATA[# Embedded python script
+from org.csstudio.display.builder.runtime.script import PVUtil, ScriptUtil
+print 'Hello'
+# widget.setPropertyValue('text', PVUtil.getString(pvs[0]))]]></text>
+        </script>
+        <description>Execute Script</description>
+      </action>
+    </actions>
+    <x>1020</x>
+    <y>550</y>
+    <width>90</width>
+    <height>40</height>
+    <tooltip>$(actions)</tooltip>
   </widget>
 </display>

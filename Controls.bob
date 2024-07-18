@@ -1,0 +1,980 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2024-06-04 14:40:36 by atf-->
+<display version="2.0.0">
+  <name>Controls</name>
+  <macros>
+    <P>FDAS:</P>
+    <EVG>FDAS:</EVG>
+  </macros>
+  <width>1635</width>
+  <height>629</height>
+  <widget type="combo" version="2.0.0">
+    <name>Combo Box</name>
+    <pv_name>$(EVG)ACQ:rate</pv_name>
+    <x>250</x>
+    <y>50</y>
+    <width>126</width>
+    <height>25</height>
+    <font>
+      <font name="Header 2" family="Liberation Sans" style="BOLD" size="18.0">
+      </font>
+    </font>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_12</name>
+    <text>ADC Acquire</text>
+    <x>20</x>
+    <y>30</y>
+    <width>167</width>
+    <height>25</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_16</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(EVG)ACQ:enable</pv_name>
+        <value>0</value>
+        <description>WritePV</description>
+      </action>
+    </actions>
+    <text>Disable</text>
+    <x>20</x>
+    <y>50</y>
+    <width>80</width>
+    <height>25</height>
+    <background_color>
+      <color name="Write_Background" red="128" green="255" blue="255">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_17</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(EVG)ACQ:enable</pv_name>
+        <value>1</value>
+        <description>WritePV</description>
+      </action>
+    </actions>
+    <text>Enable</text>
+    <x>107</x>
+    <y>50</y>
+    <width>80</width>
+    <height>25</height>
+    <background_color>
+      <color name="Write_Background" red="128" green="255" blue="255">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_1</name>
+    <pv_name>$(EVG)ACQ:enable</pv_name>
+    <bit>0</bit>
+    <x>193</x>
+    <y>50</y>
+    <width>25</width>
+    <height>25</height>
+    <off_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </off_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_13</name>
+    <text>ADC Samp. Rate</text>
+    <x>250</x>
+    <y>30</y>
+    <width>126</width>
+    <height>25</height>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_11</name>
+    <text>CCCR Name</text>
+    <x>20</x>
+    <y>219</y>
+    <width>310</width>
+    <height>22</height>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_14</name>
+    <text>Run Description</text>
+    <x>20</x>
+    <y>299</y>
+    <width>310</width>
+    <height>22</height>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry</name>
+    <pv_name>$(P)SA:FILE.VAL$</pv_name>
+    <x>20</x>
+    <y>241</y>
+    <width>520</width>
+    <background_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <format>6</format>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_1</name>
+    <pv_name>$(P)SA:DESC.VAL$</pv_name>
+    <x>20</x>
+    <y>321</y>
+    <width>210</width>
+    <format>6</format>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_15</name>
+    <text>Last Message</text>
+    <x>20</x>
+    <y>349</y>
+    <width>310</width>
+    <height>22</height>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_1</name>
+    <pv_name>pva://$(P)CTRL:LastMsg-I</pv_name>
+    <x>20</x>
+    <y>371</y>
+    <width>356</width>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Update_2</name>
+    <pv_name>pva://$(P)CTRL:LastName-I</pv_name>
+    <x>20</x>
+    <y>421</y>
+    <width>356</width>
+    <background_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <vertical_alignment>0</vertical_alignment>
+    <wrap_words>true</wrap_words>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Update_3</name>
+    <pv_name>pva://$(P)CTRL:LastFile-I</pv_name>
+    <x>20</x>
+    <y>470</y>
+    <width>520</width>
+    <height>19</height>
+    <background_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <vertical_alignment>0</vertical_alignment>
+    <wrap_words>true</wrap_words>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>0</value>
+        <description>Stop</description>
+      </action>
+    </actions>
+    <pv_name>pva://$(P)CTRL:Run-SP</pv_name>
+    <x>20</x>
+    <y>171</y>
+    <width>110</width>
+    <height>40</height>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_1</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+        <description>Start</description>
+      </action>
+    </actions>
+    <pv_name>pva://$(P)CTRL:Run-SP</pv_name>
+    <x>163</x>
+    <y>171</y>
+    <width>110</width>
+    <height>40</height>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_2</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>2</value>
+        <description>Reset</description>
+      </action>
+    </actions>
+    <pv_name>pva://$(P)CTRL:Run-SP</pv_name>
+    <x>440</x>
+    <y>171</y>
+    <width>58</width>
+    <height>40</height>
+    <background_color>
+      <color name="MINOR" red="255" green="128" blue="0">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="multi_state_led" version="2.0.0">
+    <name>LED (Multi State)</name>
+    <pv_name>pva://$(P)CTRL:Run-SP</pv_name>
+    <x>310</x>
+    <y>171</y>
+    <width>100</width>
+    <height>40</height>
+    <square>true</square>
+    <states>
+      <state>
+        <value>0</value>
+        <label>Idle</label>
+        <color>
+          <color name="Off" red="60" green="100" blue="60">
+          </color>
+        </color>
+      </state>
+      <state>
+        <value>1</value>
+        <label>Acquire</label>
+        <color>
+          <color name="On" red="0" green="255" blue="0">
+          </color>
+        </color>
+      </state>
+      <state>
+        <value>2</value>
+        <label>Abort</label>
+        <color>
+          <color name="MAJOR" red="255" green="0" blue="0">
+          </color>
+        </color>
+      </state>
+    </states>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_16</name>
+    <text>Acquisition Control</text>
+    <x>20</x>
+    <y>149</y>
+    <width>310</width>
+    <height>22</height>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_2</name>
+    <pv_name>pva://$(P)SA:READY_</pv_name>
+    <x>420</x>
+    <y>100</y>
+    <width>100</width>
+    <height>30</height>
+    <off_label>Not Ready</off_label>
+    <off_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </off_color>
+    <on_label>Ready</on_label>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <square>true</square>
+    <labels_from_pv>true</labels_from_pv>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_18</name>
+    <text>Recording Readiness:</text>
+    <x>273</x>
+    <y>100</y>
+    <width>140</width>
+    <height>30</height>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_3</name>
+    <pv_name>$(P)SA:READY</pv_name>
+    <x>150</x>
+    <y>100</y>
+    <width>100</width>
+    <height>30</height>
+    <off_label>Not Ready</off_label>
+    <off_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </off_color>
+    <on_label>Ready</on_label>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <square>true</square>
+    <labels_from_pv>true</labels_from_pv>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_19</name>
+    <text>System Readiness:</text>
+    <x>20</x>
+    <y>100</y>
+    <width>130</width>
+    <height>30</height>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_21</name>
+    <text>Last Started Name</text>
+    <x>20</x>
+    <y>399</y>
+    <width>310</width>
+    <height>22</height>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_22</name>
+    <text>Last Completed File</text>
+    <x>20</x>
+    <y>448</y>
+    <width>310</width>
+    <height>22</height>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_5</name>
+    <pv_name>=('FDAS:01:LstSz-I'+'FDAS:02:LstSz-I'+'FDAS:03:LstSz-I'+'FDAS:04:LstSz-I'+'FDAS:05:LstSz-I'+'FDAS:06:LstSz-I'+'FDAS:07:LstSz-I'+'FDAS:08:LstSz-I'+'FDAS:09:LstSz-I'+'FDAS:10:LstSz-I'+'FDAS:11:LstSz-I'+'FDAS:12:LstSz-I'+'FDAS:13:LstSz-I'+'FDAS:14:LstSz-I'+'FDAS:15:LstSz-I'+'FDAS:16:LstSz-I'+'FDAS:17:LstSz-I'+'FDAS:18:LstSz-I'+'FDAS:19:LstSz-I'+'FDAS:20:LstSz-I'+'FDAS:21:LstSz-I'+'FDAS:22:LstSz-I'+'FDAS:23:LstSz-I'+'FDAS:24:LstSz-I'+'FDAS:25:LstSz-I'+'FDAS:26:LstSz-I'+'FDAS:27:LstSz-I'+'FDAS:28:LstSz-I'+'FDAS:29:LstSz-I'+'FDAS:30:LstSz-I'+'FDAS:31:LstSz-I'+'FDAS:32:LstSz-I' /1024)</pv_name>
+    <x>330</x>
+    <y>321</y>
+    <width>115</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD_ITALIC" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+      <action type="write_pv">
+        <pv_name>loc://V1&lt;VString&gt;</pv_name>
+        <value>=(fdas:01:lstsz-i)+(fdas:02:lstsz-i)+(fdas:03:lstsz-i)+(fdas:04:lstsz-i)+(fdas:05:lstsz-i)+(fdas:06:lstsz-i)+(fdas:07:lstsz-i)+(fdas:08:lstsz-i)+(fdas:09:lstsz-i)+(fdas:10:lstsz-i)+(fdas:11:lstsz-i)+(fdas:12:lstsz-i)+(fdas:13:lstsz-i)+(fdas:14:lstsz-i)+(fdas:15:lstsz-i)+(fdas:16:lstsz-i)+(fdas:17:lstsz-i)+(fdas:18:lstsz-i)+(fdas:19:lstsz-i)+(fdas:20:lstsz-i)+(fdas:21:lstsz-i)+(fdas:22:lstsz-i)+(fdas:23:lstsz-i)+(fdas:24:lstsz-i)+(fdas:25:lstsz-i)+(fdas:26:lstsz-i)+(fdas:27:lstsz-i)+(fdas:28:lstsz-i)+(fdas:29:lstsz-i)+(fdas:30:lstsz-i)+(fdas:31:lstsz-i)+(fdas:32:lstsz-i)</value>
+        <description>WritePV</description>
+      </action>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_2</name>
+    <text>Current Filesize:</text>
+    <x>240</x>
+    <y>321</y>
+    <width>120</width>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_6</name>
+    <pv_name>FDAS:ACQ:rate</pv_name>
+    <x>460</x>
+    <y>322</y>
+    <width>84</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD_ITALIC" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <horizontal_alignment>2</horizontal_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display</name>
+    <file>ops/_acq_header.bob</file>
+    <width>1910</width>
+    <height>20</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_17</name>
+    <text>Record</text>
+    <x>630</x>
+    <y>30</y>
+    <width>20</width>
+    <height>60</height>
+    <rotation_step>1</rotation_step>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_31</name>
+    <text>LOLO</text>
+    <x>1110</x>
+    <y>30</y>
+    <width>20</width>
+    <height>60</height>
+    <rotation_step>1</rotation_step>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_32</name>
+    <text>LO</text>
+    <x>1140</x>
+    <y>30</y>
+    <width>20</width>
+    <height>60</height>
+    <rotation_step>1</rotation_step>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_33</name>
+    <text>HIHI</text>
+    <x>1200</x>
+    <y>30</y>
+    <width>20</width>
+    <height>60</height>
+    <rotation_step>1</rotation_step>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_34</name>
+    <text>HI</text>
+    <x>1170</x>
+    <y>30</y>
+    <width>20</width>
+    <height>60</height>
+    <rotation_step>1</rotation_step>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_46</name>
+    <text>In Use</text>
+    <x>1269</x>
+    <y>33</y>
+    <width>20</width>
+    <height>58</height>
+    <rotation_step>1</rotation_step>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_47</name>
+    <text>Record</text>
+    <x>1299</x>
+    <y>31</y>
+    <width>20</width>
+    <height>60</height>
+    <rotation_step>1</rotation_step>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_48</name>
+    <text>LOLO</text>
+    <x>1779</x>
+    <y>31</y>
+    <width>20</width>
+    <height>60</height>
+    <rotation_step>1</rotation_step>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_49</name>
+    <text>LO</text>
+    <x>1809</x>
+    <y>31</y>
+    <width>20</width>
+    <height>60</height>
+    <rotation_step>1</rotation_step>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_50</name>
+    <text>HIHI</text>
+    <x>1869</x>
+    <y>31</y>
+    <width>20</width>
+    <height>60</height>
+    <rotation_step>1</rotation_step>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_51</name>
+    <text>HI</text>
+    <x>1839</x>
+    <y>31</y>
+    <width>20</width>
+    <height>60</height>
+    <rotation_step>1</rotation_step>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_53</name>
+    <text>Net Rate</text>
+    <x>1359</x>
+    <y>70</y>
+    <height>21</height>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_54</name>
+    <text>File Rate</text>
+    <x>1559</x>
+    <y>70</y>
+    <width>80</width>
+    <height>21</height>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_55</name>
+    <text>Drop Rate</text>
+    <x>1469</x>
+    <y>70</y>
+    <width>60</width>
+    <height>21</height>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_56</name>
+    <text>File Size</text>
+    <x>1669</x>
+    <y>70</y>
+    <height>21</height>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_57</name>
+    <text>Chassis</text>
+    <x>570</x>
+    <y>32</y>
+    <width>20</width>
+    <height>58</height>
+    <rotation_step>1</rotation_step>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_58</name>
+    <text>Chassis</text>
+    <x>1240</x>
+    <y>33</y>
+    <width>20</width>
+    <height>58</height>
+    <rotation_step>1</rotation_step>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>01_2</name>
+    <macros>
+      <N>01</N>
+    </macros>
+    <file>_chassis_acq_sts.bob</file>
+    <x>560</x>
+    <y>95</y>
+    <width>670</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>02_2</name>
+    <macros>
+      <N>02</N>
+    </macros>
+    <file>_chassis_acq_sts.bob</file>
+    <x>560</x>
+    <y>125</y>
+    <width>670</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>03_2</name>
+    <macros>
+      <N>03</N>
+    </macros>
+    <file>_chassis_acq_sts.bob</file>
+    <x>560</x>
+    <y>155</y>
+    <width>670</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>04_2</name>
+    <macros>
+      <N>04</N>
+    </macros>
+    <file>_chassis_acq_sts.bob</file>
+    <x>560</x>
+    <y>185</y>
+    <width>670</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>05_2</name>
+    <macros>
+      <N>05</N>
+    </macros>
+    <file>_chassis_acq_sts.bob</file>
+    <x>560</x>
+    <y>215</y>
+    <width>670</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>06_2</name>
+    <macros>
+      <N>06</N>
+    </macros>
+    <file>_chassis_acq_sts.bob</file>
+    <x>560</x>
+    <y>245</y>
+    <width>670</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>07_2</name>
+    <macros>
+      <N>07</N>
+    </macros>
+    <file>_chassis_acq_sts.bob</file>
+    <x>560</x>
+    <y>275</y>
+    <width>670</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>08_2</name>
+    <macros>
+      <N>08</N>
+    </macros>
+    <file>_chassis_acq_sts.bob</file>
+    <x>560</x>
+    <y>305</y>
+    <width>670</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>09_2</name>
+    <macros>
+      <N>09</N>
+    </macros>
+    <file>_chassis_acq_sts.bob</file>
+    <x>560</x>
+    <y>335</y>
+    <width>670</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>10_2</name>
+    <macros>
+      <N>10</N>
+    </macros>
+    <file>_chassis_acq_sts.bob</file>
+    <x>560</x>
+    <y>365</y>
+    <width>670</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>11_2</name>
+    <macros>
+      <N>11</N>
+    </macros>
+    <file>_chassis_acq_sts.bob</file>
+    <x>560</x>
+    <y>395</y>
+    <width>670</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>12_2</name>
+    <macros>
+      <N>12</N>
+    </macros>
+    <file>_chassis_acq_sts.bob</file>
+    <x>560</x>
+    <y>425</y>
+    <width>670</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>13_2</name>
+    <macros>
+      <N>13</N>
+    </macros>
+    <file>_chassis_acq_sts.bob</file>
+    <x>560</x>
+    <y>455</y>
+    <width>670</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>14_2</name>
+    <macros>
+      <N>14</N>
+    </macros>
+    <file>_chassis_acq_sts.bob</file>
+    <x>560</x>
+    <y>485</y>
+    <width>670</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>15_2</name>
+    <macros>
+      <N>15</N>
+    </macros>
+    <file>_chassis_acq_sts.bob</file>
+    <x>560</x>
+    <y>515</y>
+    <width>670</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>16_2</name>
+    <macros>
+      <N>16</N>
+    </macros>
+    <file>_chassis_acq_sts.bob</file>
+    <x>560</x>
+    <y>545</y>
+    <width>670</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>17_2</name>
+    <macros>
+      <N>17</N>
+    </macros>
+    <file>_chassis_acq_sts.bob</file>
+    <x>1229</x>
+    <y>96</y>
+    <width>670</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>18_2</name>
+    <macros>
+      <N>18</N>
+    </macros>
+    <file>_chassis_acq_sts.bob</file>
+    <x>1229</x>
+    <y>126</y>
+    <width>670</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>19_2</name>
+    <macros>
+      <N>19</N>
+    </macros>
+    <file>_chassis_acq_sts.bob</file>
+    <x>1229</x>
+    <y>156</y>
+    <width>670</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>20_2</name>
+    <macros>
+      <N>20</N>
+    </macros>
+    <file>_chassis_acq_sts.bob</file>
+    <x>1229</x>
+    <y>186</y>
+    <width>670</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>21_2</name>
+    <macros>
+      <N>21</N>
+    </macros>
+    <file>_chassis_acq_sts.bob</file>
+    <x>1229</x>
+    <y>216</y>
+    <width>670</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>22_2</name>
+    <macros>
+      <N>22</N>
+    </macros>
+    <file>_chassis_acq_sts.bob</file>
+    <x>1229</x>
+    <y>246</y>
+    <width>670</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>23_2</name>
+    <macros>
+      <N>23</N>
+    </macros>
+    <file>_chassis_acq_sts.bob</file>
+    <x>1229</x>
+    <y>276</y>
+    <width>670</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>24_2</name>
+    <macros>
+      <N>24</N>
+    </macros>
+    <file>_chassis_acq_sts.bob</file>
+    <x>1229</x>
+    <y>306</y>
+    <width>670</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>25_2</name>
+    <macros>
+      <N>25</N>
+    </macros>
+    <file>_chassis_acq_sts.bob</file>
+    <x>1229</x>
+    <y>336</y>
+    <width>670</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>26_2</name>
+    <macros>
+      <N>26</N>
+    </macros>
+    <file>_chassis_acq_sts.bob</file>
+    <x>1229</x>
+    <y>366</y>
+    <width>670</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>27_2</name>
+    <macros>
+      <N>27</N>
+    </macros>
+    <file>_chassis_acq_sts.bob</file>
+    <x>1229</x>
+    <y>396</y>
+    <width>670</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>28_2</name>
+    <macros>
+      <N>28</N>
+    </macros>
+    <file>_chassis_acq_sts.bob</file>
+    <x>1229</x>
+    <y>426</y>
+    <width>670</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>29_2</name>
+    <macros>
+      <N>29</N>
+    </macros>
+    <file>_chassis_acq_sts.bob</file>
+    <x>1229</x>
+    <y>456</y>
+    <width>670</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>30_2</name>
+    <macros>
+      <N>30</N>
+    </macros>
+    <file>_chassis_acq_sts.bob</file>
+    <x>1229</x>
+    <y>486</y>
+    <width>670</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>31_2</name>
+    <macros>
+      <N>31</N>
+    </macros>
+    <file>_chassis_acq_sts.bob</file>
+    <x>1229</x>
+    <y>516</y>
+    <width>670</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>32_2</name>
+    <macros>
+      <N>32</N>
+    </macros>
+    <file>_chassis_acq_sts.bob</file>
+    <x>1229</x>
+    <y>546</y>
+    <width>670</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_59</name>
+    <text>Net Rate</text>
+    <x>690</x>
+    <y>69</y>
+    <height>21</height>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_60</name>
+    <text>File Rate</text>
+    <x>890</x>
+    <y>69</y>
+    <width>80</width>
+    <height>21</height>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_61</name>
+    <text>Drop Rate</text>
+    <x>800</x>
+    <y>69</y>
+    <width>60</width>
+    <height>21</height>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_62</name>
+    <text>File Size</text>
+    <x>1000</x>
+    <y>69</y>
+    <height>21</height>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_63</name>
+    <text>In Use</text>
+    <x>600</x>
+    <y>32</y>
+    <width>20</width>
+    <height>58</height>
+    <rotation_step>1</rotation_step>
+  </widget>
+</display>

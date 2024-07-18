@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-05-28 16:44:29 by atf-->
+<!--Saved on 2024-05-28 17:17:11 by atf-->
 <display version="2.0.0">
-  <name>ACQ $(P)Ch$(N)</name>
+  <name>Wyle Currents</name>
   <macros>
     <EVG>FDAS:01:</EVG>
   </macros>
@@ -21,13 +21,16 @@
   </widget>
   <widget type="xyplot" version="3.0.0">
     <name>X/Y Plot</name>
-    <x>110</x>
-    <y>80</y>
-    <width>810</width>
-    <height>470</height>
+    <y>30</y>
+    <width>1915</width>
+    <height>800</height>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
     <x_axis>
-      <title>X</title>
-      <autoscale>false</autoscale>
+      <title>Time</title>
+      <autoscale>true</autoscale>
       <log_scale>false</log_scale>
       <minimum>0.0</minimum>
       <maximum>0.02</maximum>
@@ -44,7 +47,7 @@
     </x_axis>
     <y_axes>
       <y_axis>
-        <title>Y</title>
+        <title>Amps</title>
         <autoscale>false</autoscale>
         <log_scale>false</log_scale>
         <minimum>0.0</minimum>
@@ -136,14 +139,14 @@
         <visible>true</visible>
       </trace>
       <trace>
-        <name>$(traces[4].y_pv)</name>
-        <x_pv></x_pv>
-        <y_pv></y_pv>
+        <name>C6187</name>
+        <x_pv>FDAS:18:SA:T</x_pv>
+        <y_pv>FDAS:18:SA:Ch21</y_pv>
         <err_pv></err_pv>
         <axis>0</axis>
         <trace_type>1</trace_type>
         <color>
-          <color red="255" green="255" blue="0">
+          <color red="153" green="153" blue="51">
           </color>
         </color>
         <line_width>1</line_width>
@@ -153,9 +156,9 @@
         <visible>true</visible>
       </trace>
       <trace>
-        <name>$(traces[5].y_pv)</name>
-        <x_pv></x_pv>
-        <y_pv></y_pv>
+        <name>C6188</name>
+        <x_pv>FDAS:18:SA:T</x_pv>
+        <y_pv>FDAS:18:SA:Ch22</y_pv>
         <err_pv></err_pv>
         <axis>0</axis>
         <trace_type>1</trace_type>
@@ -170,9 +173,9 @@
         <visible>true</visible>
       </trace>
       <trace>
-        <name>$(traces[6].y_pv)</name>
-        <x_pv></x_pv>
-        <y_pv></y_pv>
+        <name>C6189</name>
+        <x_pv>FDAS:18:SA:T</x_pv>
+        <y_pv>FDAS:18:SA:Ch23</y_pv>
         <err_pv></err_pv>
         <axis>0</axis>
         <trace_type>1</trace_type>
@@ -187,14 +190,14 @@
         <visible>true</visible>
       </trace>
       <trace>
-        <name>$(traces[7].y_pv)</name>
-        <x_pv></x_pv>
-        <y_pv></y_pv>
+        <name>C6190</name>
+        <x_pv>FDAS:18:SA:T</x_pv>
+        <y_pv>FDAS:18:SA:Ch24</y_pv>
         <err_pv></err_pv>
         <axis>0</axis>
         <trace_type>1</trace_type>
         <color>
-          <color red="191" green="255" blue="0">
+          <color red="0" green="128" blue="0">
           </color>
         </color>
         <line_width>1</line_width>
@@ -204,9 +207,9 @@
         <visible>true</visible>
       </trace>
       <trace>
-        <name>$(traces[8].y_pv)</name>
-        <x_pv></x_pv>
-        <y_pv></y_pv>
+        <name>C6191</name>
+        <x_pv>FDAS:18:SA:T</x_pv>
+        <y_pv>FDAS:18:SA:Ch25</y_pv>
         <err_pv></err_pv>
         <axis>0</axis>
         <trace_type>1</trace_type>
@@ -221,9 +224,9 @@
         <visible>true</visible>
       </trace>
       <trace>
-        <name>$(traces[9].y_pv)</name>
-        <x_pv></x_pv>
-        <y_pv></y_pv>
+        <name>C6192</name>
+        <x_pv>FDAS:18:SA:T</x_pv>
+        <y_pv>FDAS:18:SA:Ch26</y_pv>
         <err_pv></err_pv>
         <axis>0</axis>
         <trace_type>1</trace_type>
@@ -238,14 +241,14 @@
         <visible>true</visible>
       </trace>
       <trace>
-        <name>$(traces[10].y_pv)</name>
-        <x_pv></x_pv>
-        <y_pv></y_pv>
+        <name>C6193</name>
+        <x_pv>FDAS:18:SA:T</x_pv>
+        <y_pv>FDAS:18:SA:Ch27</y_pv>
         <err_pv></err_pv>
         <axis>0</axis>
         <trace_type>1</trace_type>
         <color>
-          <color red="255" green="212" blue="0">
+          <color red="102" green="102" blue="0">
           </color>
         </color>
         <line_width>1</line_width>
@@ -255,9 +258,9 @@
         <visible>true</visible>
       </trace>
       <trace>
-        <name>$(traces[11].y_pv)</name>
-        <x_pv></x_pv>
-        <y_pv></y_pv>
+        <name>C6194</name>
+        <x_pv>FDAS:18:SA:T</x_pv>
+        <y_pv>FDAS:18:SA:Ch28</y_pv>
         <err_pv></err_pv>
         <axis>0</axis>
         <trace_type>1</trace_type>
@@ -272,14 +275,14 @@
         <visible>true</visible>
       </trace>
       <trace>
-        <name>$(traces[12].y_pv)</name>
-        <x_pv></x_pv>
-        <y_pv></y_pv>
+        <name>C6194</name>
+        <x_pv>FDAS:18:SA:T</x_pv>
+        <y_pv>FDAS:18:SA:Ch28</y_pv>
         <err_pv></err_pv>
         <axis>0</axis>
         <trace_type>1</trace_type>
         <color>
-          <color red="185" green="215" blue="237">
+          <color red="0" green="26" blue="128">
           </color>
         </color>
         <line_width>1</line_width>
