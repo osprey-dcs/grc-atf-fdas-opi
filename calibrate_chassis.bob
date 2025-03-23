@@ -1,0 +1,954 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2025-03-23 18:07:58 by atf-->
+<display version="2.0.0">
+  <name>Calib</name>
+  <width>1535</width>
+  <height>821</height>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <class>TITLE</class>
+    <text>Quartz chassis calibration control</text>
+    <x use_class="true">0</x>
+    <y use_class="true">0</y>
+    <width>550</width>
+    <height>31</height>
+    <font use_class="true">
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>Combo Box</name>
+    <pv_name>FDAS:Calib:chassis:sel</pv_name>
+    <x>180</x>
+    <y>50</y>
+    <width>70</width>
+    <items>
+      <item>1</item>
+      <item>2</item>
+      <item>3</item>
+      <item>4</item>
+      <item>5</item>
+      <item>6</item>
+      <item>7</item>
+      <item>8</item>
+      <item>9</item>
+      <item>10</item>
+      <item>11</item>
+      <item>12</item>
+      <item>13</item>
+      <item>14</item>
+      <item>15</item>
+      <item>16</item>
+      <item>17</item>
+      <item>18</item>
+      <item>19</item>
+      <item>20</item>
+      <item>21</item>
+      <item>22</item>
+      <item>23</item>
+      <item>24</item>
+      <item>25</item>
+      <item>26</item>
+      <item>27</item>
+      <item>28</item>
+      <item>29</item>
+      <item>30</item>
+      <item>31</item>
+      <item>32</item>
+    </items>
+    <items_from_pv>false</items_from_pv>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_3</name>
+    <text>Select Chassis</text>
+    <x>60</x>
+    <y>50</y>
+    <width>120</width>
+    <height>30</height>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_1</name>
+    <pv_name>FDAS:Calib:status_message</pv_name>
+    <x>490</x>
+    <y>228</y>
+    <width>330</width>
+    <height>30</height>
+    <format>6</format>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_2</name>
+    <pv_name>FDAS:Calib:status_time</pv_name>
+    <x>320</x>
+    <y>228</y>
+    <width>160</width>
+    <height>30</height>
+    <format>6</format>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_1</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+        <description>WritePV</description>
+      </action>
+    </actions>
+    <pv_name>FDAS:Calib:start</pv_name>
+    <text>Calibration All</text>
+    <x>180</x>
+    <y>116</y>
+    <width>120</width>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_2</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+        <description>WritePV</description>
+      </action>
+    </actions>
+    <pv_name>FDAS:Calib:commit</pv_name>
+    <text>Commit All</text>
+    <x>180</x>
+    <y>180</y>
+    <width>120</width>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_19</name>
+    <text>1.</text>
+    <x>40</x>
+    <y>50</y>
+    <width>30</width>
+    <height>30</height>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_20</name>
+    <text>2.</text>
+    <x>40</x>
+    <y>116</y>
+    <width>30</width>
+    <height>30</height>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_21</name>
+    <text>3.</text>
+    <x>40</x>
+    <y>180</y>
+    <width>30</width>
+    <height>30</height>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry</name>
+    <pv_name>FDAS:Calib:oper</pv_name>
+    <x>440</x>
+    <y>50</y>
+    <width>330</width>
+    <height>30</height>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_22</name>
+    <text>Calib. Oper.</text>
+    <x>320</x>
+    <y>50</y>
+    <width>110</width>
+    <height>30</height>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_23</name>
+    <text>Initiate Calib.</text>
+    <x>60</x>
+    <y>116</y>
+    <width>120</width>
+    <height>30</height>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_24</name>
+    <text>Update results
+(optional)</text>
+    <x>60</x>
+    <y>180</y>
+    <width>120</width>
+    <height>48</height>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_25</name>
+    <text>Process Status</text>
+    <x>50</x>
+    <y>228</y>
+    <width>120</width>
+    <height>30</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_10</name>
+    <pv_name>FDAS:Calib:chassis:cur</pv_name>
+    <x>260</x>
+    <y>50</y>
+    <width>40</width>
+    <height>30</height>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_3</name>
+    <pv_name>FDAS:Calib:status</pv_name>
+    <x>180</x>
+    <y>228</y>
+    <width>120</width>
+    <height>30</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <format>6</format>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>320</x>
+    <y>90</y>
+    <width>500</width>
+    <height>120</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_4</name>
+      <pv_name>FDAS:Calib:dmm:manu</pv_name>
+      <x>120</x>
+      <y>25</y>
+      <width>330</width>
+      <format>6</format>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_5</name>
+      <pv_name>FDAS:Calib:dmm:model</pv_name>
+      <x>120</x>
+      <y>50</y>
+      <width>330</width>
+      <format>6</format>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_6</name>
+      <pv_name>FDAS:Calib:dmm:fw</pv_name>
+      <x>120</x>
+      <y>75</y>
+      <width>330</width>
+      <format>6</format>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_7</name>
+      <pv_name>FDAS:Calib:dmm:serno</pv_name>
+      <x>120</x>
+      <y>100</y>
+      <width>330</width>
+      <format>6</format>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_8</name>
+      <pv_name>FDAS:Calib:adc:serno</pv_name>
+      <x>120</x>
+      <width>330</width>
+      <format>6</format>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_26</name>
+      <text>Quartz S/N</text>
+      <width>120</width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_27</name>
+      <text>DMM Manu.</text>
+      <y>25</y>
+      <width>120</width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_28</name>
+      <text>DMM Model</text>
+      <y>50</y>
+      <width>120</width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_29</name>
+      <text>DMM FW</text>
+      <y>75</y>
+      <width>120</width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_30</name>
+      <text>DMM S/N</text>
+      <y>100</y>
+      <width>120</width>
+    </widget>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_39</name>
+    <macros>
+      <CH>08</CH>
+    </macros>
+    <file>_calibrate_chassis_channel.bob</file>
+    <x>40</x>
+    <y>550</y>
+    <width>725</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_40</name>
+    <macros>
+      <CH>09</CH>
+    </macros>
+    <file>_calibrate_chassis_channel.bob</file>
+    <x>40</x>
+    <y>580</y>
+    <width>725</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_41</name>
+    <macros>
+      <CH>10</CH>
+    </macros>
+    <file>_calibrate_chassis_channel.bob</file>
+    <x>40</x>
+    <y>610</y>
+    <width>725</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_42</name>
+    <macros>
+      <CH>11</CH>
+    </macros>
+    <file>_calibrate_chassis_channel.bob</file>
+    <x>40</x>
+    <y>640</y>
+    <width>725</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_43</name>
+    <macros>
+      <CH>12</CH>
+    </macros>
+    <file>_calibrate_chassis_channel.bob</file>
+    <x>40</x>
+    <y>670</y>
+    <width>725</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_44</name>
+    <macros>
+      <CH>13</CH>
+    </macros>
+    <file>_calibrate_chassis_channel.bob</file>
+    <x>40</x>
+    <y>700</y>
+    <width>725</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_45</name>
+    <macros>
+      <CH>14</CH>
+    </macros>
+    <file>_calibrate_chassis_channel.bob</file>
+    <x>40</x>
+    <y>730</y>
+    <width>725</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_46</name>
+    <macros>
+      <CH>15</CH>
+    </macros>
+    <file>_calibrate_chassis_channel.bob</file>
+    <x>40</x>
+    <y>760</y>
+    <width>725</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_47</name>
+    <macros>
+      <CH>16</CH>
+    </macros>
+    <file>_calibrate_chassis_channel.bob</file>
+    <x>40</x>
+    <y>790</y>
+    <width>725</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_48</name>
+    <macros>
+      <CH>17</CH>
+    </macros>
+    <file>_calibrate_chassis_channel.bob</file>
+    <x>810</x>
+    <y>340</y>
+    <width>725</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_49</name>
+    <macros>
+      <CH>18</CH>
+    </macros>
+    <file>_calibrate_chassis_channel.bob</file>
+    <x>810</x>
+    <y>370</y>
+    <width>725</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_50</name>
+    <macros>
+      <CH>19</CH>
+    </macros>
+    <file>_calibrate_chassis_channel.bob</file>
+    <x>810</x>
+    <y>400</y>
+    <width>725</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_51</name>
+    <macros>
+      <CH>20</CH>
+    </macros>
+    <file>_calibrate_chassis_channel.bob</file>
+    <x>810</x>
+    <y>430</y>
+    <width>725</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_52</name>
+    <macros>
+      <CH>21</CH>
+    </macros>
+    <file>_calibrate_chassis_channel.bob</file>
+    <x>810</x>
+    <y>460</y>
+    <width>725</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_53</name>
+    <macros>
+      <CH>22</CH>
+    </macros>
+    <file>_calibrate_chassis_channel.bob</file>
+    <x>810</x>
+    <y>490</y>
+    <width>725</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_54</name>
+    <macros>
+      <CH>23</CH>
+    </macros>
+    <file>_calibrate_chassis_channel.bob</file>
+    <x>810</x>
+    <y>520</y>
+    <width>725</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_55</name>
+    <macros>
+      <CH>24</CH>
+    </macros>
+    <file>_calibrate_chassis_channel.bob</file>
+    <x>810</x>
+    <y>550</y>
+    <width>725</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_56</name>
+    <macros>
+      <CH>25</CH>
+    </macros>
+    <file>_calibrate_chassis_channel.bob</file>
+    <x>810</x>
+    <y>580</y>
+    <width>725</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_57</name>
+    <macros>
+      <CH>26</CH>
+    </macros>
+    <file>_calibrate_chassis_channel.bob</file>
+    <x>810</x>
+    <y>610</y>
+    <width>725</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_58</name>
+    <macros>
+      <CH>27</CH>
+    </macros>
+    <file>_calibrate_chassis_channel.bob</file>
+    <x>810</x>
+    <y>640</y>
+    <width>725</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_59</name>
+    <macros>
+      <CH>28</CH>
+    </macros>
+    <file>_calibrate_chassis_channel.bob</file>
+    <x>810</x>
+    <y>670</y>
+    <width>725</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_60</name>
+    <macros>
+      <CH>29</CH>
+    </macros>
+    <file>_calibrate_chassis_channel.bob</file>
+    <x>810</x>
+    <y>700</y>
+    <width>725</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_61</name>
+    <macros>
+      <CH>30</CH>
+    </macros>
+    <file>_calibrate_chassis_channel.bob</file>
+    <x>810</x>
+    <y>730</y>
+    <width>725</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_62</name>
+    <macros>
+      <CH>31</CH>
+    </macros>
+    <file>_calibrate_chassis_channel.bob</file>
+    <x>810</x>
+    <y>760</y>
+    <width>725</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_63</name>
+    <macros>
+      <CH>32</CH>
+    </macros>
+    <file>_calibrate_chassis_channel.bob</file>
+    <x>810</x>
+    <y>790</y>
+    <width>725</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_8</name>
+    <text>Status</text>
+    <x>490</x>
+    <y>310</y>
+    <width>60</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_11</name>
+    <text>Date</text>
+    <x>120</x>
+    <y>310</y>
+    <width>140</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>New Calib.</text>
+    <x>490</x>
+    <y>280</y>
+    <width>120</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_2</name>
+    <text>Current Calib.</text>
+    <x>120</x>
+    <y>280</y>
+    <width>120</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_10</name>
+    <text>Slope (V/ADC)</text>
+    <x>270</x>
+    <y>310</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_12</name>
+    <text>Offset (V)</text>
+    <x>380</x>
+    <y>310</y>
+    <width>90</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_13</name>
+    <text>Offset (V)</text>
+    <x>670</x>
+    <y>310</y>
+    <width>90</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_14</name>
+    <text>Slope (V/ADC)</text>
+    <x>560</x>
+    <y>310</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_32</name>
+    <macros>
+      <CH>01</CH>
+    </macros>
+    <file>_calibrate_chassis_channel.bob</file>
+    <x>40</x>
+    <y>340</y>
+    <width>725</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_33</name>
+    <macros>
+      <CH>02</CH>
+    </macros>
+    <file>_calibrate_chassis_channel.bob</file>
+    <x>40</x>
+    <y>370</y>
+    <width>725</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_34</name>
+    <macros>
+      <CH>03</CH>
+    </macros>
+    <file>_calibrate_chassis_channel.bob</file>
+    <x>40</x>
+    <y>400</y>
+    <width>725</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_35</name>
+    <macros>
+      <CH>04</CH>
+    </macros>
+    <file>_calibrate_chassis_channel.bob</file>
+    <x>40</x>
+    <y>430</y>
+    <width>725</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_36</name>
+    <macros>
+      <CH>05</CH>
+    </macros>
+    <file>_calibrate_chassis_channel.bob</file>
+    <x>40</x>
+    <y>460</y>
+    <width>725</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_37</name>
+    <macros>
+      <CH>06</CH>
+    </macros>
+    <file>_calibrate_chassis_channel.bob</file>
+    <x>40</x>
+    <y>490</y>
+    <width>725</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_38</name>
+    <macros>
+      <CH>07</CH>
+    </macros>
+    <file>_calibrate_chassis_channel.bob</file>
+    <x>40</x>
+    <y>520</y>
+    <width>725</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline</name>
+    <x>50</x>
+    <y>339</y>
+    <width>710</width>
+    <height>1</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="710.0" y="0.0">
+      </point>
+      <point x="710.0" y="0.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_32</name>
+    <text>Status</text>
+    <x>1260</x>
+    <y>310</y>
+    <width>60</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_33</name>
+    <text>Date</text>
+    <x>890</x>
+    <y>310</y>
+    <width>140</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_34</name>
+    <text>New Calib.</text>
+    <x>1260</x>
+    <y>280</y>
+    <width>120</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_35</name>
+    <text>Current Calib.</text>
+    <x>890</x>
+    <y>280</y>
+    <width>120</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_36</name>
+    <text>Slope (V/ADC)</text>
+    <x>1040</x>
+    <y>310</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_37</name>
+    <text>Offset (V)</text>
+    <x>1150</x>
+    <y>310</y>
+    <width>90</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_38</name>
+    <text>Offset (V)</text>
+    <x>1440</x>
+    <y>310</y>
+    <width>90</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_39</name>
+    <text>Slope (V/ADC)</text>
+    <x>1330</x>
+    <y>310</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_1</name>
+    <x>820</x>
+    <y>339</y>
+    <width>710</width>
+    <height>1</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="710.0" y="0.0">
+      </point>
+      <point x="710.0" y="0.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_40</name>
+    <text>Chan.</text>
+    <x>44</x>
+    <y>310</y>
+    <width>60</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_41</name>
+    <text>Chan.</text>
+    <x>814</x>
+    <y>310</y>
+    <width>60</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_2</name>
+    <x>50</x>
+    <y>820</y>
+    <width>710</width>
+    <height>1</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="710.0" y="0.0">
+      </point>
+      <point x="710.0" y="0.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_3</name>
+    <x>820</x>
+    <y>820</y>
+    <width>710</width>
+    <height>1</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="710.0" y="0.0">
+      </point>
+      <point x="710.0" y="0.0">
+      </point>
+    </points>
+  </widget>
+</display>
