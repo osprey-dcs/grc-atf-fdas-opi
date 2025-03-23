@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-07-18 16:35:42 by atf-->
+<!--Saved on 2025-02-21 14:46:15 by atf-->
 <display version="2.0.0">
   <name>Main</name>
   <macros>
@@ -402,7 +402,8 @@
   </widget>
   <widget type="progressbar" version="2.0.0">
     <name>Progress Bar_1</name>
-    <pv_name>FDAS:SYS:MISC:DATA:AVAIL</pv_name>
+    <pv_name>FDAS:SYS:MISC:DATA:AVAIL
+</pv_name>
     <x>545</x>
     <y>390</y>
     <width>210</width>
@@ -417,6 +418,7 @@
       <action type="open_display">
         <file>sysmon.bob</file>
         <target>tab</target>
+        <description>Open Display</description>
       </action>
     </actions>
     <text>Comp. Monitoring</text>

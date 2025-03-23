@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2025-02-05 14:09:40 by atf-->
+<display version="2.0.0">
+  <name>MVF C Accels</name>
+  <width>1910</width>
+  <height>910</height>
+  <background_color>
+    <color name="Text" red="0" green="0" blue="0">
+    </color>
+  </background_color>
+  <actions>
+  </actions>
+  <widget type="label" version="2.0.0">
+    <name>X Accels</name>
+    <text>C Accels X Axis</text>
+    <x>710</x>
+    <y>90</y>
+    <width>509</width>
+    <height>82</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="72.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Header_Background" red="77" green="77" blue="77">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Y Accels</name>
+    <text>C Accels Y Axis</text>
+    <x>710</x>
+    <y>384</y>
+    <width>509</width>
+    <height>82</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="72.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Header_Background" red="77" green="77" blue="77">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Z Accels</name>
+    <text>C Accels Z Axis</text>
+    <x>710</x>
+    <y>679</y>
+    <width>505</width>
+    <height>82</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="72.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Header_Background" red="77" green="77" blue="77">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display</name>
+    <file>_acq_header.bob</file>
+    <width>1910</width>
+    <height>20</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="xyplot" version="3.0.0">
+    <name>X/Y Plot_1</name>
+    <x>5</x>
+    <y>20</y>
+    <width>1880</width>
+    <height>295</height>
+    <foreground_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <actions execute_as_one="true">
+    </actions>
+    <x_axis>
+      <title>Frequency (Hz)</title>
+      <autoscale>false</autoscale>
+      <log_scale>false</log_scale>
+      <minimum>5.0</minimum>
+      <maximum>100.0</maximum>
+      <show_grid>false</show_grid>
+      <title_font>
+        <font family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </title_font>
+      <scale_font>
+        <font family="Liberation Sans" style="REGULAR" size="14.0">
+        </font>
+      </scale_font>
+      <visible>true</visible>
+    </x_axis>
+    <y_axes>
+      <y_axis>
+        <title>X Axis</title>
+        <autoscale>true</autoscale>
+        <log_scale>true</log_scale>
+        <minimum>1.0</minimum>
+        <maximum>0.0</maximum>
+        <show_grid>true</show_grid>
+        <title_font>
+          <font family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </title_font>
+        <scale_font>
+          <font family="Liberation Sans" style="REGULAR" size="14.0">
+          </font>
+        </scale_font>
+        <on_right>false</on_right>
+        <visible>true</visible>
+        <color>
+          <color name="Read_Background" red="240" green="240" blue="240">
+          </color>
+        </color>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name>$(traces[0].y_pv)</name>
+        <x_pv>FDAS:19:SA:Ch10:FFT:Freq-I</x_pv>
+        <y_pv>FDAS:19:SA:Ch10:FFT:Out-I</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="0" green="0" blue="255">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>$(traces[1].y_pv)</name>
+        <x_pv>FDAS:19:SA:Ch13:FFT:Freq-I</x_pv>
+        <y_pv>FDAS:19:SA:Ch13:FFT:Out-I</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="255" green="0" blue="0">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>$(traces[2].y_pv)</name>
+        <x_pv>FDAS:19:SA:Ch16:FFT:Freq-I</x_pv>
+        <y_pv>FDAS:19:SA:Ch16:FFT:Out-I</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="0" green="255" blue="0">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>$(traces[3].y_pv)</name>
+        <x_pv>FDAS:19:SA:Ch19:FFT:Freq-I</x_pv>
+        <y_pv>FDAS:19:SA:Ch19:FFT:Out-I</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="170" green="0" blue="255">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>$(traces[4].y_pv)</name>
+        <x_pv>FDAS:19:SA:Ch01:FFT:Freq-I</x_pv>
+        <y_pv>FDAS:19:SA:Ch01:FFT:Out-I</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="255" green="255" blue="0">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
+  </widget>
+  <widget type="xyplot" version="3.0.0">
+    <name>X/Y Plot_2</name>
+    <x>5</x>
+    <y>315</y>
+    <width>1880</width>
+    <height>295</height>
+    <foreground_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <actions execute_as_one="true">
+    </actions>
+    <x_axis>
+      <title>Frequency (Hz)</title>
+      <autoscale>false</autoscale>
+      <log_scale>false</log_scale>
+      <minimum>5.0</minimum>
+      <maximum>100.0</maximum>
+      <show_grid>false</show_grid>
+      <title_font>
+        <font family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </title_font>
+      <scale_font>
+        <font family="Liberation Sans" style="REGULAR" size="14.0">
+        </font>
+      </scale_font>
+      <visible>true</visible>
+    </x_axis>
+    <y_axes>
+      <y_axis>
+        <title>Y Axis</title>
+        <autoscale>true</autoscale>
+        <log_scale>true</log_scale>
+        <minimum>1.0</minimum>
+        <maximum>0.0</maximum>
+        <show_grid>true</show_grid>
+        <title_font>
+          <font family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </title_font>
+        <scale_font>
+          <font family="Liberation Sans" style="REGULAR" size="14.0">
+          </font>
+        </scale_font>
+        <on_right>false</on_right>
+        <visible>true</visible>
+        <color>
+          <color name="Read_Background" red="240" green="240" blue="240">
+          </color>
+        </color>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name>$(traces[0].y_pv)</name>
+        <x_pv>FDAS:19:SA:Ch11:FFT:Freq-I</x_pv>
+        <y_pv>FDAS:19:SA:Ch11:FFT:Out-I</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="0" green="0" blue="255">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>$(traces[1].y_pv)</name>
+        <x_pv>FDAS:19:SA:Ch14:FFT:Freq-I</x_pv>
+        <y_pv>FDAS:19:SA:Ch14:FFT:Out-I</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="255" green="0" blue="0">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>$(traces[2].y_pv)</name>
+        <x_pv>FDAS:19:SA:Ch17:FFT:Freq-I</x_pv>
+        <y_pv>FDAS:19:SA:Ch17:FFT:Out-I</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="0" green="255" blue="0">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>$(traces[3].y_pv)</name>
+        <x_pv>FDAS:19:SA:Ch20:FFT:Freq-I</x_pv>
+        <y_pv>FDAS:19:SA:Ch20:FFT:Out-I</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="170" green="0" blue="255">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>$(traces[4].y_pv)</name>
+        <x_pv>FDAS:19:SA:Ch01:FFT:Freq-I</x_pv>
+        <y_pv>FDAS:19:SA:Ch01:FFT:Out-I</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="255" green="255" blue="0">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
+  </widget>
+  <widget type="xyplot" version="3.0.0">
+    <name>X/Y Plot_3</name>
+    <x>5</x>
+    <y>610</y>
+    <width>1880</width>
+    <height>295</height>
+    <foreground_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <actions execute_as_one="true">
+    </actions>
+    <x_axis>
+      <title>Frequency (Hz)</title>
+      <autoscale>false</autoscale>
+      <log_scale>false</log_scale>
+      <minimum>5.0</minimum>
+      <maximum>100.0</maximum>
+      <show_grid>false</show_grid>
+      <title_font>
+        <font family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </title_font>
+      <scale_font>
+        <font family="Liberation Sans" style="REGULAR" size="14.0">
+        </font>
+      </scale_font>
+      <visible>true</visible>
+    </x_axis>
+    <y_axes>
+      <y_axis>
+        <title>Z Axis</title>
+        <autoscale>true</autoscale>
+        <log_scale>true</log_scale>
+        <minimum>1.0</minimum>
+        <maximum>0.0</maximum>
+        <show_grid>true</show_grid>
+        <title_font>
+          <font family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </title_font>
+        <scale_font>
+          <font family="Liberation Sans" style="REGULAR" size="14.0">
+          </font>
+        </scale_font>
+        <on_right>false</on_right>
+        <visible>true</visible>
+        <color>
+          <color name="Read_Background" red="240" green="240" blue="240">
+          </color>
+        </color>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name>$(traces[0].y_pv)</name>
+        <x_pv>FDAS:19:SA:Ch12:FFT:Freq-I</x_pv>
+        <y_pv>FDAS:19:SA:Ch12:FFT:Out-I</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="0" green="0" blue="255">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>$(traces[1].y_pv)</name>
+        <x_pv>FDAS:19:SA:Ch15:FFT:Freq-I</x_pv>
+        <y_pv>FDAS:19:SA:Ch15:FFT:Out-I</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="255" green="0" blue="0">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>$(traces[2].y_pv)</name>
+        <x_pv>FDAS:19:SA:Ch18:FFT:Freq-I</x_pv>
+        <y_pv>FDAS:19:SA:Ch18:FFT:Out-I</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="0" green="255" blue="0">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>$(traces[3].y_pv)</name>
+        <x_pv>FDAS:19:SA:Ch21:FFT:Freq-I</x_pv>
+        <y_pv>FDAS:19:SA:Ch21:FFT:Out-I</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="170" green="0" blue="255">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>$(traces[4].y_pv)</name>
+        <x_pv>FDAS:19:SA:Ch01:FFT:Freq-I</x_pv>
+        <y_pv>FDAS:19:SA:Ch01:FFT:Out-I</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="255" green="255" blue="0">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
+  </widget>
+</display>

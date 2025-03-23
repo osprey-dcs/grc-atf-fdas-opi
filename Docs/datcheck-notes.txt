@@ -1,0 +1,26 @@
+
+scp /tmp/datcheck-py.txt 192.168.83.100:~/datcheck.py
+
+ssh 192.168.83.100
+
+python3 ~/datcheck.py /data/2024/09/20240924-135040-REC/REC-20240924-135040-*.dat
+
+
+scp 192.168.83.100:/data/2024/09/20240924-135040-REC/REC-20240924-135040-wo16.hdr /tmp/
+
+scp /tmp/REC-20240924-135040-wo16.hdr 192.168.83.100:/data/2024/09/20240924-135040-REC/REC-20240924-135040-wo16.hdr
+
+
+PYTHONPATH=/opt/atf-engine \
+/opt/venv/bin/python -m atf_engine.convert \
+--fileConverter /opt/atf-previewer/build/fileReformatter2/FileReformatter2 \
+/data/2024/09/20240924-135040-REC/REC-20240924-135040-wo16.hdr \
+/data/2024/09/20240924-135040-REC/REC-20240924-135040-wo16-fix.hdr
+
+python ~/datfix.py REC-20240924-135040-CH16-20240924-135040.dat  REC-20240924-135040-CH16-20240924-135040-fix.dat
+
+PYTHONPATH=/opt/atf-engine \
+/opt/venv/bin/python -m atf_engine.convert \
+--fileConverter /opt/atf-previewer/build/fileReformatter2/FileReformatter2 \
+/data/2024/09/20240924-135040-REC/REC-20240924-135040-fix.hdr \
+/data/2024/09/20240924-135040-REC/REC-20240924-135040-fix2.hdr

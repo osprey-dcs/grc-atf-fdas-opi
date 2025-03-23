@@ -1,19 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-06-04 14:40:36 by atf-->
+<!--Saved on 2025-02-05 15:18:42 by atf-->
 <display version="2.0.0">
   <name>Controls</name>
   <macros>
     <P>FDAS:</P>
     <EVG>FDAS:</EVG>
   </macros>
-  <width>1635</width>
-  <height>629</height>
+  <width>945</width>
+  <height>765</height>
+  <background_color>
+    <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+    </color>
+  </background_color>
+  <grid_step_x>5</grid_step_x>
+  <grid_step_y>5</grid_step_y>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_4</name>
+    <x>10</x>
+    <y>555</y>
+    <width>515</width>
+    <height>195</height>
+    <line_color>
+      <color name="INVALID" red="255" green="0" blue="255">
+      </color>
+    </line_color>
+    <line_style>1</line_style>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <x>10</x>
+    <y>345</y>
+    <width>515</width>
+    <height>200</height>
+    <line_color>
+      <color name="Off" red="60" green="100" blue="60">
+      </color>
+    </line_color>
+    <line_style>1</line_style>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_2</name>
+    <x>10</x>
+    <y>170</y>
+    <width>515</width>
+    <height>165</height>
+    <line_style>1</line_style>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_1</name>
+    <x>10</x>
+    <y>45</y>
+    <width>515</width>
+    <height>115</height>
+    <line_color>
+      <color name="Attention" red="255" green="160" blue="0">
+      </color>
+    </line_color>
+    <line_style>1</line_style>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+  </widget>
   <widget type="combo" version="2.0.0">
     <name>Combo Box</name>
     <pv_name>$(EVG)ACQ:rate</pv_name>
-    <x>250</x>
-    <y>50</y>
-    <width>126</width>
+    <x>198</x>
+    <y>265</y>
     <height>25</height>
     <font>
       <font name="Header 2" family="Liberation Sans" style="BOLD" size="18.0">
@@ -21,137 +90,38 @@
     </font>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_12</name>
-    <text>ADC Acquire</text>
-    <x>20</x>
-    <y>30</y>
-    <width>167</width>
-    <height>25</height>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_16</name>
-    <actions>
-      <action type="write_pv">
-        <pv_name>$(EVG)ACQ:enable</pv_name>
-        <value>0</value>
-        <description>WritePV</description>
-      </action>
-    </actions>
-    <text>Disable</text>
-    <x>20</x>
-    <y>50</y>
-    <width>80</width>
-    <height>25</height>
-    <background_color>
-      <color name="Write_Background" red="128" green="255" blue="255">
-      </color>
-    </background_color>
-    <tooltip>$(actions)</tooltip>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button_17</name>
-    <actions>
-      <action type="write_pv">
-        <pv_name>$(EVG)ACQ:enable</pv_name>
-        <value>1</value>
-        <description>WritePV</description>
-      </action>
-    </actions>
-    <text>Enable</text>
-    <x>107</x>
-    <y>50</y>
-    <width>80</width>
-    <height>25</height>
-    <background_color>
-      <color name="Write_Background" red="128" green="255" blue="255">
-      </color>
-    </background_color>
-    <tooltip>$(actions)</tooltip>
-  </widget>
-  <widget type="led" version="2.0.0">
-    <name>LED_1</name>
-    <pv_name>$(EVG)ACQ:enable</pv_name>
-    <bit>0</bit>
-    <x>193</x>
-    <y>50</y>
-    <width>25</width>
-    <height>25</height>
-    <off_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </off_color>
-  </widget>
-  <widget type="label" version="2.0.0">
     <name>Label_13</name>
-    <text>ADC Samp. Rate</text>
-    <x>250</x>
-    <y>30</y>
-    <width>126</width>
+    <text>Sample Rate =</text>
+    <x>20</x>
+    <y>265</y>
+    <width>110</width>
     <height>25</height>
+    <font>
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
     <vertical_alignment>1</vertical_alignment>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_11</name>
-    <text>CCCR Name</text>
-    <x>20</x>
-    <y>219</y>
-    <width>310</width>
-    <height>22</height>
-    <vertical_alignment>1</vertical_alignment>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_14</name>
-    <text>Run Description</text>
-    <x>20</x>
-    <y>299</y>
-    <width>310</width>
-    <height>22</height>
-    <vertical_alignment>1</vertical_alignment>
-  </widget>
-  <widget type="textentry" version="3.0.0">
-    <name>Text Entry</name>
-    <pv_name>$(P)SA:FILE.VAL$</pv_name>
-    <x>20</x>
-    <y>241</y>
-    <width>520</width>
-    <background_color>
-      <color name="Read_Background" red="240" green="240" blue="240">
-      </color>
-    </background_color>
-    <format>6</format>
-  </widget>
-  <widget type="textentry" version="3.0.0">
-    <name>Text Entry_1</name>
-    <pv_name>$(P)SA:DESC.VAL$</pv_name>
-    <x>20</x>
-    <y>321</y>
-    <width>210</width>
-    <format>6</format>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_15</name>
     <text>Last Message</text>
     <x>20</x>
-    <y>349</y>
-    <width>310</width>
-    <height>22</height>
+    <y>110</y>
+    <width>125</width>
+    <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="ITALIC" size="14.0">
+      </font>
+    </font>
     <vertical_alignment>1</vertical_alignment>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_1</name>
-    <pv_name>pva://$(P)CTRL:LastMsg-I</pv_name>
-    <x>20</x>
-    <y>371</y>
-    <width>356</width>
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>Text Update_2</name>
     <pv_name>pva://$(P)CTRL:LastName-I</pv_name>
-    <x>20</x>
-    <y>421</y>
-    <width>356</width>
+    <x>158</x>
+    <y>450</y>
+    <width>350</width>
+    <height>25</height>
     <background_color>
       <color name="Read_Background" red="240" green="240" blue="240">
       </color>
@@ -162,16 +132,17 @@
   <widget type="textentry" version="3.0.0">
     <name>Text Update_3</name>
     <pv_name>pva://$(P)CTRL:LastFile-I</pv_name>
-    <x>20</x>
-    <y>470</y>
-    <width>520</width>
-    <height>19</height>
+    <x>150</x>
+    <y>580</y>
+    <width>358</width>
+    <height>40</height>
     <background_color>
       <color name="Read_Background" red="240" green="240" blue="240">
       </color>
     </background_color>
     <vertical_alignment>0</vertical_alignment>
     <wrap_words>true</wrap_words>
+    <multi_line>true</multi_line>
   </widget>
   <widget type="action_button" version="3.0.0">
     <name>Action Button</name>
@@ -183,10 +154,9 @@
       </action>
     </actions>
     <pv_name>pva://$(P)CTRL:Run-SP</pv_name>
-    <x>20</x>
-    <y>171</y>
-    <width>110</width>
-    <height>40</height>
+    <x>208</x>
+    <y>510</y>
+    <height>25</height>
   </widget>
   <widget type="action_button" version="3.0.0">
     <name>Action Button_1</name>
@@ -198,10 +168,9 @@
       </action>
     </actions>
     <pv_name>pva://$(P)CTRL:Run-SP</pv_name>
-    <x>163</x>
-    <y>171</y>
-    <width>110</width>
-    <height>40</height>
+    <x>208</x>
+    <y>415</y>
+    <height>25</height>
   </widget>
   <widget type="action_button" version="3.0.0">
     <name>Action Button_2</name>
@@ -213,10 +182,10 @@
       </action>
     </actions>
     <pv_name>pva://$(P)CTRL:Run-SP</pv_name>
-    <x>440</x>
-    <y>171</y>
+    <x>450</x>
+    <y>415</y>
     <width>58</width>
-    <height>40</height>
+    <height>25</height>
     <background_color>
       <color name="MINOR" red="255" green="128" blue="0">
       </color>
@@ -225,10 +194,14 @@
   <widget type="multi_state_led" version="2.0.0">
     <name>LED (Multi State)</name>
     <pv_name>pva://$(P)CTRL:Run-SP</pv_name>
-    <x>310</x>
-    <y>171</y>
+    <x>405</x>
+    <y>70</y>
     <width>100</width>
-    <height>40</height>
+    <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
     <square>true</square>
     <states>
       <state>
@@ -258,96 +231,87 @@
     </states>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_16</name>
-    <text>Acquisition Control</text>
-    <x>20</x>
-    <y>149</y>
-    <width>310</width>
-    <height>22</height>
-    <vertical_alignment>1</vertical_alignment>
-  </widget>
-  <widget type="led" version="2.0.0">
-    <name>LED_2</name>
-    <pv_name>pva://$(P)SA:READY_</pv_name>
-    <x>420</x>
-    <y>100</y>
-    <width>100</width>
-    <height>30</height>
-    <off_label>Not Ready</off_label>
-    <off_color>
-      <color name="Read_Background" red="240" green="240" blue="240">
-      </color>
-    </off_color>
-    <on_label>Ready</on_label>
-    <font>
-      <font family="Liberation Sans" style="BOLD" size="16.0">
-      </font>
-    </font>
-    <square>true</square>
-    <labels_from_pv>true</labels_from_pv>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_18</name>
-    <text>Recording Readiness:</text>
-    <x>273</x>
-    <y>100</y>
-    <width>140</width>
-    <height>30</height>
-    <vertical_alignment>1</vertical_alignment>
-  </widget>
-  <widget type="led" version="2.0.0">
-    <name>LED_3</name>
-    <pv_name>$(P)SA:READY</pv_name>
-    <x>150</x>
-    <y>100</y>
-    <width>100</width>
-    <height>30</height>
-    <off_label>Not Ready</off_label>
-    <off_color>
-      <color name="Read_Background" red="240" green="240" blue="240">
-      </color>
-    </off_color>
-    <on_label>Ready</on_label>
-    <font>
-      <font family="Liberation Sans" style="BOLD" size="16.0">
-      </font>
-    </font>
-    <square>true</square>
-    <labels_from_pv>true</labels_from_pv>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_19</name>
-    <text>System Readiness:</text>
-    <x>20</x>
-    <y>100</y>
-    <width>130</width>
-    <height>30</height>
-    <vertical_alignment>1</vertical_alignment>
-  </widget>
-  <widget type="label" version="2.0.0">
     <name>Label_21</name>
     <text>Last Started Name</text>
     <x>20</x>
-    <y>399</y>
-    <width>310</width>
-    <height>22</height>
+    <y>450</y>
+    <width>148</width>
+    <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="ITALIC" size="14.0">
+      </font>
+    </font>
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_22</name>
     <text>Last Completed File</text>
     <x>20</x>
-    <y>448</y>
-    <width>310</width>
-    <height>22</height>
+    <y>580</y>
+    <width>130</width>
+    <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="ITALIC" size="14.0">
+      </font>
+    </font>
     <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_3</name>
+    <macros>
+      <N>03</N>
+    </macros>
+    <file>ops/Test BOBS/EmbeddedStat.bob</file>
+    <x>540</x>
+    <y>30</y>
+    <width>398</width>
+    <height>721</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Update_4</name>
+    <pv_name>pva://$(P)CTRL:LastMsg-I</pv_name>
+    <x>155</x>
+    <y>100</y>
+    <width>350</width>
+    <height>50</height>
+    <background_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <vertical_alignment>0</vertical_alignment>
+    <wrap_words>true</wrap_words>
+    <multi_line>true</multi_line>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_14</name>
+    <text>Run Description</text>
+    <x>20</x>
+    <y>300</y>
+    <width>148</width>
+    <height>25</height>
+    <font>
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_1</name>
+    <pv_name>$(P)SA:DESC.VAL$</pv_name>
+    <x>198</x>
+    <y>300</y>
+    <width>307</width>
+    <height>25</height>
+    <format>6</format>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_5</name>
     <pv_name>=('FDAS:01:LstSz-I'+'FDAS:02:LstSz-I'+'FDAS:03:LstSz-I'+'FDAS:04:LstSz-I'+'FDAS:05:LstSz-I'+'FDAS:06:LstSz-I'+'FDAS:07:LstSz-I'+'FDAS:08:LstSz-I'+'FDAS:09:LstSz-I'+'FDAS:10:LstSz-I'+'FDAS:11:LstSz-I'+'FDAS:12:LstSz-I'+'FDAS:13:LstSz-I'+'FDAS:14:LstSz-I'+'FDAS:15:LstSz-I'+'FDAS:16:LstSz-I'+'FDAS:17:LstSz-I'+'FDAS:18:LstSz-I'+'FDAS:19:LstSz-I'+'FDAS:20:LstSz-I'+'FDAS:21:LstSz-I'+'FDAS:22:LstSz-I'+'FDAS:23:LstSz-I'+'FDAS:24:LstSz-I'+'FDAS:25:LstSz-I'+'FDAS:26:LstSz-I'+'FDAS:27:LstSz-I'+'FDAS:28:LstSz-I'+'FDAS:29:LstSz-I'+'FDAS:30:LstSz-I'+'FDAS:31:LstSz-I'+'FDAS:32:LstSz-I' /1024)</pv_name>
-    <x>330</x>
-    <y>321</y>
+    <x>158</x>
+    <y>485</y>
     <width>115</width>
+    <height>25</height>
     <font>
       <font family="Liberation Sans" style="BOLD_ITALIC" size="16.0">
       </font>
@@ -356,7 +320,6 @@
       <color name="Transparent" red="255" green="255" blue="255" alpha="0">
       </color>
     </background_color>
-    <horizontal_alignment>2</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
     <wrap_words>false</wrap_words>
     <actions>
@@ -369,24 +332,29 @@
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_2</name>
+    <name>Label_17</name>
     <text>Current Filesize:</text>
-    <x>240</x>
-    <y>321</y>
-    <width>120</width>
+    <x>20</x>
+    <y>485</y>
+    <width>110</width>
+    <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="ITALIC" size="14.0">
+      </font>
+    </font>
     <background_color>
       <color name="Transparent" red="255" green="255" blue="255" alpha="0">
       </color>
     </background_color>
-    <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_6</name>
     <pv_name>FDAS:ACQ:rate</pv_name>
-    <x>460</x>
-    <y>322</y>
+    <x>424</x>
+    <y>485</y>
     <width>84</width>
+    <height>25</height>
     <font>
       <font family="Liberation Sans" style="BOLD_ITALIC" size="16.0">
       </font>
@@ -395,586 +363,513 @@
       <color name="Transparent" red="255" green="255" blue="255" alpha="0">
       </color>
     </background_color>
-    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>Embedded Display</name>
-    <file>ops/_acq_header.bob</file>
-    <width>1910</width>
-    <height>20</height>
-    <resize>2</resize>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_2</name>
+    <pv_name>$(P)SA:FILE.VAL$</pv_name>
+    <x>158</x>
+    <y>195</y>
+    <width>347</width>
+    <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <format>6</format>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_17</name>
-    <text>Record</text>
-    <x>630</x>
-    <y>30</y>
-    <width>20</width>
-    <height>60</height>
-    <rotation_step>1</rotation_step>
+    <name>Label_24</name>
+    <text>System Status</text>
+    <x>10</x>
+    <y>45</y>
+    <width>515</width>
+    <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="18.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>2</vertical_alignment>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_18</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(EVG)ACQ:enable</pv_name>
+        <value>0</value>
+        <description>WritePV</description>
+      </action>
+    </actions>
+    <text>Disable</text>
+    <x>208</x>
+    <y>380</y>
+    <height>25</height>
+    <background_color>
+      <color name="Off" red="60" green="100" blue="60">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_25</name>
+    <text>Pause Aquisition:</text>
+    <x>20</x>
+    <y>380</y>
+    <width>188</width>
+    <height>25</height>
+    <font>
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_26</name>
+    <text>Start Recording</text>
+    <x>20</x>
+    <y>415</y>
+    <width>148</width>
+    <height>25</height>
+    <font>
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_28</name>
+    <text>Stop Recording</text>
+    <x>20</x>
+    <y>510</y>
+    <width>148</width>
+    <height>25</height>
+    <font>
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_29</name>
+    <text>Sample Rate</text>
+    <x>325</x>
+    <y>485</y>
+    <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="ITALIC" size="14.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_19</name>
+    <actions>
+      <action type="open_display">
+        <file>ops/Test BOBS/Mini CCCR.bob</file>
+        <target>replace</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>Change CCCR</text>
+    <x>198</x>
+    <y>230</y>
+    <height>25</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_30</name>
+    <text>Current CCCR</text>
+    <x>20</x>
+    <y>195</y>
+    <width>110</width>
+    <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="ITALIC" size="14.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_31</name>
-    <text>LOLO</text>
-    <x>1110</x>
-    <y>30</y>
-    <width>20</width>
-    <height>60</height>
-    <rotation_step>1</rotation_step>
+    <text>Change CCCR if Needed</text>
+    <x>20</x>
+    <y>230</y>
+    <width>160</width>
+    <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="ITALIC" size="14.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_4</name>
+    <actions execute_as_one="true">
+      <action type="execute">
+        <script file="EmbeddedPy">
+          <text><![CDATA[# Embedded python script
+from org.csstudio.display.builder.runtime.script import PVUtil, ScriptUtil
+
+import os
+os.system ("viewer")
+
+# widget.setPropertyValue('text', PVUtil.getString(pvs[0]))
+
+]]></text>
+        </script>
+        <description>Open Viewer</description>
+      </action>
+    </actions>
+    <x>208</x>
+    <y>715</y>
+    <height>25</height>
+    <tooltip>$(actions)</tooltip>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_32</name>
-    <text>LO</text>
-    <x>1140</x>
-    <y>30</y>
-    <width>20</width>
-    <height>60</height>
-    <rotation_step>1</rotation_step>
+    <text>Convert File to UFF</text>
+    <x>20</x>
+    <y>715</y>
+    <width>148</width>
+    <height>25</height>
+    <font>
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_27</name>
+    <text>Re-enable Acquisition</text>
+    <x>20</x>
+    <y>685</y>
+    <width>188</width>
+    <height>25</height>
+    <font>
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_21</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(EVG)ACQ:enable</pv_name>
+        <value>1</value>
+        <description>WritePV</description>
+      </action>
+    </actions>
+    <text>Enable</text>
+    <x>208</x>
+    <y>685</y>
+    <height>25</height>
+    <background_color>
+      <color name="On" red="0" green="255" blue="0">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_16</name>
+    <text>----------Wait for last message to say Success----------</text>
+    <x>10</x>
+    <y>620</y>
+    <width>515</width>
+    <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="ITALIC" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_3</name>
+    <actions>
+      <action type="open_display">
+        <file>atf-main.bob</file>
+        <target>tab</target>
+        <description>Main Menu</description>
+      </action>
+      <action type="open_display">
+        <file>Controls.bob</file>
+        <target>tab</target>
+        <description>Controls</description>
+      </action>
+      <action type="open_display">
+        <file>cccr-upload.bob</file>
+        <target>tab</target>
+        <description>CCCR</description>
+      </action>
+      <action type="open_display">
+        <file>chassis_stat.bob</file>
+        <macros>
+          <P>FDAS:</P>
+        </macros>
+        <target>tab</target>
+        <description>ADC Status</description>
+      </action>
+      <action type="open_display">
+        <file>ops/ops-main.bob</file>
+        <target>tab</target>
+        <description>Displays</description>
+      </action>
+    </actions>
+    <text>Menu</text>
+    <x>20</x>
+    <width>115</width>
+    <height>20</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_1</name>
+    <pv_name>sys://time</pv_name>
+    <x>145</x>
+    <width>180</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_5</name>
+    <pv_name>alarm://nasa_alarms/PKT_DROPS.state</pv_name>
+    <x>280</x>
+    <y>70</y>
+    <width>100</width>
+    <height>25</height>
+    <off_label>RX / TX</off_label>
+    <off_color>
+      <color name="OK" red="0" green="255" blue="0">
+      </color>
+    </off_color>
+    <on_label>Packet Loss</on_label>
+    <on_color>
+      <color name="STOP" red="255" green="0" blue="0">
+      </color>
+    </on_color>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <square>true</square>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_6</name>
+    <pv_name>FDAS:SA:READY</pv_name>
+    <x>155</x>
+    <y>70</y>
+    <width>100</width>
+    <height>25</height>
+    <off_label>Fault</off_label>
+    <off_color>
+      <color name="MAJOR" red="255" green="0" blue="0">
+      </color>
+    </off_color>
+    <on_label>Data Ready</on_label>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <square>true</square>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_7</name>
+    <pv_name>FDAS:ACQ:enable</pv_name>
+    <x>30</x>
+    <y>70</y>
+    <width>100</width>
+    <height>25</height>
+    <off_label>Not Acquiring</off_label>
+    <off_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </off_color>
+    <on_label>Acquiring</on_label>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <line_color>
+      <color name="Header_Background" red="77" green="77" blue="77">
+      </color>
+    </line_color>
+    <square>true</square>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_33</name>
-    <text>HIHI</text>
-    <x>1200</x>
-    <y>30</y>
-    <width>20</width>
-    <height>60</height>
-    <rotation_step>1</rotation_step>
+    <text>Pre-Test Setup</text>
+    <x>10</x>
+    <y>170</y>
+    <width>515</width>
+    <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="18.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>2</vertical_alignment>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_34</name>
-    <text>HI</text>
-    <x>1170</x>
-    <y>30</y>
-    <width>20</width>
-    <height>60</height>
-    <rotation_step>1</rotation_step>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_46</name>
-    <text>In Use</text>
-    <x>1269</x>
-    <y>33</y>
-    <width>20</width>
-    <height>58</height>
-    <rotation_step>1</rotation_step>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_47</name>
-    <text>Record</text>
-    <x>1299</x>
-    <y>31</y>
-    <width>20</width>
-    <height>60</height>
-    <rotation_step>1</rotation_step>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_48</name>
-    <text>LOLO</text>
-    <x>1779</x>
-    <y>31</y>
-    <width>20</width>
-    <height>60</height>
-    <rotation_step>1</rotation_step>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_49</name>
-    <text>LO</text>
-    <x>1809</x>
-    <y>31</y>
-    <width>20</width>
-    <height>60</height>
-    <rotation_step>1</rotation_step>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_50</name>
-    <text>HIHI</text>
-    <x>1869</x>
-    <y>31</y>
-    <width>20</width>
-    <height>60</height>
-    <rotation_step>1</rotation_step>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_51</name>
-    <text>HI</text>
-    <x>1839</x>
-    <y>31</y>
-    <width>20</width>
-    <height>60</height>
-    <rotation_step>1</rotation_step>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_53</name>
-    <text>Net Rate</text>
-    <x>1359</x>
-    <y>70</y>
-    <height>21</height>
+    <text>Testing Steps</text>
+    <x>10</x>
+    <y>345</y>
+    <width>515</width>
+    <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="18.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
     <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>2</vertical_alignment>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_54</name>
-    <text>File Rate</text>
-    <x>1559</x>
-    <y>70</y>
-    <width>80</width>
-    <height>21</height>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_55</name>
-    <text>Drop Rate</text>
-    <x>1469</x>
-    <y>70</y>
-    <width>60</width>
-    <height>21</height>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_56</name>
-    <text>File Size</text>
-    <x>1669</x>
-    <y>70</y>
-    <height>21</height>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_57</name>
-    <text>Chassis</text>
-    <x>570</x>
-    <y>32</y>
-    <width>20</width>
-    <height>58</height>
-    <rotation_step>1</rotation_step>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_58</name>
-    <text>Chassis</text>
-    <x>1240</x>
-    <y>33</y>
-    <width>20</width>
-    <height>58</height>
-    <rotation_step>1</rotation_step>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>01_2</name>
-    <macros>
-      <N>01</N>
-    </macros>
-    <file>_chassis_acq_sts.bob</file>
-    <x>560</x>
-    <y>95</y>
-    <width>670</width>
-    <height>30</height>
-    <resize>2</resize>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>02_2</name>
-    <macros>
-      <N>02</N>
-    </macros>
-    <file>_chassis_acq_sts.bob</file>
-    <x>560</x>
-    <y>125</y>
-    <width>670</width>
-    <height>30</height>
-    <resize>2</resize>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>03_2</name>
-    <macros>
-      <N>03</N>
-    </macros>
-    <file>_chassis_acq_sts.bob</file>
-    <x>560</x>
-    <y>155</y>
-    <width>670</width>
-    <height>30</height>
-    <resize>2</resize>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>04_2</name>
-    <macros>
-      <N>04</N>
-    </macros>
-    <file>_chassis_acq_sts.bob</file>
-    <x>560</x>
-    <y>185</y>
-    <width>670</width>
-    <height>30</height>
-    <resize>2</resize>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>05_2</name>
-    <macros>
-      <N>05</N>
-    </macros>
-    <file>_chassis_acq_sts.bob</file>
-    <x>560</x>
-    <y>215</y>
-    <width>670</width>
-    <height>30</height>
-    <resize>2</resize>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>06_2</name>
-    <macros>
-      <N>06</N>
-    </macros>
-    <file>_chassis_acq_sts.bob</file>
-    <x>560</x>
-    <y>245</y>
-    <width>670</width>
-    <height>30</height>
-    <resize>2</resize>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>07_2</name>
-    <macros>
-      <N>07</N>
-    </macros>
-    <file>_chassis_acq_sts.bob</file>
-    <x>560</x>
-    <y>275</y>
-    <width>670</width>
-    <height>30</height>
-    <resize>2</resize>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>08_2</name>
-    <macros>
-      <N>08</N>
-    </macros>
-    <file>_chassis_acq_sts.bob</file>
-    <x>560</x>
-    <y>305</y>
-    <width>670</width>
-    <height>30</height>
-    <resize>2</resize>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>09_2</name>
-    <macros>
-      <N>09</N>
-    </macros>
-    <file>_chassis_acq_sts.bob</file>
-    <x>560</x>
-    <y>335</y>
-    <width>670</width>
-    <height>30</height>
-    <resize>2</resize>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>10_2</name>
-    <macros>
-      <N>10</N>
-    </macros>
-    <file>_chassis_acq_sts.bob</file>
-    <x>560</x>
-    <y>365</y>
-    <width>670</width>
-    <height>30</height>
-    <resize>2</resize>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>11_2</name>
-    <macros>
-      <N>11</N>
-    </macros>
-    <file>_chassis_acq_sts.bob</file>
-    <x>560</x>
-    <y>395</y>
-    <width>670</width>
-    <height>30</height>
-    <resize>2</resize>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>12_2</name>
-    <macros>
-      <N>12</N>
-    </macros>
-    <file>_chassis_acq_sts.bob</file>
-    <x>560</x>
-    <y>425</y>
-    <width>670</width>
-    <height>30</height>
-    <resize>2</resize>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>13_2</name>
-    <macros>
-      <N>13</N>
-    </macros>
-    <file>_chassis_acq_sts.bob</file>
-    <x>560</x>
-    <y>455</y>
-    <width>670</width>
-    <height>30</height>
-    <resize>2</resize>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>14_2</name>
-    <macros>
-      <N>14</N>
-    </macros>
-    <file>_chassis_acq_sts.bob</file>
-    <x>560</x>
-    <y>485</y>
-    <width>670</width>
-    <height>30</height>
-    <resize>2</resize>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>15_2</name>
-    <macros>
-      <N>15</N>
-    </macros>
-    <file>_chassis_acq_sts.bob</file>
-    <x>560</x>
-    <y>515</y>
-    <width>670</width>
-    <height>30</height>
-    <resize>2</resize>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>16_2</name>
-    <macros>
-      <N>16</N>
-    </macros>
-    <file>_chassis_acq_sts.bob</file>
-    <x>560</x>
-    <y>545</y>
-    <width>670</width>
-    <height>30</height>
-    <resize>2</resize>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>17_2</name>
-    <macros>
-      <N>17</N>
-    </macros>
-    <file>_chassis_acq_sts.bob</file>
-    <x>1229</x>
-    <y>96</y>
-    <width>670</width>
-    <height>30</height>
-    <resize>2</resize>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>18_2</name>
-    <macros>
-      <N>18</N>
-    </macros>
-    <file>_chassis_acq_sts.bob</file>
-    <x>1229</x>
-    <y>126</y>
-    <width>670</width>
-    <height>30</height>
-    <resize>2</resize>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>19_2</name>
-    <macros>
-      <N>19</N>
-    </macros>
-    <file>_chassis_acq_sts.bob</file>
-    <x>1229</x>
-    <y>156</y>
-    <width>670</width>
-    <height>30</height>
-    <resize>2</resize>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>20_2</name>
-    <macros>
-      <N>20</N>
-    </macros>
-    <file>_chassis_acq_sts.bob</file>
-    <x>1229</x>
-    <y>186</y>
-    <width>670</width>
-    <height>30</height>
-    <resize>2</resize>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>21_2</name>
-    <macros>
-      <N>21</N>
-    </macros>
-    <file>_chassis_acq_sts.bob</file>
-    <x>1229</x>
-    <y>216</y>
-    <width>670</width>
-    <height>30</height>
-    <resize>2</resize>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>22_2</name>
-    <macros>
-      <N>22</N>
-    </macros>
-    <file>_chassis_acq_sts.bob</file>
-    <x>1229</x>
-    <y>246</y>
-    <width>670</width>
-    <height>30</height>
-    <resize>2</resize>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>23_2</name>
-    <macros>
-      <N>23</N>
-    </macros>
-    <file>_chassis_acq_sts.bob</file>
-    <x>1229</x>
-    <y>276</y>
-    <width>670</width>
-    <height>30</height>
-    <resize>2</resize>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>24_2</name>
-    <macros>
-      <N>24</N>
-    </macros>
-    <file>_chassis_acq_sts.bob</file>
-    <x>1229</x>
-    <y>306</y>
-    <width>670</width>
-    <height>30</height>
-    <resize>2</resize>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>25_2</name>
-    <macros>
-      <N>25</N>
-    </macros>
-    <file>_chassis_acq_sts.bob</file>
-    <x>1229</x>
-    <y>336</y>
-    <width>670</width>
-    <height>30</height>
-    <resize>2</resize>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>26_2</name>
-    <macros>
-      <N>26</N>
-    </macros>
-    <file>_chassis_acq_sts.bob</file>
-    <x>1229</x>
-    <y>366</y>
-    <width>670</width>
-    <height>30</height>
-    <resize>2</resize>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>27_2</name>
-    <macros>
-      <N>27</N>
-    </macros>
-    <file>_chassis_acq_sts.bob</file>
-    <x>1229</x>
-    <y>396</y>
-    <width>670</width>
-    <height>30</height>
-    <resize>2</resize>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>28_2</name>
-    <macros>
-      <N>28</N>
-    </macros>
-    <file>_chassis_acq_sts.bob</file>
-    <x>1229</x>
-    <y>426</y>
-    <width>670</width>
-    <height>30</height>
-    <resize>2</resize>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>29_2</name>
-    <macros>
-      <N>29</N>
-    </macros>
-    <file>_chassis_acq_sts.bob</file>
-    <x>1229</x>
-    <y>456</y>
-    <width>670</width>
-    <height>30</height>
-    <resize>2</resize>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>30_2</name>
-    <macros>
-      <N>30</N>
-    </macros>
-    <file>_chassis_acq_sts.bob</file>
-    <x>1229</x>
-    <y>486</y>
-    <width>670</width>
-    <height>30</height>
-    <resize>2</resize>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>31_2</name>
-    <macros>
-      <N>31</N>
-    </macros>
-    <file>_chassis_acq_sts.bob</file>
-    <x>1229</x>
-    <y>516</y>
-    <width>670</width>
-    <height>30</height>
-    <resize>2</resize>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>32_2</name>
-    <macros>
-      <N>32</N>
-    </macros>
-    <file>_chassis_acq_sts.bob</file>
-    <x>1229</x>
-    <y>546</y>
-    <width>670</width>
-    <height>30</height>
-    <resize>2</resize>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_59</name>
-    <text>Net Rate</text>
-    <x>690</x>
-    <y>69</y>
-    <height>21</height>
+    <name>Label_36</name>
+    <text>Post-Test</text>
+    <x>10</x>
+    <y>555</y>
+    <width>515</width>
+    <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="18.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
     <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>2</vertical_alignment>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Update_7</name>
+    <pv_name>pva://$(P)CTRL:LastMsg-I</pv_name>
+    <x>150</x>
+    <y>645</y>
+    <width>230</width>
+    <height>25</height>
+    <background_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <vertical_alignment>0</vertical_alignment>
+    <wrap_words>true</wrap_words>
+    <multi_line>true</multi_line>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_8</name>
+    <pv_name>FDAS:ACQ:rate</pv_name>
+    <x>120</x>
+    <y>265</y>
+    <width>84</width>
+    <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD_ITALIC" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="progressbar" version="2.0.0">
+    <name>Progress Bar</name>
+    <pv_name>FDAS:SYS:DAQS:DATA:AVAIL</pv_name>
+    <x>308</x>
+    <y>230</y>
+    <width>197</width>
+    <height>25</height>
+    <fill_color>
+      <color red="0" green="255" blue="0" alpha="133">
+      </color>
+    </fill_color>
+    <background_color>
+      <color name="Background" red="255" green="255" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="progressbar" version="2.0.0">
+    <name>Progress Bar_1</name>
+    <pv_name>FDAS:SYS:MISC:DATA:AVAIL</pv_name>
+    <x>308</x>
+    <y>265</y>
+    <width>197</width>
+    <height>25</height>
+    <fill_color>
+      <color red="0" green="255" blue="0" alpha="133">
+      </color>
+    </fill_color>
+    <background_color>
+      <color name="Background" red="255" green="255" blue="255">
+      </color>
+    </background_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_60</name>
-    <text>File Rate</text>
-    <x>890</x>
-    <y>69</y>
-    <width>80</width>
-    <height>21</height>
+    <name>Label_18</name>
+    <text>/data Disk Usage</text>
+    <x>308</x>
+    <y>265</y>
+    <width>197</width>
+    <height>25</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_61</name>
-    <text>Drop Rate</text>
-    <x>800</x>
-    <y>69</y>
-    <width>60</width>
-    <height>21</height>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_62</name>
-    <text>File Size</text>
-    <x>1000</x>
-    <y>69</y>
-    <height>21</height>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_63</name>
-    <text>In Use</text>
-    <x>600</x>
-    <y>32</y>
-    <width>20</width>
-    <height>58</height>
-    <rotation_step>1</rotation_step>
+    <name>Label_20</name>
+    <text>/export Disk Usage</text>
+    <x>308</x>
+    <y>230</y>
+    <width>197</width>
+    <height>25</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
   </widget>
 </display>

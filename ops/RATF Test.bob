@@ -1,79 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-09-27 08:20:45 by atf-->
+<!--Saved on 2024-10-22 11:50:27 by atf-->
 <display version="2.0.0">
-  <name>Wyle Currents</name>
-  <macros>
-    <EVG>FDAS:01:</EVG>
-  </macros>
-  <width>1918</width>
-  <height>250</height>
+  <name>RATF Test</name>
+  <width>1910</width>
+  <height>940</height>
   <background_color>
-    <color name="Header_ForeGround" red="255" green="255" blue="255">
+    <color name="Text" red="0" green="0" blue="0">
     </color>
   </background_color>
   <widget type="embedded" version="2.0.0">
-    <name>Header</name>
+    <name>Embedded Display</name>
     <file>_acq_header.bob</file>
     <width>1910</width>
     <height>20</height>
     <resize>2</resize>
-    <transparent>true</transparent>
   </widget>
   <widget type="xyplot" version="3.0.0">
-    <name>X/Y Plot</name>
+    <name>X/Y Plot_1</name>
+    <x>10</x>
     <y>30</y>
-    <width>1915</width>
-    <height>800</height>
+    <width>1890</width>
+    <height>900</height>
+    <foreground_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </foreground_color>
     <background_color>
-      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      <color name="Text" red="0" green="0" blue="0">
       </color>
     </background_color>
+    <show_toolbar>true</show_toolbar>
     <x_axis>
-      <title>Time</title>
-      <autoscale>true</autoscale>
-      <log_scale>false</log_scale>
-      <minimum>0.0</minimum>
-      <maximum>0.02</maximum>
+      <title>Frequency (Hz)</title>
+      <autoscale>false</autoscale>
+      <log_scale>true</log_scale>
+      <minimum>5.0</minimum>
+      <maximum>25000.0</maximum>
       <show_grid>false</show_grid>
       <title_font>
-        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        <font family="Liberation Sans" style="BOLD" size="14.0">
         </font>
       </title_font>
       <scale_font>
-        <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+        <font family="Liberation Sans" style="REGULAR" size="14.0">
         </font>
       </scale_font>
       <visible>true</visible>
     </x_axis>
     <y_axes>
       <y_axis>
-        <title>Amps</title>
+        <title>Pascals</title>
         <autoscale>false</autoscale>
-        <log_scale>false</log_scale>
-        <minimum>0.0</minimum>
-        <maximum>50.0</maximum>
+        <log_scale>true</log_scale>
+        <minimum>1.0E-16</minimum>
+        <maximum>0.01</maximum>
         <show_grid>true</show_grid>
         <title_font>
-          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          <font family="Liberation Sans" style="BOLD" size="14.0">
           </font>
         </title_font>
         <scale_font>
-          <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+          <font family="Liberation Sans" style="REGULAR" size="14.0">
           </font>
         </scale_font>
         <on_right>false</on_right>
         <visible>true</visible>
         <color>
-          <color name="Text" red="0" green="0" blue="0">
+          <color name="Read_Background" red="240" green="240" blue="240">
           </color>
         </color>
       </y_axis>
     </y_axes>
     <traces>
       <trace>
-        <name>C6183</name>
-        <x_pv>FDAS:18:SA:T</x_pv>
-        <y_pv>FDAS:18:SA:Ch17</y_pv>
+        <name>$(traces[0].y_pv)</name>
+        <x_pv>FDAS:17:SA:Ch01:FFT:Freq-I</x_pv>
+        <y_pv>FDAS:17:SA:Ch01:FFT:Out-I</y_pv>
         <err_pv></err_pv>
         <axis>0</axis>
         <trace_type>1</trace_type>
@@ -88,9 +90,9 @@
         <visible>true</visible>
       </trace>
       <trace>
-        <name>C6184</name>
-        <x_pv>FDAS:18:SA:T</x_pv>
-        <y_pv>FDAS:18:SA:Ch18</y_pv>
+        <name>$(traces[1].y_pv)</name>
+        <x_pv>FDAS:17:SA:Ch02:FFT:Freq-I</x_pv>
+        <y_pv>FDAS:17:SA:Ch02:FFT:Out-I</y_pv>
         <err_pv></err_pv>
         <axis>0</axis>
         <trace_type>1</trace_type>
@@ -105,9 +107,9 @@
         <visible>true</visible>
       </trace>
       <trace>
-        <name>C6185</name>
-        <x_pv>FDAS:18:SA:T</x_pv>
-        <y_pv>FDAS:18:SA:Ch19</y_pv>
+        <name>$(traces[2].y_pv)</name>
+        <x_pv>FDAS:17:SA:Ch03:FFT:Freq-I</x_pv>
+        <y_pv>FDAS:17:SA:Ch03:FFT:Out-I</y_pv>
         <err_pv></err_pv>
         <axis>0</axis>
         <trace_type>1</trace_type>
@@ -122,9 +124,9 @@
         <visible>true</visible>
       </trace>
       <trace>
-        <name>C6186</name>
-        <x_pv>FDAS:18:SA:T</x_pv>
-        <y_pv>FDAS:18:SA:Ch20</y_pv>
+        <name>$(traces[3].y_pv)</name>
+        <x_pv>FDAS:17:SA:Ch04:FFT:Freq-I</x_pv>
+        <y_pv>FDAS:17:SA:Ch04:FFT:Out-I</y_pv>
         <err_pv></err_pv>
         <axis>0</axis>
         <trace_type>1</trace_type>
@@ -139,14 +141,14 @@
         <visible>true</visible>
       </trace>
       <trace>
-        <name>C6187</name>
-        <x_pv>FDAS:18:SA:T</x_pv>
-        <y_pv>FDAS:18:SA:Ch21</y_pv>
+        <name>$(traces[4].y_pv)</name>
+        <x_pv>FDAS:17:SA:Ch05:FFT:Freq-I</x_pv>
+        <y_pv>FDAS:17:SA:Ch05:FFT:Out-I</y_pv>
         <err_pv></err_pv>
         <axis>0</axis>
         <trace_type>1</trace_type>
         <color>
-          <color red="153" green="153" blue="51">
+          <color red="255" green="255" blue="0">
           </color>
         </color>
         <line_width>1</line_width>
@@ -156,9 +158,9 @@
         <visible>true</visible>
       </trace>
       <trace>
-        <name>C6188</name>
-        <x_pv>FDAS:18:SA:T</x_pv>
-        <y_pv>FDAS:18:SA:Ch22</y_pv>
+        <name>$(traces[5].y_pv)</name>
+        <x_pv>FDAS:17:SA:Ch06:FFT:Freq-I</x_pv>
+        <y_pv>FDAS:17:SA:Ch06:FFT:Out-I</y_pv>
         <err_pv></err_pv>
         <axis>0</axis>
         <trace_type>1</trace_type>
@@ -173,9 +175,9 @@
         <visible>true</visible>
       </trace>
       <trace>
-        <name>C6189</name>
-        <x_pv>FDAS:18:SA:T</x_pv>
-        <y_pv>FDAS:18:SA:Ch23</y_pv>
+        <name>$(traces[6].y_pv)</name>
+        <x_pv>FDAS:17:SA:Ch07:FFT:Freq-I</x_pv>
+        <y_pv>FDAS:17:SA:Ch07:FFT:Out-I</y_pv>
         <err_pv></err_pv>
         <axis>0</axis>
         <trace_type>1</trace_type>
@@ -190,14 +192,14 @@
         <visible>true</visible>
       </trace>
       <trace>
-        <name>C6190</name>
-        <x_pv>FDAS:18:SA:T</x_pv>
-        <y_pv>FDAS:18:SA:Ch24</y_pv>
+        <name>$(traces[7].y_pv)</name>
+        <x_pv>FDAS:17:SA:Ch08:FFT:Freq-I</x_pv>
+        <y_pv>FDAS:17:SA:Ch08:FFT:Out-I</y_pv>
         <err_pv></err_pv>
         <axis>0</axis>
         <trace_type>1</trace_type>
         <color>
-          <color red="0" green="128" blue="0">
+          <color red="191" green="255" blue="0">
           </color>
         </color>
         <line_width>1</line_width>
@@ -207,9 +209,9 @@
         <visible>true</visible>
       </trace>
       <trace>
-        <name>C6191</name>
-        <x_pv>FDAS:18:SA:T</x_pv>
-        <y_pv>FDAS:18:SA:Ch25</y_pv>
+        <name>$(traces[8].y_pv)</name>
+        <x_pv>FDAS:17:SA:Ch09:FFT:Freq-I</x_pv>
+        <y_pv>FDAS:17:SA:Ch09:FFT:Out-I</y_pv>
         <err_pv></err_pv>
         <axis>0</axis>
         <trace_type>1</trace_type>
@@ -224,9 +226,9 @@
         <visible>true</visible>
       </trace>
       <trace>
-        <name>C6192</name>
-        <x_pv>FDAS:18:SA:T</x_pv>
-        <y_pv>FDAS:18:SA:Ch26</y_pv>
+        <name>$(traces[9].y_pv)</name>
+        <x_pv>FDAS:17:SA:Ch10:FFT:Freq-I</x_pv>
+        <y_pv>FDAS:17:SA:Ch10:FFT:Out-I</y_pv>
         <err_pv></err_pv>
         <axis>0</axis>
         <trace_type>1</trace_type>
@@ -241,14 +243,14 @@
         <visible>true</visible>
       </trace>
       <trace>
-        <name>C6193</name>
-        <x_pv>FDAS:18:SA:T</x_pv>
-        <y_pv>FDAS:18:SA:Ch27</y_pv>
+        <name>$(traces[10].y_pv)</name>
+        <x_pv>FDAS:17:SA:Ch11:FFT:Freq-I</x_pv>
+        <y_pv>FDAS:17:SA:Ch11:FFT:Out-I</y_pv>
         <err_pv></err_pv>
         <axis>0</axis>
         <trace_type>1</trace_type>
         <color>
-          <color red="102" green="102" blue="0">
+          <color red="255" green="212" blue="0">
           </color>
         </color>
         <line_width>1</line_width>
@@ -258,9 +260,9 @@
         <visible>true</visible>
       </trace>
       <trace>
-        <name>C6194</name>
-        <x_pv>FDAS:18:SA:T</x_pv>
-        <y_pv>FDAS:18:SA:Ch28</y_pv>
+        <name>$(traces[11].y_pv)</name>
+        <x_pv>FDAS:17:SA:Ch12:FFT:Freq-I</x_pv>
+        <y_pv>FDAS:17:SA:Ch12:FFT:Out-I</y_pv>
         <err_pv></err_pv>
         <axis>0</axis>
         <trace_type>1</trace_type>
@@ -275,14 +277,31 @@
         <visible>true</visible>
       </trace>
       <trace>
-        <name>C6194</name>
-        <x_pv>FDAS:18:SA:T</x_pv>
-        <y_pv>FDAS:18:SA:Ch28</y_pv>
+        <name>$(traces[12].y_pv)</name>
+        <x_pv>FDAS:17:SA:Ch13:FFT:Freq-I</x_pv>
+        <y_pv>FDAS:17:SA:Ch13:FFT:Out-I</y_pv>
         <err_pv></err_pv>
         <axis>0</axis>
         <trace_type>1</trace_type>
         <color>
-          <color red="0" green="26" blue="128">
+          <color red="185" green="215" blue="237">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>$(traces[13].y_pv)</name>
+        <x_pv>FDAS:17:SA:Ch14:FFT:Freq-I</x_pv>
+        <y_pv>FDAS:17:SA:Ch14:FFT:Out-I</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="231" green="233" blue="185">
           </color>
         </color>
         <line_width>1</line_width>
@@ -292,20 +311,15 @@
         <visible>true</visible>
       </trace>
     </traces>
-  </widget>
-  <widget type="meter" version="3.0.0">
-    <name>Meter</name>
-    <pv_name>FDAS:18:SA:Ch17:Max-I</pv_name>
-    <x>20</x>
-    <y>840</y>
-    <width>150</width>
-    <height>80</height>
-    <format>1</format>
-    <show_units>false</show_units>
-    <show_limits>false</show_limits>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-    <limits_from_pv>false</limits_from_pv>
-    <minimum>-1.0</minimum>
-    <maximum>50.0</maximum>
+    <marker>
+      <marker>
+        <color>
+          <color name="Text" red="0" green="0" blue="0">
+          </color>
+        </color>
+        <pv_name>FDAS:17:SA:Ch14:FFT:Out-I</pv_name>
+        <interactive>true</interactive>
+      </marker>
+    </marker>
   </widget>
 </display>

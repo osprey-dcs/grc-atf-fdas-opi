@@ -1,0 +1,24 @@
+Facility Channel List:
+513-551,553-554,561-573,618-638,669-728
+
+LM File Naming Convention
+REC-20240918-155359-AC0841-ACOU-2024-10-09-1500_LM_GTI.UFF
+
+Customer Channel List:
+1-512,552,555-560,574-617,639-668,729-1024
+
+# Test
+
+## REC
+
+Filename/Location: **
+
+**Notes:** **
+
+|Channel|Fault|
+|---|----|
+|||
+|||
+|||
+|||
+|||

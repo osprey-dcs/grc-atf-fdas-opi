@@ -1,0 +1,47 @@
+
+*********** SSH into server first ***********
+ssh miscs
+
+
+*********** TO CREATE TAGS ***********
+
+curl --location --request PUT 'http://192.168.83.101:9090/Olog/tags' --header 'Content-Type: application/json' --header 'Authorization: Basic YWRtaW46YWRtaW5QYXNz' --header 'Cookie: SESSION=YzJjYThmNzMtOTBiZS00YmU5LTImOWQtMGJiYzM5ZjE0YTVk' --data '[{
+"name":"Test Run",
+"owner":"olog-logs"
+}]'
+
+curl --location --request PUT 'http://192.168.83.101:9090/Olog/tags' --header 'Content-Type: application/json' --header 'Authorization: Basic YWRtaW46YWRtaW5QYXNz' --header 'Cookie: SESSION=YzJjYThmNzMtOTBiZS00YmU5LTImOWQtMGJiYzM5ZjE0YTVk' --data '[{
+"name":"Configuration Change",
+"owner":"olog-logs"
+}]'
+
+curl --location --request PUT 'http://192.168.83.101:9090/Olog/tags' --header 'Content-Type: application/json' --header 'Authorization: Basic YWRtaW46YWRtaW5QYXNz' --header 'Cookie: SESSION=YzJjYThmNzMtOTBiZS00YmU5LTImOWQtMGJiYzM5ZjE0YTVk' --data '[{
+"name":"Test-Prep",
+"owner":"olog-logs"
+}]'
+
+*********** TO CREATE LOGBOOKS ***********
+curl --location --request PUT 'http://192.168.83.101:9090/Olog/logbooks' --header 'Content-Type: application/json' --header 'Authorization: Basic YWRtaW46YWRtaW5QYXNz' --header 'Cookie: SESSION=YzJjYThmNzMtOTBiZS00YmU5LTImOWQtMGJiYzM5ZjE0YTVk' --data '[{
+"name":"MVF",
+"owner":"olog-logs"
+}]'
+
+curl --location --request PUT 'http://192.168.83.101:9090/Olog/logbooks' --header 'Content-Type: application/json' --header 'Authorization: Basic YWRtaW46YWRtaW5QYXNz' --header 'Cookie: SESSION=YzJjYThmNzMtOTBiZS00YmU5LTImOWQtMGJiYzM5ZjE0YTVk' --data '[{
+"name":"RATF",
+"owner":"olog-logs"
+}]'
+
+curl --location --request PUT 'http://192.168.83.101:9090/Olog/logbooks' --header 'Content-Type: application/json' --header 'Authorization: Basic YWRtaW46YWRtaW5QYXNz' --header 'Cookie: SESSION=YzJjYThmNzMtOTBiZS00YmU5LTImOWQtMGJiYzM5ZjE0YTVk' --data '[{
+"name":"ISSUES",
+"owner":"olog-logs"
+}]'
+
+
+
+
+*********** COMMANDS TO DELETE A TAG/LOGBOOK #### THERE'S NO WAY TO RECOVER IT!! *************
+curl --location --request DELETE 'http://192.168.83.101:9090/Olog/logbooks/controls' --header 'Content-Type: application/json' --header 'Authorization: Basic YWRtaW46YWRtaW5QYXNz' --header 'Cookie: SESSION=YzJjYThmNzMtOTBiZS00YmU5LTImOWQtMGJiYzM5ZjE0YTVk'
+
+curl --location --request DELETE 'http://192.168.83.101:9090/Olog/tags/alarm' --header 'Content-Type: application/json' --header 'Authorization: Basic YWRtaW46YWRtaW5QYXNz' --header 'Cookie: SESSION=YzJjYThmNzMtOTBiZS00YmU5LTImOWQtMGJiYzM5ZjE0YTVk'
+
+curl --location --request DELETE 'http://192.168.83.101:9090/Olog/tags/experiment' --header 'Content-Type: application/json' --header 'Authorization: Basic YWRtaW46YWRtaW5QYXNz' --header 'Cookie: SESSION=YzJjYThmNzMtOTBiZS00YmU5LTImOWQtMGJiYzM5ZjE0YTVk'

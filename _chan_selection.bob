@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2024-08-20 15:21:57 by atf-->
+<display version="2.0.0">
+  <name>Display</name>
+  <macros>
+    <EVG>FDAS:01</EVG>
+  </macros>
+  <width>645</width>
+  <height>35</height>
+  <widget type="action_button" version="3.0.0">
+    <name>Sel Chas 1_1</name>
+    <actions>
+      <action type="open_display">
+        <file>_chan_selection.bob</file>
+        <macros>
+          <P>FDAS:01:</P>
+          <CHAS>01</CHAS>
+        </macros>
+        <target>replace</target>
+        <description>01</description>
+      </action>
+      <action type="open_display">
+        <file>_chan_selection.bob</file>
+        <macros>
+          <P>FDAS:02:</P>
+          <CHAS>02</CHAS>
+        </macros>
+        <target>replace</target>
+        <description>02</description>
+      </action>
+      <action type="open_display">
+        <file>_chan_selection.bob</file>
+        <macros>
+          <P>FDAS:03:</P>
+          <CHAS>03</CHAS>
+        </macros>
+        <target>replace</target>
+        <description>03</description>
+      </action>
+      <action type="open_display">
+        <file>_chan_selection.bob</file>
+        <macros>
+          <P>FDAS:04</P>
+          <CHAS>04</CHAS>
+        </macros>
+        <target>replace</target>
+        <description>04</description>
+      </action>
+      <action type="open_display">
+        <file>_chan_selection.bob</file>
+        <macros>
+          <P>FDAS:05</P>
+          <CHAS>05</CHAS>
+        </macros>
+        <target>replace</target>
+        <description>05</description>
+      </action>
+      <action type="open_display">
+        <file>_chan_selection.bob</file>
+        <macros>
+          <P>FDAS:06</P>
+          <CHAS>06</CHAS>
+        </macros>
+        <target>replace</target>
+        <description>06</description>
+      </action>
+      <action type="open_display">
+        <file>_chan_selection.bob</file>
+        <macros>
+          <P>FDAS:07</P>
+          <CHAS>07</CHAS>
+        </macros>
+        <target>replace</target>
+        <description>07</description>
+      </action>
+      <action type="open_display">
+        <file>_chan_selection.bob</file>
+        <macros>
+          <P>FDAS:08</P>
+          <CHAS>08</CHAS>
+        </macros>
+        <target>replace</target>
+        <description>08</description>
+      </action>
+    </actions>
+    <text>Chas #</text>
+    <x>120</x>
+    <y>340</y>
+    <width>60</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Sel Chan 1_1</name>
+    <actions>
+      <action type="open_display">
+        <file>_chan_selection.bob</file>
+        <macros>
+          <N>01</N>
+        </macros>
+        <target>replace</target>
+        <description>01</description>
+      </action>
+      <action type="open_display">
+        <file>_chan_selection.bob</file>
+        <macros>
+          <N>02</N>
+        </macros>
+        <target>replace</target>
+        <description>02</description>
+      </action>
+      <action type="open_display">
+        <file>_chan_selection.bob</file>
+        <macros>
+          <N>03</N>
+        </macros>
+        <target>replace</target>
+        <description>03</description>
+      </action>
+      <action type="open_display">
+        <file>_chan_selection.bob</file>
+        <macros>
+          <N>04</N>
+        </macros>
+        <target>replace</target>
+        <description>04</description>
+      </action>
+      <action type="open_display">
+        <file>_chan_selection.bob</file>
+        <macros>
+          <N>05</N>
+        </macros>
+        <target>replace</target>
+        <description>05</description>
+      </action>
+      <action type="open_display">
+        <file>_chan_selection.bob</file>
+        <macros>
+          <N>06</N>
+        </macros>
+        <target>replace</target>
+        <description>06</description>
+      </action>
+      <action type="open_display">
+        <file>_chan_selection.bob</file>
+        <macros>
+          <N>07</N>
+        </macros>
+        <target>replace</target>
+        <description>07</description>
+      </action>
+      <action type="open_display">
+        <file>_chan_selection.bob</file>
+        <macros>
+          <N>08</N>
+        </macros>
+        <target>replace</target>
+        <description>08</description>
+      </action>
+    </actions>
+    <text>Chan #</text>
+    <x>240</x>
+    <y>340</y>
+    <width>60</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>$(CHAS=None)</text>
+    <x>190</x>
+    <y>342</y>
+    <width>40</width>
+    <foreground_color>
+      <color name="Attention" red="255" green="160" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>$(N=None)</text>
+    <x>310</x>
+    <y>342</y>
+    <width>40</width>
+    <foreground_color>
+      <color name="Attention" red="255" green="160" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_11</name>
+    <pv_name>$(P)SA:Ch$(N):NAME.VAL$</pv_name>
+    <x>370</x>
+    <y>342</y>
+    <width>230</width>
+    <format>6</format>
+  </widget>
+  <widget type="xyplot" version="3.0.0">
+    <name>X/Y Plot_1</name>
+    <x>110</x>
+    <y>430</y>
+    <width>640</width>
+    <height>330</height>
+    <x_axis>
+      <title>X</title>
+      <autoscale>false</autoscale>
+      <log_scale>false</log_scale>
+      <minimum>0.0</minimum>
+      <maximum>0.2</maximum>
+      <show_grid>false</show_grid>
+      <title_font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </title_font>
+      <scale_font>
+        <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+        </font>
+      </scale_font>
+      <visible>true</visible>
+    </x_axis>
+    <y_axes>
+      <y_axis>
+        <title>$(P)SA:Ch$(N):EGU</title>
+        <autoscale>false</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>-10.0</minimum>
+        <maximum>10.0</maximum>
+        <show_grid>false</show_grid>
+        <title_font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </title_font>
+        <scale_font>
+          <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+          </font>
+        </scale_font>
+        <on_right>false</on_right>
+        <visible>true</visible>
+        <color>
+          <color name="Text" red="0" green="0" blue="0">
+          </color>
+        </color>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name>$(traces[0].y_pv)</name>
+        <x_pv>$(P)SA:T</x_pv>
+        <y_pv>$(P)SA:Ch$(N)</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="0" green="0" blue="255">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Entry_11</name>
+    <pv_name>$(P)SA:Ch$(N):NAME.VAL$</pv_name>
+    <x>160</x>
+    <y>380</y>
+    <width>310</width>
+    <height>30</height>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <format>6</format>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Entry_14</name>
+    <pv_name>$(P)SA:Ch$(N):EGU</pv_name>
+    <x>610</x>
+    <y>380</y>
+    <width>110</width>
+    <height>30</height>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <format>3</format>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_19</name>
+    <text>EGU = </text>
+    <x>560</x>
+    <y>380</y>
+    <width>60</width>
+    <height>30</height>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Active</name>
+    <file>_chan_stats.bob</file>
+    <x>110</x>
+    <y>780</y>
+    <width>645</width>
+    <height>35</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Sel Chan 1_2</name>
+    <actions>
+      <action type="open_display">
+        <file>_chan_selection.bob</file>
+        <macros>
+          <P>$(P)+1</P>
+        </macros>
+        <target>replace</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <pv_name>$(P)SA:Ch$(N)</pv_name>
+    <text>Chan #</text>
+    <x>340</x>
+    <y>290</y>
+    <width>60</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+</display>

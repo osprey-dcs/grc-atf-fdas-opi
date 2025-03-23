@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2024-08-29 10:28:37 by omitto-->
+<display version="2.0.0">
+  <name>Display</name>
+  <width>250</width>
+  <height>120</height>
+  <widget type="group" version="3.0.0">
+    <name>Macros</name>
+    <x>10</x>
+    <y>20</y>
+    <width>236</width>
+    <height>70</height>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_1</name>
+      <text>\$CHASSIS</text>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_3</name>
+      <text>\$CHANNEL</text>
+      <y>20</y>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_4</name>
+      <text>$(CHASSIS)</text>
+      <x>100</x>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_5</name>
+      <text>$(CHANNEL)</text>
+      <x>100</x>
+      <y>20</y>
+    </widget>
+  </widget>
+</display>

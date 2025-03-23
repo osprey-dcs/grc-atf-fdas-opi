@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-05-29 14:30:50 by atf-->
+<!--Saved on 2025-02-28 12:11:33 by atf-->
 <display version="2.0.0">
   <name>OPs</name>
   <widget type="label" version="2.0.0">
@@ -70,9 +70,9 @@
     <name>Action Button_3</name>
     <actions>
       <action type="open_display">
-        <file>Many Charts.bob</file>
+        <file>32 Charts.bob</file>
         <macros>
-          <P>FDAS:17:</P>
+          <P>FDAS:01:</P>
         </macros>
         <target>tab</target>
         <description>32 Graphs (Time)</description>
@@ -163,6 +163,230 @@
     </actions>
     <x>10</x>
     <y>200</y>
+    <width>130</width>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_6</name>
+    <actions>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <P>FDAS:01:</P>
+          <N>01</N>
+        </macros>
+        <target>tab</target>
+        <description>IEPE Checks</description>
+      </action>
+    </actions>
+    <x>10</x>
+    <y>240</y>
+    <width>130</width>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_7</name>
+    <actions>
+      <action type="open_display">
+        <file>Strain Guage.bob</file>
+        <macros>
+          <P>FDAS:01:</P>
+          <N>01</N>
+        </macros>
+        <target>tab</target>
+        <description>Strain Guage</description>
+      </action>
+    </actions>
+    <x>10</x>
+    <y>280</y>
+    <width>130</width>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_8</name>
+    <actions>
+      <action type="open_display">
+        <file>RATF Test.bob</file>
+        <target>tab</target>
+        <description>RATF Test</description>
+      </action>
+    </actions>
+    <x>10</x>
+    <y>320</y>
+    <width>130</width>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_9</name>
+    <actions>
+      <action type="open_display">
+        <file>Overlay.bob</file>
+        <target>tab</target>
+        <description>Time Overlay</description>
+      </action>
+    </actions>
+    <x>10</x>
+    <y>360</y>
+    <width>130</width>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>MVF T Accels</name>
+    <actions execute_as_one="true">
+      <action type="open_display">
+        <file>MVF T FFT.bob</file>
+        <target>tab</target>
+        <description>MVF T Accels</description>
+      </action>
+      <action type="write_pv">
+        <pv_name>FDAS:21:SA:Ch17:FFT:Run-Sel</pv_name>
+        <value>Run</value>
+        <description>WritePV</description>
+      </action>
+      <action type="write_pv">
+        <pv_name>FDAS:21:SA:Ch18:FFT:Run-Sel</pv_name>
+        <value>Run</value>
+        <description>WritePV</description>
+      </action>
+      <action type="write_pv">
+        <pv_name>FDAS:21:SA:Ch19:FFT:Run-Sel</pv_name>
+        <value>Run</value>
+        <description>WritePV</description>
+      </action>
+      <action type="write_pv">
+        <pv_name>FDAS:21:SA:Ch20:FFT:Run-Sel</pv_name>
+        <value>Run</value>
+        <description>WritePV</description>
+      </action>
+      <action type="write_pv">
+        <pv_name>FDAS:21:SA:Ch21:FFT:Run-Sel</pv_name>
+        <value>Run</value>
+        <description>WritePV</description>
+      </action>
+      <action type="write_pv">
+        <pv_name>FDAS:21:SA:Ch22:FFT:Run-Sel</pv_name>
+        <value>Run</value>
+        <description>WritePV</description>
+      </action>
+      <action type="write_pv">
+        <pv_name>FDAS:21:SA:Ch23:FFT:Run-Sel</pv_name>
+        <value>Run</value>
+        <description>WritePV</description>
+      </action>
+      <action type="write_pv">
+        <pv_name>FDAS:21:SA:Ch24:FFT:Run-Sel</pv_name>
+        <value>Run</value>
+        <description>WritePV</description>
+      </action>
+      <action type="write_pv">
+        <pv_name>FDAS:21:SA:Ch25:FFT:Run-Sel</pv_name>
+        <value>Run</value>
+        <description>WritePV</description>
+      </action>
+      <action type="write_pv">
+        <pv_name>FDAS:21:SA:Ch26:FFT:Run-Sel</pv_name>
+        <value>Run</value>
+        <description>WritePV</description>
+      </action>
+      <action type="write_pv">
+        <pv_name>FDAS:21:SA:Ch27:FFT:Run-Sel</pv_name>
+        <value>Run</value>
+        <description>WritePV</description>
+      </action>
+      <action type="write_pv">
+        <pv_name>FDAS:21:SA:Ch28:FFT:Run-Sel</pv_name>
+        <value>Run</value>
+        <description>WritePV</description>
+      </action>
+      <action type="write_pv">
+        <pv_name>FDAS:19:SA:Ch01:FFT:Run-Sel</pv_name>
+        <value>Run</value>
+        <description>WritePV</description>
+      </action>
+    </actions>
+    <text>MVF T Accels</text>
+    <x>10</x>
+    <y>400</y>
+    <width>130</width>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>MVF C Accels_1</name>
+    <actions execute_as_one="true">
+      <action type="open_display">
+        <file>MVF C FFT.bob</file>
+        <target>tab</target>
+        <description>MVF C Accels</description>
+      </action>
+      <action type="write_pv">
+        <pv_name>FDAS:19:SA:Ch10:FFT:Run-Sel</pv_name>
+        <value>Run</value>
+        <description>WritePV</description>
+      </action>
+      <action type="write_pv">
+        <pv_name>FDAS:19:SA:Ch11:FFT:Run-Sel</pv_name>
+        <value>Run</value>
+        <description>WritePV</description>
+      </action>
+      <action type="write_pv">
+        <pv_name>FDAS:19:SA:Ch12:FFT:Run-Sel</pv_name>
+        <value>Run</value>
+        <description>WritePV</description>
+      </action>
+      <action type="write_pv">
+        <pv_name>FDAS:19:SA:Ch13:FFT:Run-Sel</pv_name>
+        <value>Run</value>
+        <description>WritePV</description>
+      </action>
+      <action type="write_pv">
+        <pv_name>FDAS:19:SA:Ch14:FFT:Run-Sel</pv_name>
+        <value>Run</value>
+        <description>WritePV</description>
+      </action>
+      <action type="write_pv">
+        <pv_name>FDAS:19:SA:Ch15:FFT:Run-Sel</pv_name>
+        <value>Run</value>
+        <description>WritePV</description>
+      </action>
+      <action type="write_pv">
+        <pv_name>FDAS:19:SA:Ch16:FFT:Run-Sel</pv_name>
+        <value>Run</value>
+        <description>WritePV</description>
+      </action>
+      <action type="write_pv">
+        <pv_name>FDAS:19:SA:Ch17:FFT:Run-Sel</pv_name>
+        <value>Run</value>
+        <description>WritePV</description>
+      </action>
+      <action type="write_pv">
+        <pv_name>FDAS:19:SA:Ch18:FFT:Run-Sel</pv_name>
+        <value>Run</value>
+        <description>WritePV</description>
+      </action>
+      <action type="write_pv">
+        <pv_name>FDAS:19:SA:Ch19:FFT:Run-Sel</pv_name>
+        <value>Run</value>
+        <description>WritePV</description>
+      </action>
+      <action type="write_pv">
+        <pv_name>FDAS:19:SA:Ch20:FFT:Run-Sel</pv_name>
+        <value>Run</value>
+        <description>WritePV</description>
+      </action>
+      <action type="write_pv">
+        <pv_name>FDAS:19:SA:Ch21:FFT:Run-Sel</pv_name>
+        <value>Run</value>
+        <description>WritePV</description>
+      </action>
+      <action type="write_pv">
+        <pv_name>FDAS:19:SA:Ch01:FFT:Run-Sel</pv_name>
+        <value>Run</value>
+        <description>WritePV</description>
+      </action>
+    </actions>
+    <text>MVF C Accels</text>
+    <x>10</x>
+    <y>440</y>
     <width>130</width>
     <tooltip>$(actions)</tooltip>
   </widget>

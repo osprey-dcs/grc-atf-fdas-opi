@@ -1,51 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-08-05 12:34:08 by atf-->
+<!--Saved on 2024-09-06 11:37:39 by atf-->
 <display version="2.0.0">
-  <name>CCCR</name>
+  <name>Mini CCCR</name>
   <macros>
     <P>FDAS:</P>
   </macros>
-  <width>1070</width>
-  <widget type="label" version="2.0.0">
-    <name>Label</name>
-    <class>TITLE</class>
-    <text>CCCR Upload</text>
-    <x use_class="true">0</x>
-    <y use_class="true">0</y>
-    <width>550</width>
-    <height>31</height>
-    <font use_class="true">
-      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
-      </font>
-    </font>
-    <foreground_color use_class="true">
-      <color name="Text" red="0" green="0" blue="0">
-      </color>
-    </foreground_color>
-    <transparent use_class="true">true</transparent>
-  </widget>
+  <width>620</width>
+  <height>330</height>
   <widget type="fileselector" version="2.0.0">
     <name>File Selector</name>
     <pv_name>loc://cccr$(DID)("")</pv_name>
-    <x>60</x>
-    <y>80</y>
     <height>30</height>
     <tooltip>Select file on local system</tooltip>
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>inputfile</name>
     <pv_name>loc://cccr$(DID)("")</pv_name>
-    <x>110</x>
-    <y>80</y>
-    <width>730</width>
+    <y>40</y>
+    <width>620</width>
     <height>30</height>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_1</name>
-    <text>Select file</text>
-    <x>60</x>
-    <y>50</y>
-    <width>290</width>
   </widget>
   <widget type="action_button" version="3.0.0">
     <name>cccrload</name>
@@ -80,35 +53,18 @@ if fname:
       </action>
     </actions>
     <pv_name>pva://$(P)CCCR:BODY</pv_name>
-    <x>850</x>
     <y>80</y>
     <width>110</width>
     <tooltip>Load selected file</tooltip>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>cccrfile</name>
-    <pv_name>pva://$(P)CCCR:NAME</pv_name>
-    <x>60</x>
-    <y>160</y>
-    <width>600</width>
-    <height>30</height>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_1</name>
-    <pv_name>pva://$(P)CCCR:MSG</pv_name>
-    <x>60</x>
-    <y>250</y>
-    <width>1010</width>
-    <height>100</height>
-    <interactive>true</interactive>
+    <show_confirm_dialog>true</show_confirm_dialog>
+    <confirm_message>Are your sure you want to change the active CCCR?</confirm_message>
   </widget>
   <widget type="led" version="2.0.0">
     <name>LED</name>
     <pv_name>pva://$(P)CCCR:STS</pv_name>
-    <x>670</x>
-    <y>160</y>
-    <width>80</width>
-    <height>70</height>
+    <y>260</y>
+    <width>90</width>
+    <height>30</height>
     <off_color>
       <color name="MAJOR" red="255" green="0" blue="0">
       </color>
@@ -120,17 +76,10 @@ if fname:
     <square>true</square>
     <labels_from_pv>true</labels_from_pv>
   </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_2</name>
-    <text>Previous result</text>
-    <x>60</x>
-    <y>130</y>
-    <width>290</width>
-  </widget>
   <widget type="led" version="2.0.0">
     <name>LED_1</name>
     <pv_name>pva://$(P)CCCR:BUSY</pv_name>
-    <x>970</x>
+    <x>130</x>
     <y>80</y>
     <width>90</width>
     <height>30</height>
@@ -144,18 +93,23 @@ if fname:
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_2</name>
     <pv_name>pva://$(P)CCCR:LOG</pv_name>
-    <x>60</x>
-    <y>360</y>
-    <width>1010</width>
-    <height>280</height>
+    <y>120</y>
+    <width>620</width>
+    <height>130</height>
     <interactive>true</interactive>
   </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>cccrfile_1</name>
-    <pv_name>pva://$(P)CCCR:HASH</pv_name>
-    <x>60</x>
-    <y>200</y>
-    <width>600</width>
-    <height>30</height>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="open_display">
+        <file>../../Controls.bob</file>
+        <target>replace</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>Finished</text>
+    <y>300</y>
+    <width>110</width>
+    <tooltip>$(actions)</tooltip>
   </widget>
 </display>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2024-09-26 08:10:30 by atf-->
+<display version="2.0.0">
+  <name>ShortStat</name>
+  <width>398</width>
+  <height>20</height>
+  <background_color>
+    <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+    </color>
+  </background_color>
+  <grid_step_x>5</grid_step_x>
+  <grid_step_y>5</grid_step_y>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="open_display">
+        <file>../../nasaACQ_sysmon.bob</file>
+        <macros>
+          <R>$(N):</R>
+        </macros>
+        <target>tab</target>
+        <description>Sysmon</description>
+      </action>
+      <action type="open_display">
+        <file>../../nasaACQ_faststs.bob</file>
+        <macros>
+          <P>FDAS:$(N):</P>
+        </macros>
+        <target>tab</target>
+        <description>Acq.</description>
+      </action>
+    </actions>
+    <text>Chassis:$(N)</text>
+    <width>80</width>
+    <height>20</height>
+    <horizontal_alignment>0</horizontal_alignment>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_14</name>
+    <pv_name>$(P)$(N):ACQ:running</pv_name>
+    <x>170</x>
+    <width>70</width>
+    <square>true</square>
+    <labels_from_pv>true</labels_from_pv>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_15</name>
+    <pv_name>$(P)$(N):RDY</pv_name>
+    <x>90</x>
+    <width>70</width>
+    <off_color>
+      <color name="MAJOR" red="255" green="0" blue="0">
+      </color>
+    </off_color>
+    <on_color>
+      <color name="OK" red="0" green="255" blue="0">
+      </color>
+    </on_color>
+    <square>true</square>
+    <labels_from_pv>true</labels_from_pv>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_3</name>
+    <pv_name>$(P)$(N):LOLOstatus</pv_name>
+    <x>250</x>
+    <width>44</width>
+    <off_color>
+      <color name="OK" red="0" green="255" blue="0">
+      </color>
+    </off_color>
+    <on_label>LOLO</on_label>
+    <on_color>
+      <color name="MAJOR" red="255" green="0" blue="0">
+      </color>
+    </on_color>
+    <square>true</square>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_4</name>
+    <pv_name>$(P)$(N):LOstatus</pv_name>
+    <x>294</x>
+    <width>30</width>
+    <off_color>
+      <color name="OK" red="0" green="255" blue="0">
+      </color>
+    </off_color>
+    <on_label>LO</on_label>
+    <on_color>
+      <color name="MINOR" red="255" green="128" blue="0">
+      </color>
+    </on_color>
+    <square>true</square>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_5</name>
+    <pv_name>$(P)$(N):HIstatus</pv_name>
+    <x>324</x>
+    <width>30</width>
+    <off_color>
+      <color name="OK" red="0" green="255" blue="0">
+      </color>
+    </off_color>
+    <on_label>HI</on_label>
+    <on_color>
+      <color name="MINOR" red="255" green="128" blue="0">
+      </color>
+    </on_color>
+    <square>true</square>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_6</name>
+    <pv_name>$(P)$(N):HIHIstatus</pv_name>
+    <x>354</x>
+    <width>44</width>
+    <off_color>
+      <color name="OK" red="0" green="255" blue="0">
+      </color>
+    </off_color>
+    <on_label>HIHI</on_label>
+    <on_color>
+      <color name="MAJOR" red="255" green="0" blue="0">
+      </color>
+    </on_color>
+    <square>true</square>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+</display>

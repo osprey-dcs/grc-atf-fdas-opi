@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2024-09-26 08:10:36 by atf-->
+<display version="2.0.0">
+  <name>Embedded Stat</name>
+  <macros>
+    <P>FDAS:</P>
+  </macros>
+  <width>398</width>
+  <height>721</height>
+  <background_color>
+    <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+    </color>
+  </background_color>
+  <grid_step_x>5</grid_step_x>
+  <grid_step_y>5</grid_step_y>
+  <widget type="led" version="2.0.0">
+    <name>LED_12</name>
+    <pv_name>$(P)HIHIstatus</pv_name>
+    <x>233</x>
+    <y>20</y>
+    <width>44</width>
+    <off_color>
+      <color name="OK" red="0" green="255" blue="0">
+      </color>
+    </off_color>
+    <on_label>HIHI</on_label>
+    <on_color>
+      <color name="MAJOR" red="255" green="0" blue="0">
+      </color>
+    </on_color>
+    <square>true</square>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>17</name>
+    <macros>
+      <N>17</N>
+    </macros>
+    <file>Shortstat.bob</file>
+    <y>386</y>
+    <width>398</width>
+    <height>20</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>18</name>
+    <macros>
+      <N>18</N>
+    </macros>
+    <file>Shortstat.bob</file>
+    <y>407</y>
+    <width>398</width>
+    <height>20</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>19</name>
+    <macros>
+      <N>19</N>
+    </macros>
+    <file>Shortstat.bob</file>
+    <y>428</y>
+    <width>398</width>
+    <height>20</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>20</name>
+    <macros>
+      <N>20</N>
+    </macros>
+    <file>Shortstat.bob</file>
+    <y>449</y>
+    <width>398</width>
+    <height>20</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>21</name>
+    <macros>
+      <N>21</N>
+    </macros>
+    <file>Shortstat.bob</file>
+    <y>470</y>
+    <width>398</width>
+    <height>20</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>22</name>
+    <macros>
+      <N>22</N>
+    </macros>
+    <file>Shortstat.bob</file>
+    <y>491</y>
+    <width>398</width>
+    <height>20</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>23</name>
+    <macros>
+      <N>23</N>
+    </macros>
+    <file>Shortstat.bob</file>
+    <y>512</y>
+    <width>398</width>
+    <height>20</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>24</name>
+    <macros>
+      <N>24</N>
+    </macros>
+    <file>Shortstat.bob</file>
+    <y>533</y>
+    <width>398</width>
+    <height>20</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>25</name>
+    <macros>
+      <N>25</N>
+    </macros>
+    <file>Shortstat.bob</file>
+    <y>554</y>
+    <width>398</width>
+    <height>20</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>26</name>
+    <macros>
+      <N>26</N>
+    </macros>
+    <file>Shortstat.bob</file>
+    <y>575</y>
+    <width>398</width>
+    <height>20</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>27</name>
+    <macros>
+      <N>27</N>
+    </macros>
+    <file>Shortstat.bob</file>
+    <y>596</y>
+    <width>398</width>
+    <height>20</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>28</name>
+    <macros>
+      <N>28</N>
+    </macros>
+    <file>Shortstat.bob</file>
+    <y>617</y>
+    <width>398</width>
+    <height>20</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>29</name>
+    <macros>
+      <N>29</N>
+    </macros>
+    <file>Shortstat.bob</file>
+    <y>638</y>
+    <width>398</width>
+    <height>20</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>30</name>
+    <macros>
+      <N>30</N>
+    </macros>
+    <file>Shortstat.bob</file>
+    <y>659</y>
+    <width>398</width>
+    <height>20</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>31</name>
+    <macros>
+      <N>31</N>
+    </macros>
+    <file>Shortstat.bob</file>
+    <y>680</y>
+    <width>398</width>
+    <height>20</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>32</name>
+    <macros>
+      <N>32</N>
+    </macros>
+    <file>Shortstat.bob</file>
+    <y>701</y>
+    <width>398</width>
+    <height>20</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>01</name>
+    <macros>
+      <N>01</N>
+    </macros>
+    <file>Shortstat.bob</file>
+    <y>50</y>
+    <width>398</width>
+    <height>20</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>02</name>
+    <macros>
+      <N>02</N>
+    </macros>
+    <file>Shortstat.bob</file>
+    <y>71</y>
+    <width>398</width>
+    <height>20</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>03</name>
+    <macros>
+      <N>03</N>
+    </macros>
+    <file>Shortstat.bob</file>
+    <y>92</y>
+    <width>398</width>
+    <height>20</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>04</name>
+    <macros>
+      <N>04</N>
+    </macros>
+    <file>Shortstat.bob</file>
+    <y>113</y>
+    <width>398</width>
+    <height>20</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>05</name>
+    <macros>
+      <N>05</N>
+    </macros>
+    <file>Shortstat.bob</file>
+    <y>134</y>
+    <width>398</width>
+    <height>20</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>06</name>
+    <macros>
+      <N>06</N>
+    </macros>
+    <file>Shortstat.bob</file>
+    <y>155</y>
+    <width>398</width>
+    <height>20</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>07</name>
+    <macros>
+      <N>07</N>
+    </macros>
+    <file>Shortstat.bob</file>
+    <y>176</y>
+    <width>398</width>
+    <height>20</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>08</name>
+    <macros>
+      <N>08</N>
+    </macros>
+    <file>Shortstat.bob</file>
+    <y>197</y>
+    <width>398</width>
+    <height>20</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>09</name>
+    <macros>
+      <N>09</N>
+    </macros>
+    <file>Shortstat.bob</file>
+    <y>218</y>
+    <width>398</width>
+    <height>20</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>10</name>
+    <macros>
+      <N>10</N>
+    </macros>
+    <file>Shortstat.bob</file>
+    <y>239</y>
+    <width>398</width>
+    <height>20</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>11</name>
+    <macros>
+      <N>11</N>
+    </macros>
+    <file>Shortstat.bob</file>
+    <y>260</y>
+    <width>398</width>
+    <height>20</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>12</name>
+    <macros>
+      <N>12</N>
+    </macros>
+    <file>Shortstat.bob</file>
+    <y>281</y>
+    <width>398</width>
+    <height>20</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>13</name>
+    <macros>
+      <N>13</N>
+    </macros>
+    <file>Shortstat.bob</file>
+    <y>302</y>
+    <width>398</width>
+    <height>20</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>14</name>
+    <macros>
+      <N>14</N>
+    </macros>
+    <file>Shortstat.bob</file>
+    <y>323</y>
+    <width>398</width>
+    <height>20</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>15</name>
+    <macros>
+      <N>15</N>
+    </macros>
+    <file>Shortstat.bob</file>
+    <y>344</y>
+    <width>398</width>
+    <height>20</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>16</name>
+    <macros>
+      <N>16</N>
+    </macros>
+    <file>Shortstat.bob</file>
+    <y>365</y>
+    <width>398</width>
+    <height>20</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_9</name>
+    <pv_name>$(P)LOLOstatus</pv_name>
+    <x>105</x>
+    <y>20</y>
+    <width>44</width>
+    <off_color>
+      <color name="OK" red="0" green="255" blue="0">
+      </color>
+    </off_color>
+    <on_label>LOLO</on_label>
+    <on_color>
+      <color name="MAJOR" red="255" green="0" blue="0">
+      </color>
+    </on_color>
+    <square>true</square>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_10</name>
+    <pv_name>$(P)LOstatus</pv_name>
+    <x>148</x>
+    <y>20</y>
+    <width>44</width>
+    <off_color>
+      <color name="OK" red="0" green="255" blue="0">
+      </color>
+    </off_color>
+    <on_label>LO</on_label>
+    <on_color>
+      <color name="MINOR" red="255" green="128" blue="0">
+      </color>
+    </on_color>
+    <square>true</square>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_11</name>
+    <pv_name>$(P)HIstatus</pv_name>
+    <x>189</x>
+    <y>20</y>
+    <width>44</width>
+    <off_color>
+      <color name="OK" red="0" green="255" blue="0">
+      </color>
+    </off_color>
+    <on_label>HI</on_label>
+    <on_color>
+      <color name="MINOR" red="255" green="128" blue="0">
+      </color>
+    </on_color>
+    <square>true</square>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_61</name>
+    <text>Global limit summary</text>
+    <x>105</x>
+    <width>170</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD_ITALIC" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>2</vertical_alignment>
+  </widget>
+</display>

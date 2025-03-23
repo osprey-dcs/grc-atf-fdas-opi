@@ -1,0 +1,5 @@
+PYTHONPATH=/opt/atf-engine \
+/opt/venv/bin/python -m atf_engine.convert \
+--fileConverter /opt/atf-previewer/build/fileReformatter2/FileReformatter2 \
+/data/2024/09/20240924-135040-REC/REC-20240924-135040.hdr \
+/data/2024/09/20240924-135040-REC/REC-20240924-135040-fix.hdr

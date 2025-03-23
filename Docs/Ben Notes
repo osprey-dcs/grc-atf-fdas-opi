@@ -1,0 +1,92 @@
+------Starting a record File------
+    ssh 192.168.83.100
+-password
+    atf
+-disable adc acquireing in CS-Studio
+    atf-acquire
+-data should start recording then with the timestamped filename
+-to stop acquisition after 60 seconds
+    ctrl+c
+        -after 60 seconds reenaled adc acquiring in CS-Studio
+-------Converting to UFF-------
+    ==Example: "$ time /home/atf/quartz-data/convert_hdr.sh REC-20240529-123633.hdr" ==
+-Double click the file Wrote: location and use the middle mouse to paste
+
+----------------------------------------------------------------------------------------------------
+
+05/23/2024
+    Purge 1
+        /data/2024/05/20240523-143933-REC/REC-20240523-143933.json          Delivered
+
+    Header Test 1
+        M8607
+        /data/2024/05/20240523-151124-REC/REC-20240523-151124.json          Delivered
+
+    AC0822
+        Single modulator M8607 test.
+        /data/2024/05/20240523-153404-REC/REC-20240523-153404.json          Delivered
+
+    Header Test 2
+        M8607
+        /data/2024/05/20240523-155151-REC/REC-20240523-155151.json          Delivered
+
+    Header Test 3
+        M8607
+        /data/2024/05/20240523-170623-REC/REC-20240523-170623.json          Delivered
+
+    AC0823
+        Single modulator test M6183 Wyle 1.
+        /data/2024/05/20240523-172927-REC/REC-20240523-172927.json          Delivered
+
+    AC0824
+        Single modulator test M6185 Wyle 3.
+        /data/2024/05/20240523-175608-REC/REC-20240523-175608.json          Delivered
+
+05/28/2024
+    Purge 1
+        REC-20240528-124028                                                 Delivered
+
+    AC0825
+        Single Modulator Test M6191 Wyle 9                                  errored
+        REC-20240528-130001
+
+    AC0826                                                                  Unknown
+        Single Modulator Test M6194 Wyle 12
+        REC-20240528-140756
+        $ time /home/atf/quartz-data/convert_hdr.sh
+
+    AC0827                                                                  Delivered
+        Single Modulator Test M8602
+        REC-20240528-145442
+            Vent File
+            REC-20240528-150457
+
+    AC0828                                                                  Delivered
+        ETA Abort Level Test
+        REC-20240528-160322
+
+05/29/2024
+    Purge1                                                                  Delivered
+        REC-20240528-095653                                                 Delivered
+
+    AC0829                                                                  Delivered
+        REC-20240529-103902                                                 Delivered
+
+    AC0830
+        ETA Empty Chamber Full Level
+        REC-20240529-123633
+
+    AC0831
+        ETA Empty Chamber Full Level
+        REC-20240529-133239
+
+6/04/2024
+    10 Minutes Sample Recording
+        Osprey Parameters 2024-05-28-1100-2
+        REC-20240604-143509
+
+6/20/2024
+    test recording                                                          Test
+        M8607 test
+        REC-20240620-100016
+

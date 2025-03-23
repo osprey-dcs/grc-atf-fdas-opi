@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2024-10-22 11:51:58 by atf-->
+<display version="2.0.0">
+  <name>Display</name>
+  <width>400</width>
+  <height>592</height>
+  <background_color>
+    <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+    </color>
+  </background_color>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>Mean</text>
+    <x>200</x>
+    <width>60</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>Max</text>
+    <x>270</x>
+    <width>60</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_2</name>
+    <text>Pk-Pk</text>
+    <x>340</x>
+    <width>60</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display</name>
+    <macros>
+      <P>$(P1)</P>
+      <N>$(N1)</N>
+    </macros>
+    <file>Channel details.bob</file>
+    <y>20</y>
+    <height>20</height>
+    <resize>2</resize>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="Visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0 &lt; 1">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://visibleChannels</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_2</name>
+    <macros>
+      <P>$(P2)</P>
+      <N>$(N2)</N>
+    </macros>
+    <file>Channel details.bob</file>
+    <y>43</y>
+    <height>20</height>
+    <resize>2</resize>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="Visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0 &lt; 2">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://visibleChannels</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_3</name>
+    <macros>
+      <P>$(P3)</P>
+      <N>$(N3)</N>
+    </macros>
+    <file>Channel details.bob</file>
+    <y>66</y>
+    <height>20</height>
+    <resize>2</resize>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="Visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0 &lt; 3">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://visibleChannels</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_4</name>
+    <macros>
+      <P>$(P4)</P>
+      <N>$(N4)</N>
+    </macros>
+    <file>Channel details.bob</file>
+    <y>89</y>
+    <height>20</height>
+    <resize>2</resize>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="Visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0 &lt; 4">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://visibleChannels</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_5</name>
+    <macros>
+      <P>$(P5)</P>
+      <N>$(N5)</N>
+    </macros>
+    <file>Channel details.bob</file>
+    <y>112</y>
+    <height>20</height>
+    <resize>2</resize>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="Visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0 &lt; 5">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://visibleChannels</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_6</name>
+    <macros>
+      <P>$(P6)</P>
+      <N>$(N6)</N>
+    </macros>
+    <file>Channel details.bob</file>
+    <y>135</y>
+    <height>20</height>
+    <resize>2</resize>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="Visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0 &lt; 5">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://visibleChannels</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_7</name>
+    <macros>
+      <P>$(P7)</P>
+      <N>$(N7)</N>
+    </macros>
+    <file>Channel details.bob</file>
+    <y>158</y>
+    <height>20</height>
+    <resize>2</resize>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="Visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0 &lt; 7">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://visibleChannels</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_8</name>
+    <macros>
+      <P>$(P8)</P>
+      <N>$(N8)</N>
+    </macros>
+    <file>Channel details.bob</file>
+    <y>181</y>
+    <height>20</height>
+    <resize>2</resize>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="Visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0 &lt; 8">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://visibleChannels</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_9</name>
+    <macros>
+      <P>$(P9)</P>
+      <N>$(N9)</N>
+    </macros>
+    <file>Channel details.bob</file>
+    <y>204</y>
+    <height>20</height>
+    <resize>2</resize>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="Visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0 &lt; 9">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://visibleChannels</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_10</name>
+    <macros>
+      <P>$(P10)</P>
+      <N>$(N10)</N>
+    </macros>
+    <file>Channel details.bob</file>
+    <y>227</y>
+    <height>20</height>
+    <resize>2</resize>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="Visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0 &lt; 10">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://visibleChannels</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_11</name>
+    <macros>
+      <P>$(P11)</P>
+      <N>$(N11)</N>
+    </macros>
+    <file>Channel details.bob</file>
+    <y>250</y>
+    <height>20</height>
+    <resize>2</resize>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="Visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0 &lt; 11">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://visibleChannels</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_12</name>
+    <macros>
+      <P>$(P12)</P>
+      <N>$(N12)</N>
+    </macros>
+    <file>Channel details.bob</file>
+    <y>273</y>
+    <height>20</height>
+    <resize>2</resize>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="Visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0 &lt; 12">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://visibleChannels</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_13</name>
+    <macros>
+      <P>$(P13)</P>
+      <N>$(N13)</N>
+    </macros>
+    <file>Channel details.bob</file>
+    <y>296</y>
+    <height>20</height>
+    <resize>2</resize>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="Visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0 &lt; 13">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://visibleChannels</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_14</name>
+    <macros>
+      <P>$(P14)</P>
+      <N>$(N14)</N>
+    </macros>
+    <file>Channel details.bob</file>
+    <y>319</y>
+    <height>20</height>
+    <resize>2</resize>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="Visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0 &lt; 14">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://visibleChannels</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_15</name>
+    <macros>
+      <P>$(P15)</P>
+      <N>$(N15)</N>
+    </macros>
+    <file>Channel details.bob</file>
+    <y>342</y>
+    <height>20</height>
+    <resize>2</resize>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="Visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0 &lt; 15">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://visibleChannels</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_16</name>
+    <macros>
+      <P>$(P16)</P>
+      <N>$(N16)</N>
+    </macros>
+    <file>Channel details.bob</file>
+    <y>365</y>
+    <height>20</height>
+    <resize>2</resize>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="Visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0 &lt; 16">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://visibleChannels</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_17</name>
+    <macros>
+      <P>$(P17)</P>
+      <N>$(N17)</N>
+    </macros>
+    <file>Channel details.bob</file>
+    <y>388</y>
+    <height>20</height>
+    <resize>2</resize>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="Visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0 &lt; 17">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://visibleChannels</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_18</name>
+    <macros>
+      <P>$(P18)</P>
+      <N>$(N18)</N>
+    </macros>
+    <file>Channel details.bob</file>
+    <y>411</y>
+    <height>20</height>
+    <resize>2</resize>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="Visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0 &lt; 18">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://visibleChannels</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_19</name>
+    <macros>
+      <P>$(P19)</P>
+      <N>$(N19)</N>
+    </macros>
+    <file>Channel details.bob</file>
+    <y>434</y>
+    <height>20</height>
+    <resize>2</resize>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="Visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0 &lt; 19">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://visibleChannels</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_20</name>
+    <macros>
+      <P>$(P20)</P>
+      <N>$(N20)</N>
+    </macros>
+    <file>Channel details.bob</file>
+    <y>457</y>
+    <height>20</height>
+    <resize>2</resize>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="Visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0 &lt; 20">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://visibleChannels</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_21</name>
+    <macros>
+      <P>$(P21)</P>
+      <N>$(N21)</N>
+    </macros>
+    <file>Channel details.bob</file>
+    <y>480</y>
+    <height>20</height>
+    <resize>2</resize>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="Visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0 &lt; 21">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://visibleChannels</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_22</name>
+    <macros>
+      <P>$(P22)</P>
+      <N>$(N22)</N>
+    </macros>
+    <file>Channel details.bob</file>
+    <y>503</y>
+    <height>20</height>
+    <resize>2</resize>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="Visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0 &lt; 22">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://visibleChannels</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_23</name>
+    <macros>
+      <P>$(P23)</P>
+      <N>$(N23)</N>
+    </macros>
+    <file>Channel details.bob</file>
+    <y>526</y>
+    <height>20</height>
+    <resize>2</resize>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="Visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0 &lt; 23">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://visibleChannels</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_24</name>
+    <macros>
+      <P>$(P24)</P>
+      <N>$(N24)</N>
+    </macros>
+    <file>Channel details.bob</file>
+    <y>549</y>
+    <height>20</height>
+    <resize>2</resize>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="Visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0 &lt; 24">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://visibleChannels</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_25</name>
+    <macros>
+      <P>$(P25)</P>
+      <N>$(N25)</N>
+    </macros>
+    <file>Channel details.bob</file>
+    <y>572</y>
+    <height>20</height>
+    <resize>2</resize>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="Visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0 &lt; 25">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://visibleChannels</pv_name>
+      </rule>
+    </rules>
+  </widget>
+</display>

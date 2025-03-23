@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-06-04 08:53:00 by atf-->
+<!--Saved on 2024-10-22 11:50:30 by atf-->
 <display version="2.0.0">
   <name>Header</name>
   <macros>
@@ -16,6 +16,10 @@
     <text>Current Filesize:</text>
     <x>1700</x>
     <width>210</width>
+    <foreground_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </foreground_color>
     <background_color>
       <color name="Transparent" red="255" green="255" blue="255" alpha="0">
       </color>
@@ -31,6 +35,10 @@
       <font family="Liberation Sans" style="BOLD" size="16.0">
       </font>
     </font>
+    <foreground_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </foreground_color>
     <background_color>
       <color name="Transparent" red="255" green="255" blue="255" alpha="0">
       </color>
@@ -44,7 +52,7 @@
     <name>Text Entry_9</name>
     <pv_name>FDAS:SA:FILE.VAL$</pv_name>
     <x>345</x>
-    <width>555</width>
+    <width>395</width>
     <background_color>
       <color name="Read_Background" red="240" green="240" blue="240">
       </color>
@@ -55,7 +63,7 @@
   <widget type="textentry" version="3.0.0">
     <name>Text Entry_10</name>
     <pv_name>pva://FDAS:CTRL:LastName-I</pv_name>
-    <x>1010</x>
+    <x>917</x>
     <width>227</width>
     <background_color>
       <color name="Read_Background" red="240" green="240" blue="240">
@@ -69,6 +77,10 @@
     <text>CCCR:</text>
     <x>290</x>
     <width>50</width>
+    <foreground_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </foreground_color>
     <background_color>
       <color name="Transparent" red="255" green="255" blue="255" alpha="0">
       </color>
@@ -79,8 +91,12 @@
   <widget type="label" version="2.0.0">
     <name>Label_1</name>
     <text>Filename:</text>
-    <x>927</x>
+    <x>834</x>
     <width>73</width>
+    <foreground_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </foreground_color>
     <background_color>
       <color name="Transparent" red="255" green="255" blue="255" alpha="0">
       </color>
@@ -91,11 +107,11 @@
   <widget type="led" version="2.0.0">
     <name>LED_2</name>
     <pv_name>FDAS:20:Record-I</pv_name>
-    <x>1470</x>
+    <x>1360</x>
     <width>108</width>
     <off_label>Not Recording</off_label>
     <off_color>
-      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      <color name="Read_Background" red="240" green="240" blue="240">
       </color>
     </off_color>
     <on_label>Recording</on_label>
@@ -109,11 +125,11 @@
   <widget type="led" version="2.0.0">
     <name>LED_3</name>
     <pv_name>FDAS:ACQ:enable</pv_name>
-    <x>1369</x>
+    <x>1259</x>
     <width>103</width>
     <off_label>Not Acquiring</off_label>
     <off_color>
-      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      <color name="Read_Background" red="240" green="240" blue="240">
       </color>
     </off_color>
     <on_label>Acquiring</on_label>
@@ -131,12 +147,16 @@
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_2</name>
     <pv_name>FDAS:ACQ:rate</pv_name>
-    <x>1578</x>
+    <x>750</x>
     <width>84</width>
     <font>
       <font family="Liberation Sans" style="BOLD_ITALIC" size="16.0">
       </font>
     </font>
+    <foreground_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </foreground_color>
     <background_color>
       <color name="Transparent" red="255" green="255" blue="255" alpha="0">
       </color>
@@ -147,7 +167,7 @@
   <widget type="led" version="2.0.0">
     <name>LED_4</name>
     <pv_name>FDAS:SA:READY</pv_name>
-    <x>1270</x>
+    <x>1161</x>
     <width>101</width>
     <off_label>Fault</off_label>
     <off_color>
@@ -170,6 +190,10 @@
       <font family="Liberation Sans" style="BOLD_ITALIC" size="16.0">
       </font>
     </font>
+    <foreground_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </foreground_color>
     <background_color>
       <color name="Transparent" red="255" green="255" blue="255" alpha="0">
       </color>
@@ -224,5 +248,27 @@
       </font>
     </font>
     <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_5</name>
+    <pv_name>alarm://nasa_alarms/PKT_DROPS.state</pv_name>
+    <x>1466</x>
+    <width>108</width>
+    <off_label>RX / TX</off_label>
+    <off_color>
+      <color name="OK" red="0" green="255" blue="0">
+      </color>
+    </off_color>
+    <on_label>Packet Loss</on_label>
+    <on_color>
+      <color name="STOP" red="255" green="0" blue="0">
+      </color>
+    </on_color>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <square>true</square>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
 </display>

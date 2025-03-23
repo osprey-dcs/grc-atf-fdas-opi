@@ -1,22 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-10-24 10:29:52 by atf-->
+<!--Saved on 2025-01-30 12:00:00 by atf-->
 <display version="2.0.0">
-  <name>Mic Checks</name>
+  <name>Channel Checkout</name>
   <macros>
     <EVG>FDAS:01:</EVG>
   </macros>
   <width>1910</width>
-  <height>929</height>
+  <height>810</height>
   <background_color>
     <color name="Text" red="0" green="0" blue="0">
     </color>
   </background_color>
+  <actions execute_as_one="true">
+    <action type="write_pv">
+      <pv_name>$(P)SA:Ch$(N):FFT:Run-Sel</pv_name>
+      <value>Run</value>
+      <description>WritePV</description>
+    </action>
+    <action type="write_pv">
+      <pv_name>$(YM)</pv_name>
+      <value>0</value>
+      <description>WritePV</description>
+    </action>
+  </actions>
   <widget type="xyplot" version="3.0.0">
     <name>X/Y Plot_1</name>
-    <x>320</x>
-    <y>100</y>
-    <width>1560</width>
-    <height>439</height>
+    <x>252</x>
+    <y>95</y>
+    <width>1616</width>
+    <height>460</height>
     <foreground_color>
       <color name="Read_Background" red="240" green="240" blue="240">
       </color>
@@ -26,11 +38,11 @@
       </color>
     </background_color>
     <x_axis>
-      <title>X</title>
+      <title>Time (sec)</title>
       <autoscale>false</autoscale>
       <log_scale>false</log_scale>
       <minimum>0.0</minimum>
-      <maximum>0.05</maximum>
+      <maximum>0.2</maximum>
       <show_grid>false</show_grid>
       <title_font>
         <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
@@ -47,9 +59,9 @@
         <title></title>
         <autoscale>true</autoscale>
         <log_scale>false</log_scale>
-        <minimum>-100.0</minimum>
-        <maximum>100.0</maximum>
-        <show_grid>false</show_grid>
+        <minimum>$(P)SA:Ch$(N):MIN</minimum>
+        <maximum>$(P)SA:Ch$(N):MAX</maximum>
+        <show_grid>true</show_grid>
         <title_font>
           <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
           </font>
@@ -75,7 +87,7 @@
         <axis>0</axis>
         <trace_type>1</trace_type>
         <color>
-          <color name="Write_Background" red="128" green="255" blue="255">
+          <color red="0" green="0" blue="255">
           </color>
         </color>
         <line_width>1</line_width>
@@ -86,12 +98,19 @@
       </trace>
     </traces>
   </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display</name>
+    <file>_acq_header.bob</file>
+    <width>1910</width>
+    <height>20</height>
+    <resize>2</resize>
+  </widget>
   <widget type="xyplot" version="3.0.0">
-    <name>X/Y Plot_2</name>
-    <x>320</x>
-    <y>599</y>
-    <width>1560</width>
-    <height>330</height>
+    <name>X/Y Plot_3</name>
+    <x>252</x>
+    <y>575</y>
+    <width>1616</width>
+    <height>345</height>
     <foreground_color>
       <color name="Read_Background" red="240" green="240" blue="240">
       </color>
@@ -101,11 +120,11 @@
       </color>
     </background_color>
     <x_axis>
-      <title>Hz</title>
-      <autoscale>true</autoscale>
-      <log_scale>true</log_scale>
-      <minimum>30.0</minimum>
-      <maximum>500.0</maximum>
+      <title>Frequency (HZ)</title>
+      <autoscale>false</autoscale>
+      <log_scale>false</log_scale>
+      <minimum>2.0</minimum>
+      <maximum>200.0</maximum>
       <show_grid>true</show_grid>
       <title_font>
         <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
@@ -150,7 +169,7 @@
         <axis>0</axis>
         <trace_type>1</trace_type>
         <color>
-          <color name="Write_Background" red="128" green="255" blue="255">
+          <color red="0" green="0" blue="255">
           </color>
         </color>
         <line_width>1</line_width>
@@ -164,39 +183,959 @@
   <widget type="choice" version="2.0.0">
     <name>Text Entry_7</name>
     <pv_name>$(P)SA:Ch$(N):FFT:Run-Sel</pv_name>
-    <x>857</x>
-    <y>564</y>
-    <width>123</width>
-    <height>25</height>
-    <background_color>
-      <color name="Write_Background" red="128" green="255" blue="255">
-      </color>
-    </background_color>
-    <horizontal_alignment>0</horizontal_alignment>
-    <items>
-      <item>Item 1</item>
-      <item>Item 2</item>
-    </items>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_7</name>
-    <text>FFT Enable</text>
-    <x>857</x>
-    <y>539</y>
-    <width>123</width>
+    <x>1318</x>
+    <y>38</y>
+    <width>130</width>
     <height>25</height>
     <foreground_color>
       <color name="Read_Background" red="240" green="240" blue="240">
       </color>
     </foreground_color>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>2</vertical_alignment>
+    <background_color>
+      <color name="Write_Background" red="128" green="255" blue="255">
+      </color>
+    </background_color>
+    <horizontal_alignment>0</horizontal_alignment>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(P)SA:Ch$(N):FFT:Run-Sel</pv_name>
+        <value>Run</value>
+        <description>WritePV</description>
+      </action>
+      <action type="write_pv">
+        <pv_name>$(P)SA:Ch$(N):FFT:Run-Sel</pv_name>
+        <value>Item 1</value>
+        <description>WritePV</description>
+      </action>
+    </actions>
+    <items>
+      <item>Item 1</item>
+      <item>Item 2</item>
+    </items>
+  </widget>
+  <widget type="xyplot" version="3.0.0">
+    <name>X/Y Plot_2</name>
+    <x>1480</x>
+    <y>38</y>
+    <width>380</width>
+    <height>237</height>
+    <foreground_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <show_legend>false</show_legend>
+    <x_axis>
+      <title></title>
+      <autoscale>false</autoscale>
+      <log_scale>false</log_scale>
+      <minimum>0.0</minimum>
+      <maximum>0.02</maximum>
+      <show_grid>false</show_grid>
+      <title_font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </title_font>
+      <scale_font>
+        <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+        </font>
+      </scale_font>
+      <visible>true</visible>
+    </x_axis>
+    <y_axes>
+      <y_axis>
+        <title></title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>$(P)SA:Ch$(N):MIN</minimum>
+        <maximum>$(P)SA:Ch$(N):MAX</maximum>
+        <show_grid>false</show_grid>
+        <title_font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </title_font>
+        <scale_font>
+          <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+          </font>
+        </scale_font>
+        <on_right>true</on_right>
+        <visible>false</visible>
+        <color>
+          <color name="Read_Background" red="240" green="240" blue="240">
+          </color>
+        </color>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name>$(traces[0].y_pv)</name>
+        <x_pv>$(P)SA:T</x_pv>
+        <y_pv>$(P)SA:Ch$(N)</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="STOP" red="255" green="0" blue="0">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Sel Chas 1_1</name>
+    <actions>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <P>FDAS:01:</P>
+        </macros>
+        <target>replace</target>
+        <description>Chassis 01</description>
+      </action>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <P>FDAS:02:</P>
+        </macros>
+        <target>replace</target>
+        <description>Chassis 02</description>
+      </action>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <P>FDAS:03:</P>
+        </macros>
+        <target>replace</target>
+        <description>Chassis 03</description>
+      </action>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <P>FDAS:04:</P>
+        </macros>
+        <target>replace</target>
+        <description>Chassis 04</description>
+      </action>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <P>FDAS:05:</P>
+        </macros>
+        <target>replace</target>
+        <description>Chassis 05</description>
+      </action>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <P>FDAS:06:</P>
+        </macros>
+        <target>replace</target>
+        <description>Chassis 06</description>
+      </action>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <P>FDAS:07:</P>
+        </macros>
+        <target>replace</target>
+        <description>Chassis 07</description>
+      </action>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <P>FDAS:08:</P>
+        </macros>
+        <target>replace</target>
+        <description>Chassis 08</description>
+      </action>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <P>FDAS:09:</P>
+        </macros>
+        <target>replace</target>
+        <description>Chassis 09</description>
+      </action>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <P>FDAS:10:</P>
+        </macros>
+        <target>replace</target>
+        <description>Chassis 10</description>
+      </action>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <P>FDAS:11:</P>
+        </macros>
+        <target>replace</target>
+        <description>Chassis 11</description>
+      </action>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <P>FDAS:12:</P>
+        </macros>
+        <target>replace</target>
+        <description>Chassis 12</description>
+      </action>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <P>FDAS:13:</P>
+        </macros>
+        <target>replace</target>
+        <description>Chassis 13</description>
+      </action>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <P>FDAS:14:</P>
+        </macros>
+        <target>replace</target>
+        <description>Chassis 14</description>
+      </action>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <P>FDAS:15:</P>
+        </macros>
+        <target>replace</target>
+        <description>Chassis 15</description>
+      </action>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <P>FDAS:16:</P>
+        </macros>
+        <target>replace</target>
+        <description>Chassis 16</description>
+      </action>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <P>FDAS:17:</P>
+        </macros>
+        <target>replace</target>
+        <description>Chassis 17</description>
+      </action>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <P>FDAS:18:</P>
+        </macros>
+        <target>replace</target>
+        <description>Chassis 18</description>
+      </action>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <P>FDAS:19:</P>
+        </macros>
+        <target>replace</target>
+        <description>Chassis 19</description>
+      </action>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <P>FDAS:20:</P>
+        </macros>
+        <target>replace</target>
+        <description>Chassis 20</description>
+      </action>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <P>FDAS:21:</P>
+        </macros>
+        <target>replace</target>
+        <description>Chassis 21</description>
+      </action>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <P>FDAS:22:</P>
+        </macros>
+        <target>replace</target>
+        <description>Chassis 22</description>
+      </action>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <P>FDAS:23:</P>
+        </macros>
+        <target>replace</target>
+        <description>Chassis 23</description>
+      </action>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <P>FDAS:24:</P>
+        </macros>
+        <target>replace</target>
+        <description>Chassis 24</description>
+      </action>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <P>FDAS:25:</P>
+        </macros>
+        <target>replace</target>
+        <description>Chassis 25</description>
+      </action>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <P>FDAS:26:</P>
+        </macros>
+        <target>replace</target>
+        <description>Chassis 26</description>
+      </action>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <P>FDAS:27:</P>
+        </macros>
+        <target>replace</target>
+        <description>Chassis 27</description>
+      </action>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <P>FDAS:28:</P>
+        </macros>
+        <target>replace</target>
+        <description>Chassis 28</description>
+      </action>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <P>FDAS:29:</P>
+        </macros>
+        <target>replace</target>
+        <description>Chassis 29</description>
+      </action>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <P>FDAS:30:</P>
+        </macros>
+        <target>replace</target>
+        <description>Chassis 30</description>
+      </action>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <P>FDAS:31:</P>
+        </macros>
+        <target>replace</target>
+        <description>Chassis 31</description>
+      </action>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <P>FDAS:32:</P>
+        </macros>
+        <target>replace</target>
+        <description>Chassis 32</description>
+      </action>
+    </actions>
+    <text>$(P)</text>
+    <y>50</y>
+    <width>70</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Sel Chan 19</name>
+    <actions>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <N>19</N>
+        </macros>
+        <target>replace</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>Chan 19</text>
+    <y>435</y>
+    <width>70</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Sel Chan 20</name>
+    <actions>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <N>20</N>
+        </macros>
+        <target>replace</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>Chan 20</text>
+    <y>455</y>
+    <width>70</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Sel Chan 21</name>
+    <actions>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <N>21</N>
+        </macros>
+        <target>replace</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>Chan 21</text>
+    <y>475</y>
+    <width>70</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Sel Chan 22</name>
+    <actions>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <N>22</N>
+        </macros>
+        <target>replace</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>Chan 22</text>
+    <y>495</y>
+    <width>70</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Sel Chan 23</name>
+    <actions>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <N>23</N>
+        </macros>
+        <target>replace</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>Chan 23</text>
+    <y>515</y>
+    <width>70</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Sel Chan 24</name>
+    <actions>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <N>24</N>
+        </macros>
+        <target>replace</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>Chan 24</text>
+    <y>535</y>
+    <width>70</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Sel Chan 25</name>
+    <actions>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <N>25</N>
+        </macros>
+        <target>replace</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>Chan 25</text>
+    <y>555</y>
+    <width>70</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Sel Chan 26</name>
+    <actions>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <N>26</N>
+        </macros>
+        <target>replace</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>Chan 26</text>
+    <y>575</y>
+    <width>70</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Sel Chan 27</name>
+    <actions>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <N>27</N>
+        </macros>
+        <target>replace</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>Chan 27</text>
+    <y>595</y>
+    <width>70</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Sel Chan 28</name>
+    <actions>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <N>28</N>
+        </macros>
+        <target>replace</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>Chan 28</text>
+    <y>615</y>
+    <width>70</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Sel Chan 29</name>
+    <actions>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <N>29</N>
+        </macros>
+        <target>replace</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>Chan 29</text>
+    <y>635</y>
+    <width>70</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Sel Chan 30</name>
+    <actions>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <N>30</N>
+        </macros>
+        <target>replace</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>Chan 30</text>
+    <y>655</y>
+    <width>70</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Sel Chan 31</name>
+    <actions>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <N>31</N>
+        </macros>
+        <target>replace</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>Chan 31</text>
+    <y>675</y>
+    <width>70</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Sel Chan 32</name>
+    <actions>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <N>32</N>
+        </macros>
+        <target>replace</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>Chan 32</text>
+    <y>695</y>
+    <width>70</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Sel Chan 2</name>
+    <actions>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <N>02</N>
+        </macros>
+        <target>replace</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>Chan 2</text>
+    <y>95</y>
+    <width>70</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Sel Chan 3</name>
+    <actions>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <N>03</N>
+        </macros>
+        <target>replace</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>Chan 3</text>
+    <y>115</y>
+    <width>70</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Sel Chan 4</name>
+    <actions>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <N>04</N>
+        </macros>
+        <target>replace</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>Chan 4</text>
+    <y>135</y>
+    <width>70</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Sel Chan 5</name>
+    <actions>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <N>05</N>
+        </macros>
+        <target>replace</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>Chan 5</text>
+    <y>155</y>
+    <width>70</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Sel Chan 6</name>
+    <actions>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <N>06</N>
+        </macros>
+        <target>replace</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>Chan 6</text>
+    <y>175</y>
+    <width>70</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Sel Chan 7</name>
+    <actions>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <N>07</N>
+        </macros>
+        <target>replace</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>Chan 7</text>
+    <y>195</y>
+    <width>70</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Sel Chan 8</name>
+    <actions>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <N>08</N>
+        </macros>
+        <target>replace</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>Chan 8</text>
+    <y>215</y>
+    <width>70</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Sel Chan 9</name>
+    <actions>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <N>09</N>
+        </macros>
+        <target>replace</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>Chan 9</text>
+    <y>235</y>
+    <width>70</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Sel Chan 10</name>
+    <actions>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <N>10</N>
+        </macros>
+        <target>replace</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>Chan 10</text>
+    <y>255</y>
+    <width>70</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Sel Chan 11</name>
+    <actions>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <N>11</N>
+        </macros>
+        <target>replace</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>Chan 11</text>
+    <y>275</y>
+    <width>70</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Sel Chan 12</name>
+    <actions>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <N>12</N>
+        </macros>
+        <target>replace</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>Chan 12</text>
+    <y>295</y>
+    <width>70</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Sel Chan 13</name>
+    <actions>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <N>13</N>
+        </macros>
+        <target>replace</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>Chan 13</text>
+    <y>315</y>
+    <width>70</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Sel Chan 14</name>
+    <actions>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <N>14</N>
+        </macros>
+        <target>replace</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>Chan 14</text>
+    <y>335</y>
+    <width>70</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Sel Chan 15</name>
+    <actions>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <N>15</N>
+        </macros>
+        <target>replace</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>Chan 15</text>
+    <y>355</y>
+    <width>70</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Sel Chan 16</name>
+    <actions>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <N>16</N>
+        </macros>
+        <target>replace</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>Chan 16</text>
+    <y>375</y>
+    <width>70</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Sel Chan 17</name>
+    <actions>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <N>17</N>
+        </macros>
+        <target>replace</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>Chan 17</text>
+    <y>395</y>
+    <width>70</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Sel Chan 18</name>
+    <actions>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <N>18</N>
+        </macros>
+        <target>replace</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>Chan 18</text>
+    <y>415</y>
+    <width>70</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Sel Chan 1</name>
+    <actions>
+      <action type="open_display">
+        <file>Channel Checkout.bob</file>
+        <macros>
+          <N>01</N>
+        </macros>
+        <target>replace</target>
+        <description>Chan 1</description>
+      </action>
+    </actions>
+    <y>76</y>
+    <width>70</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Entry_11</name>
     <pv_name>$(P)SA:Ch$(N):NAME.VAL$</pv_name>
-    <x>390</x>
-    <y>30</y>
+    <x>220</x>
+    <y>45</y>
     <width>250</width>
     <height>30</height>
     <foreground_color>
@@ -212,10 +1151,10 @@
     <wrap_words>false</wrap_words>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_9</name>
+    <name>Label_15</name>
     <text>Min</text>
-    <x>730</x>
-    <y>36</y>
+    <x>542</x>
+    <y>26</y>
     <width>50</width>
     <height>19</height>
     <foreground_color>
@@ -226,10 +1165,10 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_10</name>
+    <name>Label_16</name>
     <text>Mean</text>
-    <x>797</x>
-    <y>35</y>
+    <x>609</x>
+    <y>25</y>
     <width>60</width>
     <foreground_color>
       <color name="Read_Background" red="240" green="240" blue="240">
@@ -239,10 +1178,10 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_11</name>
+    <name>Label_17</name>
     <text>Std</text>
-    <x>867</x>
-    <y>35</y>
+    <x>679</x>
+    <y>25</y>
     <width>65</width>
     <foreground_color>
       <color name="Read_Background" red="240" green="240" blue="240">
@@ -252,10 +1191,10 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_12</name>
+    <name>Label_18</name>
     <text>Max</text>
-    <x>950</x>
-    <y>35</y>
+    <x>762</x>
+    <y>25</y>
     <width>52</width>
     <foreground_color>
       <color name="Read_Background" red="240" green="240" blue="240">
@@ -265,125 +1204,56 @@
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_31</name>
+    <name>Label_37</name>
     <text>Cnt</text>
-    <x>1012</x>
-    <y>35</y>
+    <x>824</x>
+    <y>25</y>
     <width>60</width>
     <foreground_color>
       <color name="Read_Background" red="240" green="240" blue="240">
       </color>
     </foreground_color>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>Embedded Display</name>
-    <file>_acq_header.bob</file>
-    <width>1910</width>
-    <height>20</height>
-    <resize>2</resize>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
-    <pv_name>=20*log10('$(P)SA:Ch$(N):Std-I'/0.00002)</pv_name>
-    <x>390</x>
-    <y>60</y>
-    <width>50</width>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
-      </font>
-    </font>
-    <background_color>
-      <color name="Write_Background" red="128" green="255" blue="255">
-      </color>
-    </background_color>
-    <format>1</format>
-    <precision>1</precision>
-    <horizontal_alignment>2</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_13</name>
-    <text>(SPL, reference 20µPa)</text>
-    <x>470</x>
-    <y>60</y>
-    <width>170</width>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
-      </font>
-    </font>
-    <foreground_color>
-      <color name="Read_Background" red="240" green="240" blue="240">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="Write_Background" red="128" green="255" blue="255">
-      </color>
-    </background_color>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_6</name>
-    <pv_name>=-'$(P)SA:Ch$(N):Min-I'+'$(P)SA:Ch$(N):Max-I'</pv_name>
-    <x>640</x>
-    <y>55</y>
-    <width>73</width>
-    <height>25</height>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_33</name>
-    <text>Peak-Peak</text>
-    <x>640</x>
-    <y>35</y>
-    <width>73</width>
-    <foreground_color>
-      <color name="Read_Background" red="240" green="240" blue="240">
-      </color>
-    </foreground_color>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_7</name>
-    <pv_name>$(P)SA:Ch$(N):Min-I</pv_name>
-    <x>722</x>
-    <y>55</y>
-    <width>60</width>
-    <height>25</height>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_40</name>
-    <pv_name>$(P)SA:Ch$(N):Mean-I</pv_name>
-    <x>797</x>
-    <y>55</y>
+    <pv_name>=-'$(P)SA:Ch$(N):Min-I'+'$(P)SA:Ch$(N):Max-I'</pv_name>
+    <x>451</x>
+    <y>45</y>
+    <width>73</width>
+    <height>25</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_39</name>
+    <text>Peak-Peak</text>
+    <x>452</x>
+    <y>25</y>
+    <width>73</width>
+    <foreground_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_41</name>
+    <pv_name>$(P)SA:Ch$(N):Min-I</pv_name>
+    <x>538</x>
+    <y>45</y>
     <width>60</width>
     <height>25</height>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update_41</name>
-    <pv_name>$(P)SA:Ch$(N):Std-I</pv_name>
-    <x>867</x>
-    <y>55</y>
-    <width>65</width>
-    <height>25</height>
-    <format>3</format>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
     <name>Text Update_42</name>
-    <pv_name>$(P)SA:Ch$(N):Max-I</pv_name>
-    <x>942</x>
-    <y>55</y>
+    <pv_name>$(P)SA:Ch$(N):Mean-I</pv_name>
+    <x>613</x>
+    <y>45</y>
     <width>60</width>
     <height>25</height>
     <horizontal_alignment>1</horizontal_alignment>
@@ -391,19 +1261,42 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_43</name>
+    <pv_name>$(P)SA:Ch$(N):Std-I</pv_name>
+    <x>683</x>
+    <y>45</y>
+    <width>65</width>
+    <height>25</height>
+    <format>3</format>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_44</name>
+    <pv_name>$(P)SA:Ch$(N):Max-I</pv_name>
+    <x>758</x>
+    <y>45</y>
+    <width>60</width>
+    <height>25</height>
+    <format>1</format>
+    <precision>-4</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_45</name>
     <pv_name>$(P)SA:Ch$(N):Cnt-I</pv_name>
-    <x>1012</x>
-    <y>55</y>
+    <x>828</x>
+    <y>45</y>
     <width>60</width>
     <height>25</height>
     <horizontal_alignment>1</horizontal_alignment>
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="led" version="2.0.0">
-    <name>LED_4</name>
+    <name>LED_8</name>
     <pv_name>$(P)ACQ:HIHIstatus:$(N)</pv_name>
-    <x>1162</x>
-    <y>55</y>
+    <x>992</x>
+    <y>45</y>
     <off_color>
       <color name="OK" red="0" green="255" blue="0">
       </color>
@@ -415,10 +1308,10 @@
     <square>true</square>
   </widget>
   <widget type="led" version="2.0.0">
-    <name>LED_5</name>
+    <name>LED_9</name>
     <pv_name>$(P)ACQ:HIstatus:$(N)</pv_name>
-    <x>1137</x>
-    <y>55</y>
+    <x>967</x>
+    <y>45</y>
     <off_color>
       <color name="OK" red="0" green="255" blue="0">
       </color>
@@ -430,10 +1323,10 @@
     <square>true</square>
   </widget>
   <widget type="led" version="2.0.0">
-    <name>LED_6</name>
+    <name>LED_10</name>
     <pv_name>$(P)ACQ:LOstatus:$(N)</pv_name>
-    <x>1112</x>
-    <y>55</y>
+    <x>942</x>
+    <y>45</y>
     <off_color>
       <color name="OK" red="0" green="255" blue="0">
       </color>
@@ -445,10 +1338,10 @@
     <square>true</square>
   </widget>
   <widget type="led" version="2.0.0">
-    <name>LED_7</name>
+    <name>LED_11</name>
     <pv_name>$(P)ACQ:LOLOstatus:$(N)</pv_name>
-    <x>1087</x>
-    <y>55</y>
+    <x>917</x>
+    <y>45</y>
     <off_color>
       <color name="OK" red="0" green="255" blue="0">
       </color>
@@ -460,49 +1353,10 @@
     <square>true</square>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Entry_14</name>
-    <pv_name>$(P)SA:Ch$(N):EGU</pv_name>
-    <x>300</x>
-    <y>195</y>
-    <width>20</width>
-    <height>80</height>
-    <font>
-      <font family="Liberation Sans" style="BOLD" size="16.0">
-      </font>
-    </font>
-    <background_color>
-      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
-      </color>
-    </background_color>
-    <format>3</format>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <rotation_step>1</rotation_step>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_23</name>
-    <text>EGU = </text>
-    <x>300</x>
-    <y>275</y>
-    <width>20</width>
-    <height>60</height>
-    <font>
-      <font family="Liberation Sans" style="BOLD" size="16.0">
-      </font>
-    </font>
-    <background_color>
-      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
-      </color>
-    </background_color>
-    <horizontal_alignment>2</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <rotation_step>1</rotation_step>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_1</name>
+    <name>Text Update_46</name>
     <pv_name>$(P)SA:Ch$(N):NAME.VAL$[14:-1]</pv_name>
-    <x>260</x>
-    <y>35</y>
+    <x>90</x>
+    <y>25</y>
     <width>130</width>
     <height>41</height>
     <font>
@@ -519,950 +1373,13 @@
     </background_color>
     <format>6</format>
   </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Sel Chas 1_1</name>
-    <actions>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <P>FDAS:01:</P>
-        </macros>
-        <target>replace</target>
-        <description>Chassis 01</description>
-      </action>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <P>FDAS:02:</P>
-        </macros>
-        <target>replace</target>
-        <description>Chassis 02</description>
-      </action>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <P>FDAS:03:</P>
-        </macros>
-        <target>replace</target>
-        <description>Chassis 03</description>
-      </action>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <P>FDAS:04:</P>
-        </macros>
-        <target>replace</target>
-        <description>Chassis 04</description>
-      </action>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <P>FDAS:05:</P>
-        </macros>
-        <target>replace</target>
-        <description>Chassis 05</description>
-      </action>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <P>FDAS:06:</P>
-        </macros>
-        <target>replace</target>
-        <description>Chassis 06</description>
-      </action>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <P>FDAS:07:</P>
-        </macros>
-        <target>replace</target>
-        <description>Chassis 07</description>
-      </action>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <P>FDAS:08:</P>
-        </macros>
-        <target>replace</target>
-        <description>Chassis 08</description>
-      </action>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <P>FDAS:09:</P>
-        </macros>
-        <target>replace</target>
-        <description>Chassis 09</description>
-      </action>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <P>FDAS:10:</P>
-        </macros>
-        <target>replace</target>
-        <description>Chassis 10</description>
-      </action>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <P>FDAS:11:</P>
-        </macros>
-        <target>replace</target>
-        <description>Chassis 11</description>
-      </action>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <P>FDAS:12:</P>
-        </macros>
-        <target>replace</target>
-        <description>Chassis 12</description>
-      </action>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <P>FDAS:13:</P>
-        </macros>
-        <target>replace</target>
-        <description>Chassis 13</description>
-      </action>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <P>FDAS:14:</P>
-        </macros>
-        <target>replace</target>
-        <description>Chassis 14</description>
-      </action>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <P>FDAS:15:</P>
-        </macros>
-        <target>replace</target>
-        <description>Chassis 15</description>
-      </action>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <P>FDAS:16:</P>
-        </macros>
-        <target>replace</target>
-        <description>Chassis 16</description>
-      </action>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <P>FDAS:17:</P>
-        </macros>
-        <target>replace</target>
-        <description>Chassis 17</description>
-      </action>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <P>FDAS:18:</P>
-        </macros>
-        <target>replace</target>
-        <description>Chassis 18</description>
-      </action>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <P>FDAS:19:</P>
-        </macros>
-        <target>replace</target>
-        <description>Chassis 19</description>
-      </action>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <P>FDAS:20:</P>
-        </macros>
-        <target>replace</target>
-        <description>Chassis 20</description>
-      </action>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <P>FDAS:21:</P>
-        </macros>
-        <target>replace</target>
-        <description>Chassis 21</description>
-      </action>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <P>FDAS:22:</P>
-        </macros>
-        <target>replace</target>
-        <description>Chassis 22</description>
-      </action>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <P>FDAS:23:</P>
-        </macros>
-        <target>replace</target>
-        <description>Chassis 23</description>
-      </action>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <P>FDAS:24:</P>
-        </macros>
-        <target>replace</target>
-        <description>Chassis 24</description>
-      </action>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <P>FDAS:25:</P>
-        </macros>
-        <target>replace</target>
-        <description>Chassis 25</description>
-      </action>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <P>FDAS:26:</P>
-        </macros>
-        <target>replace</target>
-        <description>Chassis 26</description>
-      </action>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <P>FDAS:27:</P>
-        </macros>
-        <target>replace</target>
-        <description>Chassis 27</description>
-      </action>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <P>FDAS:28:</P>
-        </macros>
-        <target>replace</target>
-        <description>Chassis 28</description>
-      </action>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <P>FDAS:29:</P>
-        </macros>
-        <target>replace</target>
-        <description>Chassis 29</description>
-      </action>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <P>FDAS:30:</P>
-        </macros>
-        <target>replace</target>
-        <description>Chassis 30</description>
-      </action>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <P>FDAS:31:</P>
-        </macros>
-        <target>replace</target>
-        <description>Chassis 31</description>
-      </action>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <P>FDAS:32:</P>
-        </macros>
-        <target>replace</target>
-        <description>Chassis 32</description>
-      </action>
-    </actions>
-    <text>$(P)</text>
-    <x>10</x>
-    <y>76</y>
-    <width>70</width>
-    <height>20</height>
-    <tooltip>$(actions)</tooltip>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Sel Chan 19_1</name>
-    <actions>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <N>19</N>
-        </macros>
-        <target>replace</target>
-        <description>Open Display</description>
-      </action>
-    </actions>
-    <text>Chan 19</text>
-    <x>10</x>
-    <y>461</y>
-    <width>70</width>
-    <height>20</height>
-    <tooltip>$(actions)</tooltip>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Sel Chan 20_1</name>
-    <actions>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <N>20</N>
-        </macros>
-        <target>replace</target>
-        <description>Open Display</description>
-      </action>
-    </actions>
-    <text>Chan 20</text>
-    <x>10</x>
-    <y>481</y>
-    <width>70</width>
-    <height>20</height>
-    <tooltip>$(actions)</tooltip>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Sel Chan 21_1</name>
-    <actions>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <N>21</N>
-        </macros>
-        <target>replace</target>
-        <description>Open Display</description>
-      </action>
-    </actions>
-    <text>Chan 21</text>
-    <x>10</x>
-    <y>501</y>
-    <width>70</width>
-    <height>20</height>
-    <tooltip>$(actions)</tooltip>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Sel Chan 22_1</name>
-    <actions>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <N>22</N>
-        </macros>
-        <target>replace</target>
-        <description>Open Display</description>
-      </action>
-    </actions>
-    <text>Chan 22</text>
-    <x>10</x>
-    <y>521</y>
-    <width>70</width>
-    <height>20</height>
-    <tooltip>$(actions)</tooltip>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Sel Chan 23_1</name>
-    <actions>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <N>23</N>
-        </macros>
-        <target>replace</target>
-        <description>Open Display</description>
-      </action>
-    </actions>
-    <text>Chan 23</text>
-    <x>10</x>
-    <y>541</y>
-    <width>70</width>
-    <height>20</height>
-    <tooltip>$(actions)</tooltip>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Sel Chan 24_1</name>
-    <actions>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <N>24</N>
-        </macros>
-        <target>replace</target>
-        <description>Open Display</description>
-      </action>
-    </actions>
-    <text>Chan 24</text>
-    <x>10</x>
-    <y>561</y>
-    <width>70</width>
-    <height>20</height>
-    <tooltip>$(actions)</tooltip>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Sel Chan 25_1</name>
-    <actions>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <N>25</N>
-        </macros>
-        <target>replace</target>
-        <description>Open Display</description>
-      </action>
-    </actions>
-    <text>Chan 25</text>
-    <x>10</x>
-    <y>581</y>
-    <width>70</width>
-    <height>20</height>
-    <tooltip>$(actions)</tooltip>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Sel Chan 26_1</name>
-    <actions>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <N>26</N>
-        </macros>
-        <target>replace</target>
-        <description>Open Display</description>
-      </action>
-    </actions>
-    <text>Chan 26</text>
-    <x>10</x>
-    <y>601</y>
-    <width>70</width>
-    <height>20</height>
-    <tooltip>$(actions)</tooltip>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Sel Chan 27_1</name>
-    <actions>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <N>27</N>
-        </macros>
-        <target>replace</target>
-        <description>Open Display</description>
-      </action>
-    </actions>
-    <text>Chan 27</text>
-    <x>10</x>
-    <y>621</y>
-    <width>70</width>
-    <height>20</height>
-    <tooltip>$(actions)</tooltip>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Sel Chan 28_1</name>
-    <actions>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <N>28</N>
-        </macros>
-        <target>replace</target>
-        <description>Open Display</description>
-      </action>
-    </actions>
-    <text>Chan 28</text>
-    <x>10</x>
-    <y>641</y>
-    <width>70</width>
-    <height>20</height>
-    <tooltip>$(actions)</tooltip>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Sel Chan 29_1</name>
-    <actions>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <N>29</N>
-        </macros>
-        <target>replace</target>
-        <description>Open Display</description>
-      </action>
-    </actions>
-    <text>Chan 29</text>
-    <x>10</x>
-    <y>661</y>
-    <width>70</width>
-    <height>20</height>
-    <tooltip>$(actions)</tooltip>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Sel Chan 30_1</name>
-    <actions>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <N>30</N>
-        </macros>
-        <target>replace</target>
-        <description>Open Display</description>
-      </action>
-    </actions>
-    <text>Chan 30</text>
-    <x>10</x>
-    <y>681</y>
-    <width>70</width>
-    <height>20</height>
-    <tooltip>$(actions)</tooltip>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Sel Chan 31_1</name>
-    <actions>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <N>31</N>
-        </macros>
-        <target>replace</target>
-        <description>Open Display</description>
-      </action>
-    </actions>
-    <text>Chan 31</text>
-    <x>10</x>
-    <y>701</y>
-    <width>70</width>
-    <height>20</height>
-    <tooltip>$(actions)</tooltip>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Sel Chan 32_1</name>
-    <actions>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <N>32</N>
-        </macros>
-        <target>replace</target>
-        <description>Open Display</description>
-      </action>
-    </actions>
-    <text>Chan 32</text>
-    <x>10</x>
-    <y>721</y>
-    <width>70</width>
-    <height>20</height>
-    <tooltip>$(actions)</tooltip>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Sel Chan 2_1</name>
-    <actions>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <N>02</N>
-        </macros>
-        <target>replace</target>
-        <description>Open Display</description>
-      </action>
-    </actions>
-    <text>Chan 2</text>
-    <x>10</x>
-    <y>121</y>
-    <width>70</width>
-    <height>20</height>
-    <tooltip>$(actions)</tooltip>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Sel Chan 3_1</name>
-    <actions>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <N>03</N>
-        </macros>
-        <target>replace</target>
-        <description>Open Display</description>
-      </action>
-    </actions>
-    <text>Chan 3</text>
-    <x>10</x>
-    <y>141</y>
-    <width>70</width>
-    <height>20</height>
-    <tooltip>$(actions)</tooltip>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Sel Chan 4_1</name>
-    <actions>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <N>04</N>
-        </macros>
-        <target>replace</target>
-        <description>Open Display</description>
-      </action>
-    </actions>
-    <text>Chan 4</text>
-    <x>10</x>
-    <y>161</y>
-    <width>70</width>
-    <height>20</height>
-    <tooltip>$(actions)</tooltip>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Sel Chan 5_1</name>
-    <actions>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <N>05</N>
-        </macros>
-        <target>replace</target>
-        <description>Open Display</description>
-      </action>
-    </actions>
-    <text>Chan 5</text>
-    <x>10</x>
-    <y>181</y>
-    <width>70</width>
-    <height>20</height>
-    <tooltip>$(actions)</tooltip>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Sel Chan 6_1</name>
-    <actions>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <N>06</N>
-        </macros>
-        <target>replace</target>
-        <description>Open Display</description>
-      </action>
-    </actions>
-    <text>Chan 6</text>
-    <x>10</x>
-    <y>201</y>
-    <width>70</width>
-    <height>20</height>
-    <tooltip>$(actions)</tooltip>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Sel Chan 7_1</name>
-    <actions>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <N>07</N>
-        </macros>
-        <target>replace</target>
-        <description>Open Display</description>
-      </action>
-    </actions>
-    <text>Chan 7</text>
-    <x>10</x>
-    <y>221</y>
-    <width>70</width>
-    <height>20</height>
-    <tooltip>$(actions)</tooltip>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Sel Chan 8_1</name>
-    <actions>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <N>08</N>
-        </macros>
-        <target>replace</target>
-        <description>Open Display</description>
-      </action>
-    </actions>
-    <text>Chan 8</text>
-    <x>10</x>
-    <y>241</y>
-    <width>70</width>
-    <height>20</height>
-    <tooltip>$(actions)</tooltip>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Sel Chan 9_1</name>
-    <actions>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <N>09</N>
-        </macros>
-        <target>replace</target>
-        <description>Open Display</description>
-      </action>
-    </actions>
-    <text>Chan 9</text>
-    <x>10</x>
-    <y>261</y>
-    <width>70</width>
-    <height>20</height>
-    <tooltip>$(actions)</tooltip>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Sel Chan 10_1</name>
-    <actions>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <N>10</N>
-        </macros>
-        <target>replace</target>
-        <description>Open Display</description>
-      </action>
-    </actions>
-    <text>Chan 10</text>
-    <x>10</x>
-    <y>281</y>
-    <width>70</width>
-    <height>20</height>
-    <tooltip>$(actions)</tooltip>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Sel Chan 11_1</name>
-    <actions>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <N>11</N>
-        </macros>
-        <target>replace</target>
-        <description>Open Display</description>
-      </action>
-    </actions>
-    <text>Chan 11</text>
-    <x>10</x>
-    <y>301</y>
-    <width>70</width>
-    <height>20</height>
-    <tooltip>$(actions)</tooltip>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Sel Chan 12_1</name>
-    <actions>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <N>12</N>
-        </macros>
-        <target>replace</target>
-        <description>Open Display</description>
-      </action>
-    </actions>
-    <text>Chan 12</text>
-    <x>10</x>
-    <y>321</y>
-    <width>70</width>
-    <height>20</height>
-    <tooltip>$(actions)</tooltip>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Sel Chan 13_1</name>
-    <actions>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <N>13</N>
-        </macros>
-        <target>replace</target>
-        <description>Open Display</description>
-      </action>
-    </actions>
-    <text>Chan 13</text>
-    <x>10</x>
-    <y>341</y>
-    <width>70</width>
-    <height>20</height>
-    <tooltip>$(actions)</tooltip>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Sel Chan 14_1</name>
-    <actions>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <N>14</N>
-        </macros>
-        <target>replace</target>
-        <description>Open Display</description>
-      </action>
-    </actions>
-    <text>Chan 14</text>
-    <x>10</x>
-    <y>361</y>
-    <width>70</width>
-    <height>20</height>
-    <tooltip>$(actions)</tooltip>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Sel Chan 15_1</name>
-    <actions>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <N>15</N>
-        </macros>
-        <target>replace</target>
-        <description>Open Display</description>
-      </action>
-    </actions>
-    <text>Chan 15</text>
-    <x>10</x>
-    <y>381</y>
-    <width>70</width>
-    <height>20</height>
-    <tooltip>$(actions)</tooltip>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Sel Chan 16_1</name>
-    <actions>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <N>16</N>
-        </macros>
-        <target>replace</target>
-        <description>Open Display</description>
-      </action>
-    </actions>
-    <text>Chan 16</text>
-    <x>10</x>
-    <y>401</y>
-    <width>70</width>
-    <height>20</height>
-    <tooltip>$(actions)</tooltip>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Sel Chan 17_1</name>
-    <actions>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <N>17</N>
-        </macros>
-        <target>replace</target>
-        <description>Open Display</description>
-      </action>
-    </actions>
-    <text>Chan 17</text>
-    <x>10</x>
-    <y>421</y>
-    <width>70</width>
-    <height>20</height>
-    <tooltip>$(actions)</tooltip>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Sel Chan 18_1</name>
-    <actions>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <N>18</N>
-        </macros>
-        <target>replace</target>
-        <description>Open Display</description>
-      </action>
-    </actions>
-    <text>Chan 18</text>
-    <x>10</x>
-    <y>441</y>
-    <width>70</width>
-    <height>20</height>
-    <tooltip>$(actions)</tooltip>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_44</name>
-    <pv_name>$(P)SA:Ch01:NAME.VAL$</pv_name>
-    <x>82</x>
-    <y>102</y>
-    <width>160</width>
-    <foreground_color>
-      <color name="Read_Background" red="240" green="240" blue="240">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
-      </color>
-    </background_color>
-    <format>6</format>
-    <vertical_alignment>1</vertical_alignment>
-    <border_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </border_color>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Sel Chan 1_1</name>
-    <actions>
-      <action type="open_display">
-        <file>MicCheck.bob</file>
-        <macros>
-          <N>01</N>
-        </macros>
-        <target>replace</target>
-        <description>Chan 1</description>
-      </action>
-    </actions>
-    <x>10</x>
-    <y>102</y>
-    <width>70</width>
-    <height>20</height>
-    <tooltip>$(actions)</tooltip>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_45</name>
-    <pv_name>$(P)SA:Ch02:NAME.VAL$</pv_name>
-    <x>82</x>
-    <y>121</y>
-    <width>160</width>
-    <foreground_color>
-      <color name="Read_Background" red="240" green="240" blue="240">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
-      </color>
-    </background_color>
-    <format>6</format>
-    <vertical_alignment>1</vertical_alignment>
-    <border_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </border_color>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_46</name>
-    <pv_name>$(P)SA:Ch03:NAME.VAL$</pv_name>
-    <x>82</x>
-    <y>141</y>
-    <width>160</width>
-    <foreground_color>
-      <color name="Read_Background" red="240" green="240" blue="240">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
-      </color>
-    </background_color>
-    <format>6</format>
-    <vertical_alignment>1</vertical_alignment>
-    <border_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </border_color>
-  </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_47</name>
-    <pv_name>$(P)SA:Ch04:NAME.VAL$</pv_name>
-    <x>82</x>
-    <y>161</y>
-    <width>160</width>
+    <pv_name>$(P)SA:Ch$(N):LASTCAL</pv_name>
+    <x>1161</x>
+    <y>38</y>
+    <width>130</width>
+    <height>30</height>
     <foreground_color>
       <color name="Read_Background" red="240" green="240" blue="240">
       </color>
@@ -1471,617 +1388,727 @@
       <color name="Transparent" red="255" green="255" blue="255" alpha="0">
       </color>
     </background_color>
-    <format>6</format>
     <vertical_alignment>1</vertical_alignment>
-    <border_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </border_color>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_48</name>
-    <pv_name>$(P)SA:Ch05:NAME.VAL$</pv_name>
-    <x>82</x>
-    <y>181</y>
-    <width>160</width>
-    <foreground_color>
-      <color name="Read_Background" red="240" green="240" blue="240">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
-      </color>
-    </background_color>
-    <format>6</format>
-    <vertical_alignment>1</vertical_alignment>
-    <border_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </border_color>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_49</name>
-    <pv_name>$(P)SA:Ch06:NAME.VAL$</pv_name>
-    <x>82</x>
-    <y>201</y>
-    <width>160</width>
-    <foreground_color>
-      <color name="Read_Background" red="240" green="240" blue="240">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
-      </color>
-    </background_color>
-    <format>6</format>
-    <vertical_alignment>1</vertical_alignment>
-    <border_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </border_color>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_50</name>
-    <pv_name>$(P)SA:Ch07:NAME.VAL$</pv_name>
-    <x>82</x>
-    <y>221</y>
-    <width>160</width>
-    <foreground_color>
-      <color name="Read_Background" red="240" green="240" blue="240">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
-      </color>
-    </background_color>
-    <format>6</format>
-    <vertical_alignment>1</vertical_alignment>
-    <border_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </border_color>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_51</name>
-    <pv_name>$(P)SA:Ch08:NAME.VAL$</pv_name>
-    <x>82</x>
-    <y>241</y>
-    <width>160</width>
-    <foreground_color>
-      <color name="Read_Background" red="240" green="240" blue="240">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
-      </color>
-    </background_color>
-    <format>6</format>
-    <vertical_alignment>1</vertical_alignment>
-    <border_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </border_color>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_52</name>
-    <pv_name>$(P)SA:Ch09:NAME.VAL$</pv_name>
-    <x>82</x>
-    <y>261</y>
-    <width>160</width>
-    <foreground_color>
-      <color name="Read_Background" red="240" green="240" blue="240">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
-      </color>
-    </background_color>
-    <format>6</format>
-    <vertical_alignment>1</vertical_alignment>
-    <border_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </border_color>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_53</name>
-    <pv_name>$(P)SA:Ch10:NAME.VAL$</pv_name>
-    <x>82</x>
-    <y>281</y>
-    <width>160</width>
-    <foreground_color>
-      <color name="Read_Background" red="240" green="240" blue="240">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
-      </color>
-    </background_color>
-    <format>6</format>
-    <vertical_alignment>1</vertical_alignment>
-    <border_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </border_color>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_54</name>
-    <pv_name>$(P)SA:Ch11:NAME.VAL$</pv_name>
-    <x>82</x>
-    <y>301</y>
-    <width>160</width>
-    <foreground_color>
-      <color name="Read_Background" red="240" green="240" blue="240">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
-      </color>
-    </background_color>
-    <format>6</format>
-    <vertical_alignment>1</vertical_alignment>
-    <border_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </border_color>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_55</name>
-    <pv_name>$(P)SA:Ch12:NAME.VAL$</pv_name>
-    <x>82</x>
-    <y>321</y>
-    <width>160</width>
-    <foreground_color>
-      <color name="Read_Background" red="240" green="240" blue="240">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
-      </color>
-    </background_color>
-    <format>6</format>
-    <vertical_alignment>1</vertical_alignment>
-    <border_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </border_color>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_56</name>
-    <pv_name>$(P)SA:Ch13:NAME.VAL$</pv_name>
-    <x>82</x>
-    <y>341</y>
-    <width>160</width>
-    <foreground_color>
-      <color name="Read_Background" red="240" green="240" blue="240">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
-      </color>
-    </background_color>
-    <format>6</format>
-    <vertical_alignment>1</vertical_alignment>
-    <border_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </border_color>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_57</name>
-    <pv_name>$(P)SA:Ch14:NAME.VAL$</pv_name>
-    <x>82</x>
-    <y>361</y>
-    <width>160</width>
-    <foreground_color>
-      <color name="Read_Background" red="240" green="240" blue="240">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
-      </color>
-    </background_color>
-    <format>6</format>
-    <vertical_alignment>1</vertical_alignment>
-    <border_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </border_color>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_58</name>
-    <pv_name>$(P)SA:Ch15:NAME.VAL$</pv_name>
-    <x>82</x>
-    <y>381</y>
-    <width>160</width>
-    <foreground_color>
-      <color name="Read_Background" red="240" green="240" blue="240">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
-      </color>
-    </background_color>
-    <format>6</format>
-    <vertical_alignment>1</vertical_alignment>
-    <border_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </border_color>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_59</name>
-    <pv_name>$(P)SA:Ch16:NAME.VAL$</pv_name>
-    <x>82</x>
-    <y>401</y>
-    <width>160</width>
-    <foreground_color>
-      <color name="Read_Background" red="240" green="240" blue="240">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
-      </color>
-    </background_color>
-    <format>6</format>
-    <vertical_alignment>1</vertical_alignment>
-    <border_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </border_color>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_60</name>
-    <pv_name>$(P)SA:Ch17:NAME.VAL$</pv_name>
-    <x>82</x>
-    <y>421</y>
-    <width>160</width>
-    <foreground_color>
-      <color name="Read_Background" red="240" green="240" blue="240">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
-      </color>
-    </background_color>
-    <format>6</format>
-    <vertical_alignment>1</vertical_alignment>
-    <border_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </border_color>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_61</name>
-    <pv_name>$(P)SA:Ch18:NAME.VAL$</pv_name>
-    <x>82</x>
-    <y>441</y>
-    <width>160</width>
-    <foreground_color>
-      <color name="Read_Background" red="240" green="240" blue="240">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
-      </color>
-    </background_color>
-    <format>6</format>
-    <vertical_alignment>1</vertical_alignment>
-    <border_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </border_color>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_62</name>
-    <pv_name>$(P)SA:Ch19:NAME.VAL$</pv_name>
-    <x>82</x>
-    <y>461</y>
-    <width>160</width>
-    <foreground_color>
-      <color name="Read_Background" red="240" green="240" blue="240">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
-      </color>
-    </background_color>
-    <format>6</format>
-    <vertical_alignment>1</vertical_alignment>
-    <border_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </border_color>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_63</name>
-    <pv_name>$(P)SA:Ch20:NAME.VAL$</pv_name>
-    <x>82</x>
-    <y>481</y>
-    <width>160</width>
-    <foreground_color>
-      <color name="Read_Background" red="240" green="240" blue="240">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
-      </color>
-    </background_color>
-    <format>6</format>
-    <vertical_alignment>1</vertical_alignment>
-    <border_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </border_color>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_64</name>
-    <pv_name>$(P)SA:Ch21:NAME.VAL$</pv_name>
-    <x>82</x>
-    <y>501</y>
-    <width>160</width>
-    <foreground_color>
-      <color name="Read_Background" red="240" green="240" blue="240">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
-      </color>
-    </background_color>
-    <format>6</format>
-    <vertical_alignment>1</vertical_alignment>
-    <border_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </border_color>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_65</name>
-    <pv_name>$(P)SA:Ch22:NAME.VAL$</pv_name>
-    <x>82</x>
-    <y>521</y>
-    <width>160</width>
-    <foreground_color>
-      <color name="Read_Background" red="240" green="240" blue="240">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
-      </color>
-    </background_color>
-    <format>6</format>
-    <vertical_alignment>1</vertical_alignment>
-    <border_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </border_color>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_66</name>
-    <pv_name>$(P)SA:Ch23:NAME.VAL$</pv_name>
-    <x>82</x>
-    <y>541</y>
-    <width>160</width>
-    <foreground_color>
-      <color name="Read_Background" red="240" green="240" blue="240">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
-      </color>
-    </background_color>
-    <format>6</format>
-    <vertical_alignment>1</vertical_alignment>
-    <border_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </border_color>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_67</name>
-    <pv_name>$(P)SA:Ch24:NAME.VAL$</pv_name>
-    <x>82</x>
-    <y>561</y>
-    <width>160</width>
-    <foreground_color>
-      <color name="Read_Background" red="240" green="240" blue="240">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
-      </color>
-    </background_color>
-    <format>6</format>
-    <vertical_alignment>1</vertical_alignment>
-    <border_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </border_color>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_68</name>
-    <pv_name>$(P)SA:Ch25:NAME.VAL$</pv_name>
-    <x>82</x>
-    <y>581</y>
-    <width>160</width>
-    <foreground_color>
-      <color name="Read_Background" red="240" green="240" blue="240">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
-      </color>
-    </background_color>
-    <format>6</format>
-    <vertical_alignment>1</vertical_alignment>
-    <border_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </border_color>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_69</name>
-    <pv_name>$(P)SA:Ch26:NAME.VAL$</pv_name>
-    <x>82</x>
-    <y>601</y>
-    <width>160</width>
-    <foreground_color>
-      <color name="Read_Background" red="240" green="240" blue="240">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
-      </color>
-    </background_color>
-    <format>6</format>
-    <vertical_alignment>1</vertical_alignment>
-    <border_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </border_color>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_70</name>
-    <pv_name>$(P)SA:Ch27:NAME.VAL$</pv_name>
-    <x>82</x>
-    <y>621</y>
-    <width>160</width>
-    <foreground_color>
-      <color name="Read_Background" red="240" green="240" blue="240">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
-      </color>
-    </background_color>
-    <format>6</format>
-    <vertical_alignment>1</vertical_alignment>
-    <border_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </border_color>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_71</name>
-    <pv_name>$(P)SA:Ch28:NAME.VAL$</pv_name>
-    <x>82</x>
-    <y>641</y>
-    <width>160</width>
-    <foreground_color>
-      <color name="Read_Background" red="240" green="240" blue="240">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
-      </color>
-    </background_color>
-    <format>6</format>
-    <vertical_alignment>1</vertical_alignment>
-    <border_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </border_color>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_72</name>
-    <pv_name>$(P)SA:Ch29:NAME.VAL$</pv_name>
-    <x>82</x>
-    <y>661</y>
-    <width>160</width>
-    <foreground_color>
-      <color name="Read_Background" red="240" green="240" blue="240">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
-      </color>
-    </background_color>
-    <format>6</format>
-    <vertical_alignment>1</vertical_alignment>
-    <border_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </border_color>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_73</name>
-    <pv_name>$(P)SA:Ch30:NAME.VAL$</pv_name>
-    <x>82</x>
-    <y>681</y>
-    <width>160</width>
-    <foreground_color>
-      <color name="Read_Background" red="240" green="240" blue="240">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
-      </color>
-    </background_color>
-    <format>6</format>
-    <vertical_alignment>1</vertical_alignment>
-    <border_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </border_color>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_74</name>
-    <pv_name>$(P)SA:Ch31:NAME.VAL$</pv_name>
-    <x>82</x>
-    <y>701</y>
-    <width>160</width>
-    <foreground_color>
-      <color name="Read_Background" red="240" green="240" blue="240">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
-      </color>
-    </background_color>
-    <format>6</format>
-    <vertical_alignment>1</vertical_alignment>
-    <border_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </border_color>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_75</name>
-    <pv_name>$(P)SA:Ch32:NAME.VAL$</pv_name>
-    <x>82</x>
-    <y>721</y>
-    <width>160</width>
-    <foreground_color>
-      <color name="Read_Background" red="240" green="240" blue="240">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
-      </color>
-    </background_color>
-    <format>6</format>
-    <vertical_alignment>1</vertical_alignment>
-    <border_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_14</name>
-    <text> dB</text>
-    <x>440</x>
-    <y>60</y>
-    <width>30</width>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
-      </font>
-    </font>
+    <name>Label_40</name>
+    <text>Last Calibration</text>
+    <x>1048</x>
+    <y>38</y>
+    <width>129</width>
+    <height>30</height>
+    <foreground_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </foreground_color>
     <background_color>
-      <color name="Write_Background" red="128" green="255" blue="255">
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
       </color>
     </background_color>
-    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_9</name>
+    <pv_name>$(P)SA:Ch02:NAME.VAL$</pv_name>
+    <x>72</x>
+    <y>95</y>
+    <width>180</width>
+    <foreground_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <format>6</format>
     <vertical_alignment>1</vertical_alignment>
     <wrap_words>false</wrap_words>
+    <border_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_10</name>
+    <pv_name>$(P)SA:Ch03:NAME.VAL$</pv_name>
+    <x>72</x>
+    <y>115</y>
+    <width>180</width>
+    <foreground_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <format>6</format>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_11</name>
+    <pv_name>$(P)SA:Ch04:NAME.VAL$</pv_name>
+    <x>72</x>
+    <y>135</y>
+    <width>180</width>
+    <foreground_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <format>6</format>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_12</name>
+    <pv_name>$(P)SA:Ch05:NAME.VAL$</pv_name>
+    <x>72</x>
+    <y>155</y>
+    <width>180</width>
+    <foreground_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <format>6</format>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_13</name>
+    <pv_name>$(P)SA:Ch06:NAME.VAL$</pv_name>
+    <x>72</x>
+    <y>175</y>
+    <width>180</width>
+    <foreground_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <format>6</format>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_14</name>
+    <pv_name>$(P)SA:Ch07:NAME.VAL$</pv_name>
+    <x>72</x>
+    <y>195</y>
+    <width>180</width>
+    <foreground_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <format>6</format>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_15</name>
+    <pv_name>$(P)SA:Ch08:NAME.VAL$</pv_name>
+    <x>72</x>
+    <y>215</y>
+    <width>180</width>
+    <foreground_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <format>6</format>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_16</name>
+    <pv_name>$(P)SA:Ch09:NAME.VAL$</pv_name>
+    <x>72</x>
+    <y>235</y>
+    <width>180</width>
+    <foreground_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <format>6</format>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_17</name>
+    <pv_name>$(P)SA:Ch10:NAME.VAL$</pv_name>
+    <x>72</x>
+    <y>255</y>
+    <width>180</width>
+    <foreground_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <format>6</format>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_18</name>
+    <pv_name>$(P)SA:Ch11:NAME.VAL$</pv_name>
+    <x>72</x>
+    <y>275</y>
+    <width>180</width>
+    <foreground_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <format>6</format>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_19</name>
+    <pv_name>$(P)SA:Ch12:NAME.VAL$</pv_name>
+    <x>72</x>
+    <y>295</y>
+    <width>180</width>
+    <foreground_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <format>6</format>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_20</name>
+    <pv_name>$(P)SA:Ch13:NAME.VAL$</pv_name>
+    <x>72</x>
+    <y>315</y>
+    <width>180</width>
+    <foreground_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <format>6</format>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_21</name>
+    <pv_name>$(P)SA:Ch14:NAME.VAL$</pv_name>
+    <x>72</x>
+    <y>335</y>
+    <width>180</width>
+    <foreground_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <format>6</format>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_22</name>
+    <pv_name>$(P)SA:Ch15:NAME.VAL$</pv_name>
+    <x>72</x>
+    <y>355</y>
+    <width>180</width>
+    <foreground_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <format>6</format>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_23</name>
+    <pv_name>$(P)SA:Ch16:NAME.VAL$</pv_name>
+    <x>72</x>
+    <y>375</y>
+    <width>180</width>
+    <foreground_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <format>6</format>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_24</name>
+    <pv_name>$(P)SA:Ch17:NAME.VAL$</pv_name>
+    <x>72</x>
+    <y>395</y>
+    <width>180</width>
+    <foreground_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <format>6</format>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_25</name>
+    <pv_name>$(P)SA:Ch18:NAME.VAL$</pv_name>
+    <x>72</x>
+    <y>415</y>
+    <width>180</width>
+    <foreground_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <format>6</format>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_26</name>
+    <pv_name>$(P)SA:Ch19:NAME.VAL$</pv_name>
+    <x>72</x>
+    <y>435</y>
+    <width>180</width>
+    <foreground_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <format>6</format>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_27</name>
+    <pv_name>$(P)SA:Ch20:NAME.VAL$</pv_name>
+    <x>72</x>
+    <y>455</y>
+    <width>180</width>
+    <foreground_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <format>6</format>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_28</name>
+    <pv_name>$(P)SA:Ch21:NAME.VAL$</pv_name>
+    <x>72</x>
+    <y>475</y>
+    <width>180</width>
+    <foreground_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <format>6</format>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_29</name>
+    <pv_name>$(P)SA:Ch22:NAME.VAL$</pv_name>
+    <x>72</x>
+    <y>495</y>
+    <width>180</width>
+    <foreground_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <format>6</format>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_30</name>
+    <pv_name>$(P)SA:Ch23:NAME.VAL$</pv_name>
+    <x>72</x>
+    <y>515</y>
+    <width>180</width>
+    <foreground_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <format>6</format>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_31</name>
+    <pv_name>$(P)SA:Ch24:NAME.VAL$</pv_name>
+    <x>72</x>
+    <y>535</y>
+    <width>180</width>
+    <foreground_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <format>6</format>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_32</name>
+    <pv_name>$(P)SA:Ch25:NAME.VAL$</pv_name>
+    <x>72</x>
+    <y>555</y>
+    <width>180</width>
+    <foreground_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <format>6</format>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_33</name>
+    <pv_name>$(P)SA:Ch26:NAME.VAL$</pv_name>
+    <x>72</x>
+    <y>575</y>
+    <width>180</width>
+    <foreground_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <format>6</format>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_34</name>
+    <pv_name>$(P)SA:Ch27:NAME.VAL$</pv_name>
+    <x>72</x>
+    <y>595</y>
+    <width>180</width>
+    <foreground_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <format>6</format>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_35</name>
+    <pv_name>$(P)SA:Ch28:NAME.VAL$</pv_name>
+    <x>72</x>
+    <y>615</y>
+    <width>180</width>
+    <foreground_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <format>6</format>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_36</name>
+    <pv_name>$(P)SA:Ch29:NAME.VAL$</pv_name>
+    <x>72</x>
+    <y>635</y>
+    <width>180</width>
+    <foreground_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <format>6</format>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_37</name>
+    <pv_name>$(P)SA:Ch30:NAME.VAL$</pv_name>
+    <x>72</x>
+    <y>655</y>
+    <width>180</width>
+    <foreground_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <format>6</format>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_38</name>
+    <pv_name>$(P)SA:Ch31:NAME.VAL$</pv_name>
+    <x>72</x>
+    <y>675</y>
+    <width>180</width>
+    <foreground_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <format>6</format>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_39</name>
+    <pv_name>$(P)SA:Ch32:NAME.VAL$</pv_name>
+    <x>72</x>
+    <y>695</y>
+    <width>180</width>
+    <foreground_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <format>6</format>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_8</name>
+    <pv_name>$(P)SA:Ch01:NAME.VAL$</pv_name>
+    <x>72</x>
+    <y>76</y>
+    <width>180</width>
+    <foreground_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <format>6</format>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <border_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </border_color>
   </widget>
 </display>

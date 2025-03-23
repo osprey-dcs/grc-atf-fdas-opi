@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2025-02-11 14:37:31 by atf-->
+<display version="2.0.0">
+  <name>Mini Chart</name>
+  <width>300</width>
+  <height>150</height>
+  <background_color>
+    <color name="Text" red="0" green="0" blue="0">
+    </color>
+  </background_color>
+  <grid_step_x>5</grid_step_x>
+  <grid_step_y>5</grid_step_y>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <width>300</width>
+    <height>150</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="Header_Background" red="77" green="77" blue="77">
+      </color>
+    </line_color>
+    <line_style>2</line_style>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <corner_width>2</corner_width>
+    <corner_height>2</corner_height>
+  </widget>
+  <widget type="xyplot" version="3.0.0">
+    <name>X/Y Plot_2</name>
+    <x>5</x>
+    <y>3</y>
+    <width>290</width>
+    <height>145</height>
+    <foreground_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <title_font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </title_font>
+    <show_legend>false</show_legend>
+    <x_axis>
+      <title></title>
+      <autoscale>false</autoscale>
+      <log_scale>false</log_scale>
+      <minimum>0.0</minimum>
+      <maximum>0.1</maximum>
+      <show_grid>false</show_grid>
+      <title_font>
+        <font family="Ubuntu Condensed" style="REGULAR" size="12.0">
+        </font>
+      </title_font>
+      <scale_font>
+        <font family="Ubuntu" style="REGULAR" size="12.0">
+        </font>
+      </scale_font>
+      <visible>true</visible>
+    </x_axis>
+    <y_axes>
+      <y_axis>
+        <title></title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>10.0</maximum>
+        <show_grid>true</show_grid>
+        <title_font>
+          <font family="Liberation Sans" style="BOLD" size="1.0">
+          </font>
+        </title_font>
+        <scale_font>
+          <font family="Liberation Sans" style="REGULAR" size="10.0">
+          </font>
+        </scale_font>
+        <on_right>false</on_right>
+        <visible>false</visible>
+        <color>
+          <color name="Read_Background" red="240" green="240" blue="240">
+          </color>
+        </color>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name>$(traces[0].y_pv)</name>
+        <x_pv>FDAS:$(P)SA:T</x_pv>
+        <y_pv>FDAS:$(P)SA:Ch$(N)</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="26" green="51" blue="153">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>2</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_46</name>
+    <pv_name>FDAS:$(P)SA:Ch$(N):NAME.VAL$[14:-1]</pv_name>
+    <x>124</x>
+    <width>175</width>
+    <height>35</height>
+    <font>
+      <font family="Ubuntu Condensed" style="REGULAR" size="24.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <format>6</format>
+    <precision>1</precision>
+    <horizontal_alignment>2</horizontal_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_47</name>
+    <pv_name>FDAS:$(P)SA:Ch$(N):Max-I</pv_name>
+    <x>5</x>
+    <y>3</y>
+    <width>90</width>
+    <font>
+      <font family="Ubuntu Mono" style="REGULAR" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <precision>4</precision>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_48</name>
+    <pv_name>FDAS:$(P)SA:Ch$(N):Min-I</pv_name>
+    <x>5</x>
+    <y>104</y>
+    <width>90</width>
+    <font>
+      <font family="Ubuntu Mono" style="REGULAR" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <precision>4</precision>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_49</name>
+    <pv_name>FDAS:$(P)SA:Ch$(N):Mean-I</pv_name>
+    <x>5</x>
+    <y>50</y>
+    <width>90</width>
+    <font>
+      <font family="Ubuntu Mono" style="REGULAR" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <precision>4</precision>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Text Update_50</name>
+    <text>$(P)$(N)</text>
+    <x>209</x>
+    <y>104</y>
+    <width>90</width>
+    <font>
+      <font family="Ubuntu Mono" style="REGULAR" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+</display>

@@ -1,0 +1,9 @@
+
+Coherence Formula
+    =arrayDiv(arrayPow(arrayMult('FDAS:17:SA:Ch01:FFT:Out-I','FDAS:17:SA:Ch02:FFT:Out-I'),2),arrayMult(arrayPow('FDAS:17:SA:Ch01:FFT:Out-I',2),arrayPow('FDAS:17:SA:Ch02:FFT:Out-I',2)))
+
+   =arrayDiv(arrayPow(arrayMult(scale('FDAS:17:SA:Ch01:FFT:Out-I',1E8),scale('FDAS:17:SA:Ch02:FFT:Out-I',1E8)),2),arrayMult(arrayPow(scale('FDAS:17:SA:Ch01:FFT:Out-I',1E8),2),arrayPow(scale('FDAS:17:SA:Ch02:FFT:Out-I',1E8),2)))
+
+$(P)SA:Ch$(N):FFT:Freq-I
+    =arrayDiv(arrayPow(arrayMult('$(P1)SA:Ch$(N1):FFT:Out-I','$(P2)SA:Ch$(N2):FFT:Out-I'),2),arrayMult(arrayPow('$(P1)SA:Ch$(N1):FFT:Out-I',2),arrayPow('$(P2)SA:Ch$(N2):FFT:Out-I',2)))
+    =arrayDiv((arrayMult(scale('$(P1)SA:Ch$(N1):FFT:Out-I',100000000),scale('$(P2)SA:Ch$(N2):FFT:Out-I',100000000)),2),arrayMult((scale('$(P1)SA:Ch$(N1):FFT:Out-I',100000000),2),arrayPow(scale('$(P2)SA:Ch$(N2):FFT:Out-I',100000000),2)))

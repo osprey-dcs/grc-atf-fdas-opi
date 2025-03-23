@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2024-09-05 18:20:42 by atf-->
+<display version="2.0.0">
+  <name>Display</name>
+  <macros>
+    <CHASSIS>1</CHASSIS>
+    <CHANNEL>1</CHANNEL>
+  </macros>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <class>TITLE</class>
+    <text>My Display</text>
+    <x use_class="true">0</x>
+    <y use_class="true">0</y>
+    <width>550</width>
+    <height>31</height>
+    <font use_class="true">
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <pv_name>loc://$(DID)trigger</pv_name>
+    <text>NEXT</text>
+    <x>390</x>
+    <y>70</y>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_5</name>
+    <text>LOCAL PV</text>
+    <x>18</x>
+    <y>154</y>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_3</name>
+    <pv_name>loc://test&lt;VLong&gt;(1)</pv_name>
+    <x>98</x>
+    <y>154</y>
+    <width>190</width>
+    <format>1</format>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display</name>
+    <file>macros-embed.bob</file>
+    <x>18</x>
+    <y>31</y>
+    <width>250</width>
+    <height>120</height>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[# Embedded python script
+from org.csstudio.display.builder.runtime.script import PVUtil, ScriptUtil
+print 'Hello'
+
+value = PVUtil.getLong(pvs[0])
+direction = PVUtil.getLong(pvs[1])
+
+if direction == 1:
+	if value == 32:
+		value = 0
+	pvs[0].write(value+1)
+	widget.getPropertyValue("macros").add("CHANNEL", str(value+1))
+if direction == -1:
+	if value == 1:
+		value = 33
+	pvs[0].write(value-1)
+	widget.getPropertyValue("macros").add("CHANNEL", str(value-1))
+
+# Need to change the file name and then revert back to force a reload
+widget.setPropertyValue("file", "")
+widget.setPropertyValue("file", "macros-embed.bob")
+]]></text>
+        <pv_name trigger="false">loc://test</pv_name>
+        <pv_name>loc://$(DID)trigger</pv_name>
+      </script>
+    </scripts>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_1</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>-1</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <pv_name>loc://$(DID)trigger&lt;VLong&gt;</pv_name>
+    <text>PREVIOUS</text>
+    <x>268</x>
+    <y>70</y>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_1</name>
+    <file>../SingleGraph.bob</file>
+    <y>180</y>
+    <width>1110</width>
+    <height>610</height>
+  </widget>
+</display>
